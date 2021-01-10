@@ -133,3 +133,64 @@ EmergencyRover *RoverList::getAvailableEmergencyRover()
     return nullptr;
 }
 
+void RoverList::addInMissionEmergencyRover(EmergencyRover *ER)
+{
+    InMissionEmergencyRovers.InsertBeg(ER);
+}
+
+EmergencyRover *RoverList::getInMissionEmergencyRover()
+{
+
+}
+
+void RoverList::addInCheckupEmergencyRover(EmergencyRover *ER)
+{
+   InCheckupEmergencyRovers.InsertBeg(ER);
+
+
+}
+
+EmergencyRover *RoverList::getInCheckupEmergencyRover() {
+    return nullptr;
+}
+
+void RoverList::addInMissionPolarRover(PolarRover *PR)
+{
+    InMissionPolarRovers.InsertBeg(PR);
+
+}
+
+PolarRover *RoverList::getInMissionPolarRover() {
+    return nullptr;
+}
+
+void RoverList::addInCheckupPolarRover(PolarRover *PR)
+{
+    InCheckupPolarRovers.InsertBeg(PR);
+
+
+}
+
+PolarRover *RoverList::getInCheckupPolarRover() {
+    return nullptr;
+}
+
+void RoverList::addInMissionMountainousRover(MountainousRover *ER)
+{
+    InMissionMountainousRovers.InsertBeg(ER);
+
+}
+
+MountainousRover *RoverList::getInMissionMountainousRover() {
+    return nullptr;
+}
+
+void RoverList::addInCheckupMountainousRover(MountainousRover *ER)
+{
+    InCheckupMountainousRovers.InsertBeg(ER);
+}
+
+MountainousRover *RoverList::getInCheckupMountainousRover() {
+    return nullptr;
+}
+

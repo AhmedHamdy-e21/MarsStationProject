@@ -52,37 +52,49 @@ public:
     /////////////InMission
     const LinkedListMissions<EmergencyRover *> &getInMissionEmergencyRovers() const;
     int getNoOfInMissionEmergencyRovers() const;
+    void addInMissionEmergencyRover(EmergencyRover* ER);
+    EmergencyRover * getInMissionEmergencyRover();
     /////////////InCheckup
     const LinkedListMissions<EmergencyRover *> &getInCheckupEmergencyRovers() const;
     int getNoOfInCheckupEmergencyRovers() const;
+    void addInCheckupEmergencyRover(EmergencyRover* ER);
+    EmergencyRover * getInCheckupEmergencyRover();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////PolarRovers
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////Available
     const LinkedQueue<PolarRover *> &getAvailablePolarRovers() const;
     int getNoOfAvailablePolarRovers() const;
-    void addAvailablePolarRover(PolarRover * PR);// enqueue
-    PolarRover * getAvailablePolarRover();// dequeue
+    void addAvailablePolarRover(PolarRover * PR);
+    PolarRover * getAvailablePolarRover();
     /////////////InMission
     int getNoOfInMissionPolarRovers() const;
     const LinkedListMissions<PolarRover *> &getInMissionPolarRovers() const;
+    void addInMissionPolarRover(PolarRover * PR);
+    PolarRover * getInMissionPolarRover();
     /////////////InCheckup
     int getNoOfInCheckupPolarRovers() const;
     const LinkedListMissions<PolarRover *> &getInCheckupPolarRovers() const;
+    void addInCheckupPolarRover(PolarRover * PR);
+    PolarRover * getInCheckupPolarRover();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////EmergencyRover
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////Available
     int getNoOfAvailableMountainousRovers() const;
     const LinkedQueue<MountainousRover *> &getAvailableMountainousRovers() const;
-    void addAvailableMountainousRover(MountainousRover* ER);// enqueue
-    MountainousRover* getAvailableMountainousRover();// dequeue
+    void addAvailableMountainousRover(MountainousRover* ER);
+    MountainousRover* getAvailableMountainousRover();
     /////////////InMission
     const LinkedListMissions<MountainousRover *> &getInMissionMountainousRovers() const;
     int getNoOfInMissionMountainousRovers() const;
+    void addInMissionMountainousRover(MountainousRover* ER);
+    MountainousRover* getInMissionMountainousRover();
     /////////////InCheckup
     int getNoOfInCheckupMountainousRovers() const;
     const LinkedListMissions<MountainousRover *> &getInCheckupMountainousRovers() const;
+    void addInCheckupMountainousRover(MountainousRover* ER);
+    MountainousRover* getInCheckupMountainousRover();
 };
 
 #endif //MARSSTATIONPROJECT_ROVERLIST_H
