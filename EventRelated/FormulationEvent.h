@@ -1,0 +1,14 @@
+//
+// Created by raspberry on 2021-01-10.
+//
+
+#ifndef MARSSTATIONPROJECT_FORMULATIONEVENT_H
+#define MARSSTATIONPROJECT_FORMULATIONEVENT_H
+
+
+class FormulationEvent {
+
+};
+
+
+#endif //MARSSTATIONPROJECT_FORMULATIONEVENT_H

@@ -112,6 +112,30 @@
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/Queue/QueueADT.h">
 			<Option target="MarsStationProject"/>
 		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/CancelEvent.cpp">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/CancelEvent.h">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/Event.cpp">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/Event.h">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/FormulationEvent.cpp">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/FormulationEvent.h">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PrompteEvent.cpp">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PrompteEvent.h">
+			<Option target="MarsStationProject"/>
+		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MarsStation.cpp">
 			<Option target="MarsStationProject"/>
 		</Unit>

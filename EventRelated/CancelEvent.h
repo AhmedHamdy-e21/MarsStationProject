@@ -1,0 +1,14 @@
+//
+// Created by raspberry on 2021-01-10.
+//
+
+#ifndef MARSSTATIONPROJECT_CANCELEVENT_H
+#define MARSSTATIONPROJECT_CANCELEVENT_H
+
+
+class CancelEvent {
+
+};
+
+
+#endif //MARSSTATIONPROJECT_CANCELEVENT_H

@@ -1,0 +1,14 @@
+//
+// Created by raspberry on 2021-01-10.
+//
+
+#ifndef MARSSTATIONPROJECT_PROMPTEEVENT_H
+#define MARSSTATIONPROJECT_PROMPTEEVENT_H
+
+
+class PrompteEvent {
+
+};
+
+
+#endif //MARSSTATIONPROJECT_PROMPTEEVENT_H
