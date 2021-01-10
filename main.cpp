@@ -22,6 +22,9 @@ int main() {
     Mo->PrintMission();
     PolarMission* Ms=M.getPolarMission();
     Ms->PrintMission();
+    M.addInExecutionPolar(Ms);
+    M.getInExecutionPolar().PrintList();
+
 
 
 //    M.getWaitingPolarMissionQueue().peek(Ms);

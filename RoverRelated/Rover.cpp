@@ -4,32 +4,62 @@
 
 #include "Rover.h"
 
-void Rover::set_Number_of_Missions_to_checkup_after(int N_missions)
+Rover::Rover()
 {
-	 Number_of_missions_to_checkup_after= N_missions;
+
 }
 
-int Rover::get_Number_of_missions_to_checkup_after()
+Rover::Rover(int Speed, int CheckupDuration, int NoCheckupMissions)
 {
-	return Number_of_missions_to_checkup_after;
+    setSpeed(Speed);
+    setCheckupDuration(CheckupDuration);
+    setNoCheckupMissions(NoCheckupMissions);
 }
 
-void Rover::set_start_time_of_current_mission(int time)
+
+void Rover::Print()
 {
-	start_time_of_current_mission =time;
+    cout << "\n I'm a Rover  " << this->Speed << this->CheckupDuration;
+
+
 }
 
-int Rover::get_start_time_of_current_mission()
-{
-	return start_time_of_current_mission;
+int Rover::getNoCheckupMissions() const {
+    return NoCheckupMissions;
 }
 
-void Rover::set_current_mission_duration(int duration)
-{
-	current_mission_duration = duration;
+int Rover::getCheckupDuration() const {
+    return CheckupDuration;
 }
 
-int Rover::get_current_mission_duration()
-{
-	return current_mission_duration;
+float Rover::getSpeed() const {
+    return Speed;
+}
+
+int Rover::getMissionStartTime() const {
+    return MissionStartTime;
+}
+
+int Rover::getMissionDuration() const {
+    return MissionDuration;
+}
+
+void Rover::setNoCheckupMissions(int noCheckupMissions) {
+    NoCheckupMissions = noCheckupMissions;
+}
+
+void Rover::setCheckupDuration(int checkupDuration) {
+    CheckupDuration = checkupDuration;
+}
+
+void Rover::setSpeed(float speed) {
+    Speed = speed;
+}
+
+void Rover::setMissionStartTime(int missionStartTime) {
+    MissionStartTime = missionStartTime;
+}
+
+void Rover::setMissionDuration(int missionDuration) {
+    MissionDuration = missionDuration;
 }

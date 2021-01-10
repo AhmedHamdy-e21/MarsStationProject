@@ -23,7 +23,7 @@ private:
     int NoOfWaitingEmergencyMission;
     int NoOfWaitingPolarMission;
     int NoOfWaitingMountainousMission;
-    /////////////IsExecuting Missions
+    /////////////IsExecution Missions
     LinkedListMissions<MountainousMission*> InExecutionMountainous;
     LinkedListMissions<EmergencyMission*> InExecutionEmergency;
     LinkedListMissions<PolarMission*> InExecutionPolar;

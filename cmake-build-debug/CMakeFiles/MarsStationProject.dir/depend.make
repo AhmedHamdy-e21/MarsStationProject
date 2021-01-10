@@ -34,8 +34,18 @@ CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionList.cpp.o: ../Missi
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionList.cpp.o: ../MissionRelated/MountainousMission.h
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionList.cpp.o: ../MissionRelated/PolarMission.h
 
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../DataStructure/LinkedList/LinkedListMissions.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../DataStructure/LinkedList/NodeMission.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../DataStructure/Queue/LinkedQueue.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../DataStructure/Queue/NodeQ.cpp
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../DataStructure/Queue/NodeQ.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../DataStructure/Queue/QueueADT.h
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../MarsStationRelated/RoverList.cpp
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../MarsStationRelated/RoverList.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../RoverRelated/EmergencyRovers.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../RoverRelated/MountainousRover.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../RoverRelated/PolarRover.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o: ../RoverRelated/Rover.h
 
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/UIClass.cpp.o: ../MarsStationRelated/UIClass.cpp
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/UIClass.cpp.o: ../MarsStationRelated/UIClass.h
@@ -55,13 +65,13 @@ CMakeFiles/MarsStationProject.dir/MissionRelated/PolarMission.cpp.o: ../MissionR
 CMakeFiles/MarsStationProject.dir/MissionRelated/PolarMission.cpp.o: ../MissionRelated/PolarMission.cpp
 CMakeFiles/MarsStationProject.dir/MissionRelated/PolarMission.cpp.o: ../MissionRelated/PolarMission.h
 
-CMakeFiles/MarsStationProject.dir/RoverRelated/Emergency_rovers.cpp.o: ../RoverRelated/Emergency_rovers.cpp
-CMakeFiles/MarsStationProject.dir/RoverRelated/Emergency_rovers.cpp.o: ../RoverRelated/Emergency_rovers.h
-CMakeFiles/MarsStationProject.dir/RoverRelated/Emergency_rovers.cpp.o: ../RoverRelated/Rover.h
+CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRovers.cpp.o: ../RoverRelated/EmergencyRovers.cpp
+CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRovers.cpp.o: ../RoverRelated/EmergencyRovers.h
+CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRovers.cpp.o: ../RoverRelated/Rover.h
 
-CMakeFiles/MarsStationProject.dir/RoverRelated/MountaneousRover.cpp.o: ../RoverRelated/MountaneousRover.cpp
-CMakeFiles/MarsStationProject.dir/RoverRelated/MountaneousRover.cpp.o: ../RoverRelated/MountaneousRover.h
-CMakeFiles/MarsStationProject.dir/RoverRelated/MountaneousRover.cpp.o: ../RoverRelated/Rover.h
+CMakeFiles/MarsStationProject.dir/RoverRelated/MountainousRover.cpp.o: ../RoverRelated/MountainousRover.cpp
+CMakeFiles/MarsStationProject.dir/RoverRelated/MountainousRover.cpp.o: ../RoverRelated/MountainousRover.h
+CMakeFiles/MarsStationProject.dir/RoverRelated/MountainousRover.cpp.o: ../RoverRelated/Rover.h
 
 CMakeFiles/MarsStationProject.dir/RoverRelated/PolarRover.cpp.o: ../RoverRelated/PolarRover.cpp
 CMakeFiles/MarsStationProject.dir/RoverRelated/PolarRover.cpp.o: ../RoverRelated/PolarRover.h

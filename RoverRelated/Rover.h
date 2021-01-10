@@ -10,54 +10,35 @@ using namespace std;
 class Rover {
 private:
 	int NoCheckupMissions;
-	int CheckupDuration; // constant in subclassess,hence, no getters and setters
-	float Speed; // constant in subclasses,hence, no getters and setters
-	int MissionStartTime;
-	int MissionDuration;
-
+    int CheckupDuration;
+    float Speed;
+    int MissionStartTime;
+    int MissionDuration;
 public:
-	//void Assign_mission(current_time)  // el mafrod akhodha men class tany
-	// void checkup( number of missions ) // hatakhod 3adad el missions ely rover 3amltha
-	// time WhenAvailable() //should return time that rover will be available in
+    Rover();
+    Rover(int Speed, int CheckupDuration,int NoCheckupMissions);
+    void setNoCheckupMissions(int noCheckupMissions);
 
-	void setNoCheckupMissions(int Nomissions);
-	int getNoCheckupMissions();
-	void setMissionStartTime(int time);
-	int getMissionStartTime();
-	void setMissionDuration(int duration);
-	int getMissionDuration();
+    void setCheckupDuration(int checkupDuration);
 
-	Rover(int Speed, int CheckupDuration,int NoCheckupMissions)
-	{
-		setSpeed(Speed);
-		setCheckupDuration(CheckupDuration);
-        setNoCheckupMissions(NoCheckupMissions);
-	}
+    void setSpeed(float speed);
 
+    void setMissionStartTime(int missionStartTime);
 
-	virtual void setSpeed(int speed)
-	{
-		this->Speed = speed;
-	}
+    void setMissionDuration(int missionDuration);
 
-	virtual float getSpeed() const
-	{
-		return this->Speed;
-	}
+    int getNoCheckupMissions() const;
 
-	virtual void setCheckupDuration(int  check_up_duration)
-	{
-		this->CheckupDuration = check_up_duration;
-	}
+    int getCheckupDuration() const;
 
-	virtual int getCheckupDuration() const   //Make sure in gitkraken
-	{
-		return this->CheckupDuration;
-	}
+    float getSpeed() const;
 
-	virtual void Print()
-	{
-		cout << "\n I'm a Rover  " << this->Speed << this->CheckupDuration;
-	}
+    int getMissionStartTime() const;
+
+    int getMissionDuration() const;
+
+	virtual void Print();
+
+	~Rover();
 
 };
