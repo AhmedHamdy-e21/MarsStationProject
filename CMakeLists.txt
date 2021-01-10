@@ -39,8 +39,6 @@ add_executable(MarsStationProject main.cpp
         MarsStationRelated/MissionLists.h
         MarsStationRelated/UIClass.cpp
         MarsStationRelated/UIClass.h
-        MarsStationRelated/MarsStation.h
-        MarsStationRelated/MarsStation.cpp
         ##################################################################
         #Rover Related
         ##################################################################
@@ -54,4 +52,4 @@ add_executable(MarsStationProject main.cpp
         RoverRelated/Rover.h
 
 
-        MarsStationRelated/RoverLists.cpp MarsStationRelated/RoverLists.h EventRelated/Event.cpp EventRelated/Event.h EventRelated/FormulationEvent.cpp EventRelated/FormulationEvent.h EventRelated/CancelEvent.cpp EventRelated/CancelEvent.h EventRelated/PrompteEvent.cpp EventRelated/PrompteEvent.h)
+        MarsStationRelated/RoverLists.cpp MarsStationRelated/RoverLists.h EventRelated/Event.cpp EventRelated/Event.h EventRelated/FormulationEvent.cpp EventRelated/FormulationEvent.h EventRelated/CancelEvent.cpp EventRelated/CancelEvent.h EventRelated/PrompteEvent.cpp EventRelated/PrompteEvent.h MarsStationRelated/MarsStation.cpp MarsStationRelated/MarsStation.h)
