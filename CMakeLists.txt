@@ -48,8 +48,8 @@ add_executable(MarsStationProject main.cpp
         RoverRelated/MountainousRover.h
         RoverRelated/PolarRover.cpp
         RoverRelated/PolarRover.h
-        RoverRelated/EmergencyRovers.h
-        RoverRelated/EmergencyRovers.cpp
+        RoverRelated/EmergencyRover.h
+        RoverRelated/EmergencyRover.cpp
 
 
         MarsStationRelated/RoverList.cpp MarsStationRelated/RoverList.h)

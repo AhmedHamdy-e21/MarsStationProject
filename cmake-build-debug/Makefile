@@ -467,32 +467,32 @@ MissionRelated/PolarMission.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MissionRelated/PolarMission.cpp.s
 .PHONY : MissionRelated/PolarMission.cpp.s
 
-RoverRelated/EmergencyRovers.o: RoverRelated/EmergencyRovers.cpp.o
+RoverRelated/EmergencyRover.o: RoverRelated/EmergencyRover.cpp.o
 
-.PHONY : RoverRelated/EmergencyRovers.o
+.PHONY : RoverRelated/EmergencyRover.o
 
 # target to build an object file
-RoverRelated/EmergencyRovers.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRovers.cpp.o
-.PHONY : RoverRelated/EmergencyRovers.cpp.o
+RoverRelated/EmergencyRover.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRover.cpp.o
+.PHONY : RoverRelated/EmergencyRover.cpp.o
 
-RoverRelated/EmergencyRovers.i: RoverRelated/EmergencyRovers.cpp.i
+RoverRelated/EmergencyRover.i: RoverRelated/EmergencyRover.cpp.i
 
-.PHONY : RoverRelated/EmergencyRovers.i
+.PHONY : RoverRelated/EmergencyRover.i
 
 # target to preprocess a source file
-RoverRelated/EmergencyRovers.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRovers.cpp.i
-.PHONY : RoverRelated/EmergencyRovers.cpp.i
+RoverRelated/EmergencyRover.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRover.cpp.i
+.PHONY : RoverRelated/EmergencyRover.cpp.i
 
-RoverRelated/EmergencyRovers.s: RoverRelated/EmergencyRovers.cpp.s
+RoverRelated/EmergencyRover.s: RoverRelated/EmergencyRover.cpp.s
 
-.PHONY : RoverRelated/EmergencyRovers.s
+.PHONY : RoverRelated/EmergencyRover.s
 
 # target to generate assembly for a file
-RoverRelated/EmergencyRovers.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRovers.cpp.s
-.PHONY : RoverRelated/EmergencyRovers.cpp.s
+RoverRelated/EmergencyRover.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRover.cpp.s
+.PHONY : RoverRelated/EmergencyRover.cpp.s
 
 RoverRelated/MountainousRover.o: RoverRelated/MountainousRover.cpp.o
 
@@ -620,9 +620,9 @@ help:
 	@echo "... MissionRelated/PolarMission.o"
 	@echo "... MissionRelated/PolarMission.i"
 	@echo "... MissionRelated/PolarMission.s"
-	@echo "... RoverRelated/EmergencyRovers.o"
-	@echo "... RoverRelated/EmergencyRovers.i"
-	@echo "... RoverRelated/EmergencyRovers.s"
+	@echo "... RoverRelated/EmergencyRover.o"
+	@echo "... RoverRelated/EmergencyRover.i"
+	@echo "... RoverRelated/EmergencyRover.s"
 	@echo "... RoverRelated/MountainousRover.o"
 	@echo "... RoverRelated/MountainousRover.i"
 	@echo "... RoverRelated/MountainousRover.s"

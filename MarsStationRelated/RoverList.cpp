@@ -4,7 +4,7 @@
 
 #include "RoverList.h"
 
-const LinkedQueue<EmergencyRovers *> &RoverList::getAvailableEmergencyRovers() const {
+const LinkedQueue<EmergencyRover *> &RoverList::getAvailableEmergencyRovers() const {
     return AvailableEmergencyRovers;
 }
 
@@ -28,7 +28,7 @@ int RoverList::getNoOfAvailableMountainousRovers() const {
     return AvailableMountainousRovers.getSize();
 }
 
-const LinkedListMissions<EmergencyRovers *> &RoverList::getInMissionEmergencyRovers() const {
+const LinkedListMissions<EmergencyRover *> &RoverList::getInMissionEmergencyRovers() const {
     return InMissionEmergencyRovers;
 }
 
@@ -52,7 +52,7 @@ int RoverList::getNoOfInMissionMountainousRovers() const {
     return InMissionMountainousRovers.getCount();
 }
 
-const LinkedListMissions<EmergencyRovers *> &RoverList::getInCheckupEmergencyRovers() const {
+const LinkedListMissions<EmergencyRover *> &RoverList::getInCheckupEmergencyRovers() const {
     return InCheckupEmergencyRovers;
 }
 
@@ -75,3 +75,61 @@ int RoverList::getNoOfInCheckupPolarRovers() const {
 int RoverList::getNoOfInCheckupMountainousRovers() const {
     return InCheckupMountainousRovers.getCount();
 }
+
+void RoverList::addAvailableEmergencyRover(EmergencyRover *ER)
+{
+    AvailableEmergencyRovers.enqueue(ER);
+
+}
+
+
+
+void RoverList::addAvailablePolarRover(PolarRover *PR)
+{
+    AvailablePolarRovers.enqueue(PR);
+
+}
+
+
+void RoverList::addAvailableMountainousRover(MountainousRover *ER)
+{
+    AvailableMountainousRovers.enqueue(ER);
+
+}
+
+MountainousRover *RoverList::getAvailableMountainousRover()
+{
+    bool isAvailable;
+    MountainousRover* M;
+    isAvailable=AvailableMountainousRovers.dequeue(M);
+    if(isAvailable)
+    {
+        return M;
+    }
+    return nullptr;
+}
+
+PolarRover *RoverList::getAvailablePolarRover()
+{
+    bool isAvailable;
+    PolarRover* M;
+    isAvailable=AvailablePolarRovers.dequeue(M);
+    if(isAvailable)
+    {
+        return M;
+    }
+    return nullptr;
+}
+
+EmergencyRover *RoverList::getAvailableEmergencyRover()
+{
+    bool isAvailable;
+    EmergencyRover* M;
+    isAvailable=AvailableEmergencyRovers.dequeue(M);
+    if(isAvailable)
+    {
+        return M;
+    }
+    return nullptr;
+}
+

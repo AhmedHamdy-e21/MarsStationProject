@@ -160,10 +160,10 @@
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/PolarMission.h">
 			<Option target="MarsStationProject"/>
 		</Unit>
-		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/RoverRelated/EmergencyRovers.cpp">
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/RoverRelated/EmergencyRover.cpp">
 			<Option target="MarsStationProject"/>
 		</Unit>
-		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/RoverRelated/EmergencyRovers.h">
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/RoverRelated/EmergencyRover.h">
 			<Option target="MarsStationProject"/>
 		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/RoverRelated/MountainousRover.cpp">

@@ -11,7 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MarsStationProject.dir/MissionRelated/Mission.cpp.o"
   "CMakeFiles/MarsStationProject.dir/MissionRelated/MountainousMission.cpp.o"
   "CMakeFiles/MarsStationProject.dir/MissionRelated/PolarMission.cpp.o"
-  "CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRovers.cpp.o"
+  "CMakeFiles/MarsStationProject.dir/RoverRelated/EmergencyRover.cpp.o"
   "CMakeFiles/MarsStationProject.dir/RoverRelated/MountainousRover.cpp.o"
   "CMakeFiles/MarsStationProject.dir/RoverRelated/PolarRover.cpp.o"
   "CMakeFiles/MarsStationProject.dir/main.cpp.o"

@@ -1,9 +1,9 @@
 #include"Rover.h"
 
-class EmergencyRovers : public Rover
+class EmergencyRover : public Rover
 {
 public:
-    EmergencyRovers(int Speed, int CheckupDuration, int NoCheckupMissions) : Rover(Speed, CheckupDuration, NoCheckupMissions) {};
+    EmergencyRover(int Speed, int CheckupDuration, int NoCheckupMissions) : Rover(Speed, CheckupDuration, NoCheckupMissions) {};
 
   
     void Print() override  //Make sure in gitkraken
