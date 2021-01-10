@@ -3,3 +3,6 @@
 //
 
 #include "CancelEvent.h"
+
+CancelEvent::CancelEvent(int ID,int ED):Event(ED,ID)
+{}

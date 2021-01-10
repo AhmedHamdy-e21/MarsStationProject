@@ -3,3 +3,5 @@
 //
 
 #include "PrompteEvent.h"
+
+PrompteEvent::PrompteEvent(int ED,int ID):Event(ED,ID) {}

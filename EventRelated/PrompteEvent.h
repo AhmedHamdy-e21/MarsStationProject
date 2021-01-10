@@ -4,9 +4,12 @@
 
 #ifndef MARSSTATIONPROJECT_PROMPTEEVENT_H
 #define MARSSTATIONPROJECT_PROMPTEEVENT_H
+#include "Event.h"
 
-
-class PrompteEvent {
+class PrompteEvent:public Event
+{
+public:
+    PrompteEvent(int ED,int ID);
 
 };
 

@@ -5,8 +5,11 @@
 #ifndef MARSSTATIONPROJECT_CANCELEVENT_H
 #define MARSSTATIONPROJECT_CANCELEVENT_H
 
-
-class CancelEvent {
+#include "Event.h"
+class CancelEvent:public Event
+{
+public:
+    CancelEvent(int ID,int ED);
 
 };
 
