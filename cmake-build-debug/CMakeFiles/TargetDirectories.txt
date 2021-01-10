@@ -1,3 +1,3 @@
-/home/raspberry/Desktop/Data Structure Project Building/MarsStationProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/raspberry/Desktop/Data Structure Project Building/MarsStationProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/raspberry/Desktop/Data Structure Project Building/MarsStationProject/cmake-build-debug/CMakeFiles/MarsStationProject.dir
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/cmake-build-debug/CMakeFiles/MarsStationProject.dir

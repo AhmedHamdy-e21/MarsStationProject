@@ -51,6 +51,7 @@ class LinkedQueue:public QueueADT<T>
 private :
 	NodeQ<T>* backPtr;
 	NodeQ<T>* frontPtr;
+	int size;
 public :
 	LinkedQueue();	
 	bool isEmpty() const ;
@@ -58,6 +59,10 @@ public :
 	bool dequeue(T& frntEntry);  
 	bool peek(T& frntEntry)  const;	
 	~LinkedQueue();
+    int getSize() const
+    {
+        return size;
+    }
 };
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,6 +71,8 @@ Function: Queue()
 The constructor of the Queue class.
 
 */
+
+
 
 template <typename T>
 LinkedQueue<T>::LinkedQueue()
@@ -109,6 +116,7 @@ bool LinkedQueue<T>::enqueue( const T& newEntry)
 		backPtr->setNext(newNodePtr); // The queue was not empty
 
 	backPtr = newNodePtr; // New node is the last node now
+	size++;
 	return true ;
 } // end enqueue
 
@@ -143,6 +151,7 @@ bool LinkedQueue<T>:: dequeue(T& frntEntry)
 
     delete [] nodeToDeletePtr;
 //    free( nodeToDeletePtr);
+    size--;
 
 
 	return true;

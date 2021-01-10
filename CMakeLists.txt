@@ -41,6 +41,15 @@ add_executable(MarsStationProject main.cpp
         MarsStationRelated/UIClass.h
         MarsStationRelated/MarsStation.h
         MarsStationRelated/MarsStation.cpp
+        ##################################################################
+        #Rover Related
+        ##################################################################
+        RoverRelated/MountainousRover.cpp
+        RoverRelated/MountainousRover.h
+        RoverRelated/PolarRover.cpp
+        RoverRelated/PolarRover.h
+        RoverRelated/Emergency_rovers.h
+        RoverRelated/Emergency_rovers.cpp
 
 
-        )
+        MarsStationRelated/RoverList.cpp MarsStationRelated/RoverList.h)

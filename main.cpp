@@ -11,10 +11,10 @@ int main() {
     EmergencyMission* M5=new EmergencyMission(1,36,61,32,5);
     MissionList M;
     M.addEmergencyMission(M5);
-//    M.getEmergencyMissionHeap().printHeap();
+//    M.getWaitingEmergencyMissionHeap().printHeap();
     M.addMountainousMission(M3);
     M.addMountainousMission(M3);
-//    M.getMountainousMissionList().PrintList();
+//    M.getWaitingMountainousMissionList().PrintList();
     M.addPolarMission(MP);
     M.addPolarMission(MP);
     M.addPolarMission(MP);
@@ -24,7 +24,7 @@ int main() {
     Ms->PrintMission();
 
 
-//    M.getPolarMissionQueue().peek(Ms);
+//    M.getWaitingPolarMissionQueue().peek(Ms);
 //    Ms->PrintMission();
 //    Ms.PrintMission();
 
