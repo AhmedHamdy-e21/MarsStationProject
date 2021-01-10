@@ -33,24 +33,6 @@ void MaxHeap<T>::insertItem(T value)
 
 }
 
-//
-//void MaxHeap<T>::insertItem(T value)
-//
-//
-//
-//{
-//    if ( size+1 >= vect.size())
-//    {
-//        Mission M;
-//        vect.push_back(M);
-//    }
-//    vect[++ size]= value;
-//    shiftUp(size);
-//    return;
-//
-//}
-
-
 template<typename T>
 void MaxHeap<T>::shiftDown(int i) {
     if (i > size) return;
@@ -112,11 +94,6 @@ template<typename T>
 MaxHeap<T>::MaxHeap()
 {
     size=0;
-
-
-
-
-
 }
 
 template<typename T>
@@ -125,7 +102,6 @@ void MaxHeap<T>::printHeap() const {
         (*it)->Print();
         cout<<endl;
     }
-
 }
 
 template<typename T>
@@ -136,4 +112,23 @@ int MaxHeap<T>::getSize() const {
 template<typename T>
 void MaxHeap<T>::maxHeapify() {
 
+}
+
+template<typename T>
+vector<T> MaxHeap<T>::getVect() {
+    if (size==0)
+    {
+        cout<<"\nThe vector is empty You might get en error if you're trying to access any member\n";
+    }
+    return vect;
+}
+
+template<typename T>
+bool MaxHeap<T>::isEmpty() const {
+    return size== 0;
+}
+
+template<typename T>
+T MaxHeap<T>::getMax() const {
+    return vect[0];
 }

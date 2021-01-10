@@ -8,8 +8,6 @@
 #include "../RoverRelated/MountainousRover.h"
 #include "../RoverRelated/PolarRover.h"
 #include "../RoverRelated/EmergencyRover.h"
-#include "../DataStructure/Queue/NodeQ.h"
-#include "../DataStructure/Queue/NodeQ.cpp"
 #include "../DataStructure/Queue/LinkedQueue.h"
 #include "../DataStructure/Queue/QueueADT.h"
 #include "../DataStructure/LinkedList/LinkedListMissions.h"

@@ -1,10 +1,28 @@
 #include <iostream>
+
+//#include "RoverRelated/MountainousRover.h"
+//#include "RoverRelated/PolarRover.h"
+//#include "RoverRelated/EmergencyRover.h"
+//#include "DataStructure/Queue/NodeQ.h"
+//#include "DataStructure/Queue/NodeQ.cpp"
+//#include "DataStructure/Queue/LinkedQueue.h"
+//#include "DataStructure/Queue/QueueADT.h"
+//#include "DataStructure/LinkedList/LinkedListMissions.h"
+//#include "MissionRelated/Mission.h"
+//#include "MissionRelated/EmergencyMission.h"
+//#include "MissionRelated/PolarMission.h"
+//#include "MissionRelated/MountainousMission.h"
+//#include "DataStructure/LinkedList/LinkedListMissions.h"
+//#include "DataStructure/MaxHeap/MaxHeap.cpp"
+//#include "DataStructure/Queue/LinkedQueue.h"
+//#include "DataStructure/Queue/NodeQ.cpp"
+
 #include  "MarsStationRelated/MarsStation.h"
-//#include  "MarsStationRelated/MissionLists.h"
+#include  "MarsStationRelated/MissionLists.h"
 #include  "MarsStationRelated/RoverLists.h"
 
 int main() {
-    /*
+
 //    Mission*M3=new Mission(1,2,6,32,5);
     PolarMission*MP=new PolarMission(1,2,6235,32,5);
 //    PolarMission* Ms;
@@ -21,12 +39,12 @@ int main() {
     M.addPolarMission(MP);
     M.addPolarMission(MP);
     MountainousMission* Mo=M.getMountainousMission();
-    Mo->PrintMission();
+    Mo->Print();
     PolarMission* Ms=M.getPolarMission();
     Ms->Print();
     M.addInExecutionPolar(Ms);
     M.getInExecutionPolar().PrintList();
-*/
+
 
     //////
     RoverLists RL;
