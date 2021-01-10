@@ -18,8 +18,7 @@
 //#include "DataStructure/Queue/NodeQ.cpp"
 
 #include  "MarsStationRelated/MarsStation.h"
-#include  "MarsStationRelated/MissionLists.h"
-#include  "MarsStationRelated/RoverLists.h"
+
 
 int main() {
 
