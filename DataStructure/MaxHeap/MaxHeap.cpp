@@ -122,7 +122,7 @@ MaxHeap<T>::MaxHeap()
 template<typename T>
 void MaxHeap<T>::printHeap() const {
     for (auto it = begin(vect); it != end(vect); ++it) {
-        (*it)->PrintMission();
+        (*it)->Print();
         cout<<endl;
     }
 

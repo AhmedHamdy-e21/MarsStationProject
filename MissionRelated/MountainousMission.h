@@ -28,7 +28,7 @@ public:
        {
            this->AutoP=AutoP;
        }
-        void PrintMission() const override  //Make sure in gitkraken
+        void Print() const override  //Make sure in gitkraken
         {
             cout<<"\nIt's Mountainous mission with  ID: "<<getID()<<" and Target location of "<< this->getTargetLocation()<<endl;
         }

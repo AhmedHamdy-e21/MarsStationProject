@@ -278,59 +278,59 @@ MarsStationRelated/MarsStation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.s
 .PHONY : MarsStationRelated/MarsStation.cpp.s
 
-MarsStationRelated/MissionList.o: MarsStationRelated/MissionList.cpp.o
+MarsStationRelated/MissionLists.o: MarsStationRelated/MissionLists.cpp.o
 
-.PHONY : MarsStationRelated/MissionList.o
-
-# target to build an object file
-MarsStationRelated/MissionList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionList.cpp.o
-.PHONY : MarsStationRelated/MissionList.cpp.o
-
-MarsStationRelated/MissionList.i: MarsStationRelated/MissionList.cpp.i
-
-.PHONY : MarsStationRelated/MissionList.i
-
-# target to preprocess a source file
-MarsStationRelated/MissionList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionList.cpp.i
-.PHONY : MarsStationRelated/MissionList.cpp.i
-
-MarsStationRelated/MissionList.s: MarsStationRelated/MissionList.cpp.s
-
-.PHONY : MarsStationRelated/MissionList.s
-
-# target to generate assembly for a file
-MarsStationRelated/MissionList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionList.cpp.s
-.PHONY : MarsStationRelated/MissionList.cpp.s
-
-MarsStationRelated/RoverList.o: MarsStationRelated/RoverList.cpp.o
-
-.PHONY : MarsStationRelated/RoverList.o
+.PHONY : MarsStationRelated/MissionLists.o
 
 # target to build an object file
-MarsStationRelated/RoverList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.o
-.PHONY : MarsStationRelated/RoverList.cpp.o
+MarsStationRelated/MissionLists.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionLists.cpp.o
+.PHONY : MarsStationRelated/MissionLists.cpp.o
 
-MarsStationRelated/RoverList.i: MarsStationRelated/RoverList.cpp.i
+MarsStationRelated/MissionLists.i: MarsStationRelated/MissionLists.cpp.i
 
-.PHONY : MarsStationRelated/RoverList.i
+.PHONY : MarsStationRelated/MissionLists.i
 
 # target to preprocess a source file
-MarsStationRelated/RoverList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.i
-.PHONY : MarsStationRelated/RoverList.cpp.i
+MarsStationRelated/MissionLists.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionLists.cpp.i
+.PHONY : MarsStationRelated/MissionLists.cpp.i
 
-MarsStationRelated/RoverList.s: MarsStationRelated/RoverList.cpp.s
+MarsStationRelated/MissionLists.s: MarsStationRelated/MissionLists.cpp.s
 
-.PHONY : MarsStationRelated/RoverList.s
+.PHONY : MarsStationRelated/MissionLists.s
 
 # target to generate assembly for a file
-MarsStationRelated/RoverList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverList.cpp.s
-.PHONY : MarsStationRelated/RoverList.cpp.s
+MarsStationRelated/MissionLists.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/MissionLists.cpp.s
+.PHONY : MarsStationRelated/MissionLists.cpp.s
+
+MarsStationRelated/RoverLists.o: MarsStationRelated/RoverLists.cpp.o
+
+.PHONY : MarsStationRelated/RoverLists.o
+
+# target to build an object file
+MarsStationRelated/RoverLists.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverLists.cpp.o
+.PHONY : MarsStationRelated/RoverLists.cpp.o
+
+MarsStationRelated/RoverLists.i: MarsStationRelated/RoverLists.cpp.i
+
+.PHONY : MarsStationRelated/RoverLists.i
+
+# target to preprocess a source file
+MarsStationRelated/RoverLists.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverLists.cpp.i
+.PHONY : MarsStationRelated/RoverLists.cpp.i
+
+MarsStationRelated/RoverLists.s: MarsStationRelated/RoverLists.cpp.s
+
+.PHONY : MarsStationRelated/RoverLists.s
+
+# target to generate assembly for a file
+MarsStationRelated/RoverLists.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/RoverLists.cpp.s
+.PHONY : MarsStationRelated/RoverLists.cpp.s
 
 MarsStationRelated/UIClass.o: MarsStationRelated/UIClass.cpp.o
 
@@ -548,6 +548,33 @@ RoverRelated/PolarRover.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/PolarRover.cpp.s
 .PHONY : RoverRelated/PolarRover.cpp.s
 
+RoverRelated/Rover.o: RoverRelated/Rover.cpp.o
+
+.PHONY : RoverRelated/Rover.o
+
+# target to build an object file
+RoverRelated/Rover.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/Rover.cpp.o
+.PHONY : RoverRelated/Rover.cpp.o
+
+RoverRelated/Rover.i: RoverRelated/Rover.cpp.i
+
+.PHONY : RoverRelated/Rover.i
+
+# target to preprocess a source file
+RoverRelated/Rover.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/Rover.cpp.i
+.PHONY : RoverRelated/Rover.cpp.i
+
+RoverRelated/Rover.s: RoverRelated/Rover.cpp.s
+
+.PHONY : RoverRelated/Rover.s
+
+# target to generate assembly for a file
+RoverRelated/Rover.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/RoverRelated/Rover.cpp.s
+.PHONY : RoverRelated/Rover.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -599,12 +626,12 @@ help:
 	@echo "... MarsStationRelated/MarsStation.o"
 	@echo "... MarsStationRelated/MarsStation.i"
 	@echo "... MarsStationRelated/MarsStation.s"
-	@echo "... MarsStationRelated/MissionList.o"
-	@echo "... MarsStationRelated/MissionList.i"
-	@echo "... MarsStationRelated/MissionList.s"
-	@echo "... MarsStationRelated/RoverList.o"
-	@echo "... MarsStationRelated/RoverList.i"
-	@echo "... MarsStationRelated/RoverList.s"
+	@echo "... MarsStationRelated/MissionLists.o"
+	@echo "... MarsStationRelated/MissionLists.i"
+	@echo "... MarsStationRelated/MissionLists.s"
+	@echo "... MarsStationRelated/RoverLists.o"
+	@echo "... MarsStationRelated/RoverLists.i"
+	@echo "... MarsStationRelated/RoverLists.s"
 	@echo "... MarsStationRelated/UIClass.o"
 	@echo "... MarsStationRelated/UIClass.i"
 	@echo "... MarsStationRelated/UIClass.s"
@@ -629,6 +656,9 @@ help:
 	@echo "... RoverRelated/PolarRover.o"
 	@echo "... RoverRelated/PolarRover.i"
 	@echo "... RoverRelated/PolarRover.s"
+	@echo "... RoverRelated/Rover.o"
+	@echo "... RoverRelated/Rover.i"
+	@echo "... RoverRelated/Rover.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -10,10 +10,10 @@
 #include "../DataStructure/MaxHeap/MaxHeap.cpp"
 #include "../DataStructure/Queue/NodeQ.h"
 #include "../DataStructure/Queue/NodeQ.cpp"
-#include "../DataStructure/Queue/LinkedQueue.h"
-#include "../DataStructure/Queue/QueueADT.h"
 
-class MissionList
+#include "../DataStructure/Queue/LinkedQueue.h"
+
+class MissionLists
 {
 private:
     /////////////Waiting Missions
@@ -41,7 +41,7 @@ private:
     // It can be just a linked list
 
 public:
-    MissionList();
+    MissionLists();
 
     // I need to check to the special cases when there isn't missions available
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -96,7 +96,7 @@ public:
     int getNoOfInExecutionMountainous() const;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    ~MissionList();
+    ~MissionLists();
 
 
 

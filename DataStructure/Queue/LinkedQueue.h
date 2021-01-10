@@ -59,10 +59,8 @@ public :
 	bool dequeue(T& frntEntry);  
 	bool peek(T& frntEntry)  const;	
 	~LinkedQueue();
-    int getSize() const
-    {
-        return size;
-    }
+    int getSize() const;
+
 };
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,6 +77,7 @@ LinkedQueue<T>::LinkedQueue()
 {
 	backPtr=nullptr;
 	frontPtr=nullptr;
+	size=0;
 
 }
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -195,6 +194,11 @@ LinkedQueue<T>::~LinkedQueue()
 
 //	cout<<"\n Is LinkedQueue Empty now?? ==> "<<boolalpha<<isEmpty();
 //	cout<<"\nEnding LinkedQueue destructor..."<<endl;
+}
+
+template<typename T>
+int LinkedQueue<T>::getSize() const {
+    return size;
 }
 
 #endif

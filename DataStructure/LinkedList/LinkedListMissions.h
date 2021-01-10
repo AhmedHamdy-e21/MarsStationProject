@@ -95,7 +95,7 @@ public:
         while(p)
         {
             cout << "[ " ;
-            p->getItem()->PrintMission();
+            p->getItem()->Print();
             cout<< " ]";
             cout << "--->";
             p = p->getNext();
@@ -117,7 +117,7 @@ public:
     bool DeleteNode(int ID)
     {
         cout<<"\nDeleting Mission of ID "<<ID;
-//        value->PrintMission();
+//        value->Print();
         cout<<endl;
         if(Head == nullptr){
             return false;
@@ -149,7 +149,7 @@ public:
 //    bool DeleteNode(const T &value)
 //    {
 //        cout<<"\nDeleting the element ";
-//        value->PrintMission();
+//        value->Print();
 //        cout<<endl;
 //        if(Head == nullptr){
 //            return false;
@@ -179,7 +179,7 @@ public:
 
     bool DeleteNodes(const T &value){
         cout<<"\nDeleting all the elements of value ";
-        value->PrintMission();
+        value->Print();
         cout<<endl;
 
 
@@ -235,27 +235,32 @@ public:
         while(p){
             if(p->getItem()->getID() == Key->getID()){
                 cout<<"Found the element ";
-                Key->PrintMission();
+                Key->Print();
                 cout<<endl;
                 return true;
             }
             p = p->getNext();
         }
         cout<<"\nElement ";
-        Key->PrintMission();
+        Key->Print();
         cout<<" not found"<<endl;
         return false;
     }
 
-    void DeleteFirst(){
+    T DeleteFirst(){
         cout<<"\nDeleting the first element"<<endl;
-        if(Head){
+        T ReturnedObj;
+        if(Head)
+        {
+            ReturnedObj=Head->getItem();
+
+
             NodeMission<T> *p = Head->getNext();
             delete Head;
             Head = p;
             count--;
         }
-        return;
+        return ReturnedObj;
     }
 
 

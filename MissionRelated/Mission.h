@@ -100,7 +100,7 @@ public:
         return CompletedMission;
     }
 
-    virtual void PrintMission() const
+    virtual void Print() const
     {
         cout<<"In mission "<<"With ID: "<<getID();
     }

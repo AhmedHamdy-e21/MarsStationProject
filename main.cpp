@@ -1,15 +1,17 @@
 #include <iostream>
 #include  "MarsStationRelated/MarsStation.h"
-#include  "MarsStationRelated/MissionList.h"
+//#include  "MarsStationRelated/MissionLists.h"
+#include  "MarsStationRelated/RoverLists.h"
 
 int main() {
+    /*
 //    Mission*M3=new Mission(1,2,6,32,5);
     PolarMission*MP=new PolarMission(1,2,6235,32,5);
 //    PolarMission* Ms;
     MountainousMission* M3=new MountainousMission(2,1,2,6435,32,5);
     Mission* M4=new Mission(1,3,6,32,5);
     EmergencyMission* M5=new EmergencyMission(1,36,61,32,5);
-    MissionList M;
+    MissionLists M;
     M.addEmergencyMission(M5);
 //    M.getWaitingEmergencyMissionHeap().printHeap();
     M.addMountainousMission(M3);
@@ -21,15 +23,33 @@ int main() {
     MountainousMission* Mo=M.getMountainousMission();
     Mo->PrintMission();
     PolarMission* Ms=M.getPolarMission();
-    Ms->PrintMission();
+    Ms->Print();
     M.addInExecutionPolar(Ms);
     M.getInExecutionPolar().PrintList();
+*/
 
+    //////
+    RoverLists RL;
+    EmergencyRover* EM=new EmergencyRover(1,2,3);
+    EmergencyRover* EM4=new EmergencyRover(4,6,7);
+    EmergencyRover* EM1;
+    EmergencyRover* EM2;
+    RL.addAvailableEmergencyRover(EM4);
+    RL.addAvailableEmergencyRover(EM4);
+    RL.addAvailableEmergencyRover(EM4);
+    cout<<"\n The number of Avalable Emergency is "<<RL.getNoOfAvailableEmergencyRovers()<<endl;
+    EM2=RL.getAvailableEmergencyRover();
+    EM2->Print();
+    RL.addInMissionEmergencyRover(EM);
+    RL.addInMissionEmergencyRover(EM);
+    RL.addInMissionEmergencyRover(EM);
+    RL.addInMissionEmergencyRover(EM);
+    RL.addInMissionEmergencyRover(EM);
+    cout<<"\n The number of InMissionEmergencyRover is "<<RL.getNoOfInMissionEmergencyRovers()<<endl;
 
-
-//    M.getWaitingPolarMissionQueue().peek(Ms);
-//    Ms->PrintMission();
-//    Ms.PrintMission();
+    RL.getInMissionEmergencyRovers().PrintList();
+    EM1=RL.getInMissionEmergencyRover();
+    EM1->Print();
 
     return 0;
 }

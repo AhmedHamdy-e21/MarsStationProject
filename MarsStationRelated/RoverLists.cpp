@@ -2,81 +2,81 @@
 // Created by raspberry on 2021-01-10.
 //
 
-#include "RoverList.h"
+#include "RoverLists.h"
 
-const LinkedQueue<EmergencyRover *> &RoverList::getAvailableEmergencyRovers() const {
+const LinkedQueue<EmergencyRover *> &RoverLists::getAvailableEmergencyRovers() const {
     return AvailableEmergencyRovers;
 }
 
-const LinkedQueue<PolarRover *> &RoverList::getAvailablePolarRovers() const {
+const LinkedQueue<PolarRover *> &RoverLists::getAvailablePolarRovers() const {
     return AvailablePolarRovers;
 }
 
-const LinkedQueue<MountainousRover *> &RoverList::getAvailableMountainousRovers() const {
+const LinkedQueue<MountainousRover *> &RoverLists::getAvailableMountainousRovers() const {
     return AvailableMountainousRovers;
 }
 
-int RoverList::getNoOfAvailableEmergencyRovers() const {
+int RoverLists::getNoOfAvailableEmergencyRovers() const {
     return AvailableEmergencyRovers.getSize();
 }
 
-int RoverList::getNoOfAvailablePolarRovers() const {
+int RoverLists::getNoOfAvailablePolarRovers() const {
     return AvailablePolarRovers.getSize();
 }
 
-int RoverList::getNoOfAvailableMountainousRovers() const {
+int RoverLists::getNoOfAvailableMountainousRovers() const {
     return AvailableMountainousRovers.getSize();
 }
 
-const LinkedListMissions<EmergencyRover *> &RoverList::getInMissionEmergencyRovers() const {
+const LinkedListMissions<EmergencyRover *> &RoverLists::getInMissionEmergencyRovers() const {
     return InMissionEmergencyRovers;
 }
 
-const LinkedListMissions<PolarRover *> &RoverList::getInMissionPolarRovers() const {
+const LinkedListMissions<PolarRover *> &RoverLists::getInMissionPolarRovers() const {
     return InMissionPolarRovers;
 }
 
-const LinkedListMissions<MountainousRover *> &RoverList::getInMissionMountainousRovers() const {
+const LinkedListMissions<MountainousRover *> &RoverLists::getInMissionMountainousRovers() const {
     return InMissionMountainousRovers;
 }
 
-int RoverList::getNoOfInMissionEmergencyRovers() const {
+int RoverLists::getNoOfInMissionEmergencyRovers() const {
     return InMissionEmergencyRovers.getCount();
 }
 
-int RoverList::getNoOfInMissionPolarRovers() const {
+int RoverLists::getNoOfInMissionPolarRovers() const {
     return InMissionPolarRovers.getCount();
 }
 
-int RoverList::getNoOfInMissionMountainousRovers() const {
+int RoverLists::getNoOfInMissionMountainousRovers() const {
     return InMissionMountainousRovers.getCount();
 }
 
-const LinkedListMissions<EmergencyRover *> &RoverList::getInCheckupEmergencyRovers() const {
+const LinkedListMissions<EmergencyRover *> &RoverLists::getInCheckupEmergencyRovers() const {
     return InCheckupEmergencyRovers;
 }
 
-const LinkedListMissions<PolarRover *> &RoverList::getInCheckupPolarRovers() const {
+const LinkedListMissions<PolarRover *> &RoverLists::getInCheckupPolarRovers() const {
     return InCheckupPolarRovers;
 }
 
-const LinkedListMissions<MountainousRover *> &RoverList::getInCheckupMountainousRovers() const {
+const LinkedListMissions<MountainousRover *> &RoverLists::getInCheckupMountainousRovers() const {
     return InCheckupMountainousRovers;
 }
 
-int RoverList::getNoOfInCheckupEmergencyRovers() const {
+int RoverLists::getNoOfInCheckupEmergencyRovers() const {
     return InCheckupEmergencyRovers.getCount();
 }
 
-int RoverList::getNoOfInCheckupPolarRovers() const {
+int RoverLists::getNoOfInCheckupPolarRovers() const {
     return InCheckupPolarRovers.getCount();
 }
 
-int RoverList::getNoOfInCheckupMountainousRovers() const {
+int RoverLists::getNoOfInCheckupMountainousRovers() const {
     return InCheckupMountainousRovers.getCount();
 }
 
-void RoverList::addAvailableEmergencyRover(EmergencyRover *ER)
+void RoverLists::addAvailableEmergencyRover(EmergencyRover *ER)
 {
     AvailableEmergencyRovers.enqueue(ER);
 
@@ -84,20 +84,20 @@ void RoverList::addAvailableEmergencyRover(EmergencyRover *ER)
 
 
 
-void RoverList::addAvailablePolarRover(PolarRover *PR)
+void RoverLists::addAvailablePolarRover(PolarRover *PR)
 {
     AvailablePolarRovers.enqueue(PR);
 
 }
 
 
-void RoverList::addAvailableMountainousRover(MountainousRover *ER)
+void RoverLists::addAvailableMountainousRover(MountainousRover *ER)
 {
     AvailableMountainousRovers.enqueue(ER);
 
 }
 
-MountainousRover *RoverList::getAvailableMountainousRover()
+MountainousRover *RoverLists::getAvailableMountainousRover()
 {
     bool isAvailable;
     MountainousRover* M;
@@ -109,7 +109,7 @@ MountainousRover *RoverList::getAvailableMountainousRover()
     return nullptr;
 }
 
-PolarRover *RoverList::getAvailablePolarRover()
+PolarRover *RoverLists::getAvailablePolarRover()
 {
     bool isAvailable;
     PolarRover* M;
@@ -121,7 +121,7 @@ PolarRover *RoverList::getAvailablePolarRover()
     return nullptr;
 }
 
-EmergencyRover *RoverList::getAvailableEmergencyRover()
+EmergencyRover *RoverLists::getAvailableEmergencyRover()
 {
     bool isAvailable;
     EmergencyRover* M;
@@ -133,64 +133,70 @@ EmergencyRover *RoverList::getAvailableEmergencyRover()
     return nullptr;
 }
 
-void RoverList::addInMissionEmergencyRover(EmergencyRover *ER)
+void RoverLists::addInMissionEmergencyRover(EmergencyRover *ER)
 {
     InMissionEmergencyRovers.InsertBeg(ER);
 }
 
-EmergencyRover *RoverList::getInMissionEmergencyRover()
+EmergencyRover *RoverLists::getInMissionEmergencyRover()
 {
-
+    EmergencyRover * ReturnedObj=(InMissionEmergencyRovers.DeleteFirst());
+    return ReturnedObj;
 }
 
-void RoverList::addInCheckupEmergencyRover(EmergencyRover *ER)
+void RoverLists::addInCheckupEmergencyRover(EmergencyRover *ER)
 {
    InCheckupEmergencyRovers.InsertBeg(ER);
 
 
 }
 
-EmergencyRover *RoverList::getInCheckupEmergencyRover() {
-    return nullptr;
+EmergencyRover *RoverLists::getInCheckupEmergencyRover() {
+    EmergencyRover * ReturnedObj=(InCheckupEmergencyRovers.DeleteFirst());
+    return ReturnedObj;
 }
 
-void RoverList::addInMissionPolarRover(PolarRover *PR)
+void RoverLists::addInMissionPolarRover(PolarRover *PR)
 {
     InMissionPolarRovers.InsertBeg(PR);
 
 }
 
-PolarRover *RoverList::getInMissionPolarRover() {
-    return nullptr;
+PolarRover *RoverLists::getInMissionPolarRover() {
+    PolarRover * ReturnedObj=(InMissionPolarRovers.DeleteFirst());
+    return ReturnedObj;
 }
 
-void RoverList::addInCheckupPolarRover(PolarRover *PR)
+void RoverLists::addInCheckupPolarRover(PolarRover *PR)
 {
     InCheckupPolarRovers.InsertBeg(PR);
 
 
 }
 
-PolarRover *RoverList::getInCheckupPolarRover() {
-    return nullptr;
+PolarRover *RoverLists::getInCheckupPolarRover() {
+    PolarRover * ReturnedObj=(InCheckupPolarRovers.DeleteFirst());
+    return ReturnedObj;
 }
 
-void RoverList::addInMissionMountainousRover(MountainousRover *ER)
+void RoverLists::addInMissionMountainousRover(MountainousRover *ER)
 {
     InMissionMountainousRovers.InsertBeg(ER);
 
 }
 
-MountainousRover *RoverList::getInMissionMountainousRover() {
-    return nullptr;
+MountainousRover *RoverLists::getInMissionMountainousRover() {
+    MountainousRover * ReturnedObj=(InMissionMountainousRovers.DeleteFirst());
+    return ReturnedObj;
 }
 
-void RoverList::addInCheckupMountainousRover(MountainousRover *ER)
+void RoverLists::addInCheckupMountainousRover(MountainousRover *ER)
 {
     InCheckupMountainousRovers.InsertBeg(ER);
 }
 
-MountainousRover *RoverList::getInCheckupMountainousRover() {
-    return nullptr;
+MountainousRover *RoverLists::getInCheckupMountainousRover() {
+    MountainousRover * ReturnedObj=(InCheckupMountainousRovers.DeleteFirst());
+    return ReturnedObj;
 }
 

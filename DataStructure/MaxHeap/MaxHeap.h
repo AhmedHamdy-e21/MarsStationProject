@@ -71,7 +71,7 @@ public:
 //};
 //void MaxHeap<Mission>::printHeap() const {
 //    for (auto it = begin(vect); it != end(vect); ++it) {
-//        it->PrintMission();
+//        it->Print();
 //    }
 //}
 

@@ -2,24 +2,24 @@
 // Created by raspberry on 2020-11-30.
 //
 
-#include "MissionList.h"
+#include "MissionLists.h"
 
 
-MissionList::MissionList()
+MissionLists::MissionLists()
 {
 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-EmergencyMission *MissionList::getEmergencyMission() {
+EmergencyMission *MissionLists::getEmergencyMission() {
     EmergencyMission *Em = WaitingEmergencyMissionHeap.extractMax();;
     return Em;
 }
-const MaxHeap<EmergencyMission*> MissionList::getWaitingEmergencyMissionHeap() const
+const MaxHeap<EmergencyMission*> MissionLists::getWaitingEmergencyMissionHeap() const
 {
     return WaitingEmergencyMissionHeap;
 }
-void MissionList::addEmergencyMission(EmergencyMission *EMission)
+void MissionLists::addEmergencyMission(EmergencyMission *EMission)
 {
     WaitingEmergencyMissionHeap.insertItem(EMission);
 }
@@ -27,16 +27,16 @@ void MissionList::addEmergencyMission(EmergencyMission *EMission)
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const LinkedQueue<PolarMission*> MissionList::getWaitingPolarMissionQueue() const
+const LinkedQueue<PolarMission*> MissionLists::getWaitingPolarMissionQueue() const
 {
     return WaitingPolarMissionQueue;
 }
-void MissionList::addPolarMission(PolarMission *PMission)
+void MissionLists::addPolarMission(PolarMission *PMission)
 {
 
     WaitingPolarMissionQueue.enqueue(PMission);
 }
-PolarMission *MissionList::getPolarMission() {
+PolarMission *MissionLists::getPolarMission() {
     PolarMission * P;
     WaitingPolarMissionQueue.dequeue(P);
     return P;
@@ -46,20 +46,20 @@ PolarMission *MissionList::getPolarMission() {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const LinkedListMissions<MountainousMission*> MissionList::getWaitingMountainousMissionList() const
+const LinkedListMissions<MountainousMission*> MissionLists::getWaitingMountainousMissionList() const
 {
     return WaitingMountainousMissionList;
 }
-void MissionList::addMountainousMission( MountainousMission *MMission)
+void MissionLists::addMountainousMission(MountainousMission *MMission)
 {
         WaitingMountainousMissionList.InsertBeg(MMission);
 }
-MountainousMission *MissionList::getMountainousMission() {
+MountainousMission *MissionLists::getMountainousMission() {
     MountainousMission * M=WaitingMountainousMissionList.getHead()->getItem();
     WaitingMountainousMissionList.DeleteFirst();
     return M;
 }
-void MissionList::cancelMountainousMission(int ID)
+void MissionLists::cancelMountainousMission(int ID)
 {
     WaitingMountainousMissionList.DeleteNode(ID);
 }
@@ -69,99 +69,99 @@ void MissionList::cancelMountainousMission(int ID)
 
 
 
-MissionList::~MissionList() {
+MissionLists::~MissionLists() {
 
 }
 
-int MissionList::getNoOfCompletedPolar() const {
+int MissionLists::getNoOfCompletedPolar() const {
     return NoOfCompletedPolar;
 }
 
-int MissionList::getNoOfCompletedEmergency() const {
+int MissionLists::getNoOfCompletedEmergency() const {
     return NoOfCompletedEmergency;
 }
 
-int MissionList::getNoOfCompletedMountainous() const {
+int MissionLists::getNoOfCompletedMountainous() const {
     return NoOfCompletedMountainous;
 }
 
-void MissionList::setNoOfCompletedPolar(int noOfCompletedPolar) {
+void MissionLists::setNoOfCompletedPolar(int noOfCompletedPolar) {
     NoOfCompletedPolar = noOfCompletedPolar;
 }
 
-void MissionList::setNoOfCompletedEmergency(int noOfCompletedEmergency) {
+void MissionLists::setNoOfCompletedEmergency(int noOfCompletedEmergency) {
     NoOfCompletedEmergency = noOfCompletedEmergency;
 }
 
-void MissionList::setNoOfCompletedMountainous(int noOfCompletedMountainous) {
+void MissionLists::setNoOfCompletedMountainous(int noOfCompletedMountainous) {
     NoOfCompletedMountainous = noOfCompletedMountainous;
 }
 
-const LinkedListMissions<MountainousMission *> &MissionList::getInExecutionMountainous() const {
+const LinkedListMissions<MountainousMission *> &MissionLists::getInExecutionMountainous() const {
     return InExecutionMountainous;
 }
 
-const LinkedListMissions<EmergencyMission *> &MissionList::getInExecutionEmergency() const {
+const LinkedListMissions<EmergencyMission *> &MissionLists::getInExecutionEmergency() const {
     return InExecutionEmergency;
 }
 
-const LinkedListMissions<PolarMission *> &MissionList::getInExecutionPolar() const {
+const LinkedListMissions<PolarMission *> &MissionLists::getInExecutionPolar() const {
     return InExecutionPolar;
 }
 
-void MissionList::addInExecutionEmergency(EmergencyMission *EMission)
+void MissionLists::addInExecutionEmergency(EmergencyMission *EMission)
 {
     InExecutionEmergency.InsertBeg(EMission);
 }
 
-void MissionList::deleteInExecutionEmergency(int ID)
+void MissionLists::deleteInExecutionEmergency(int ID)
 {
     InExecutionEmergency.DeleteNode(ID);
 }
 
-void MissionList::addInExecutionPolar(PolarMission *EMission)
+void MissionLists::addInExecutionPolar(PolarMission *EMission)
 {
     InExecutionPolar.InsertBeg(EMission);
 }
 
-void MissionList::deleteInExecutionPolar(int ID)
+void MissionLists::deleteInExecutionPolar(int ID)
 {
     InExecutionPolar.DeleteNode(ID);
 }
 
-void MissionList::addInExecutionMountainous(MountainousMission *EMission)
+void MissionLists::addInExecutionMountainous(MountainousMission *EMission)
 {
     InExecutionMountainous.InsertBeg(EMission);
 
 }
 
-void MissionList::deleteInExecutionMountainous(int ID)
+void MissionLists::deleteInExecutionMountainous(int ID)
 {
     InExecutionMountainous.DeleteNode(ID);
 
 }
 
-int MissionList::getNoOfWaitingEmergencyMission() const {
+int MissionLists::getNoOfWaitingEmergencyMission() const {
     return WaitingEmergencyMissionHeap.getSize();
 }
 
-int MissionList::getNoOfWaitingPolarMission() const {
+int MissionLists::getNoOfWaitingPolarMission() const {
     return WaitingPolarMissionQueue.getSize();
 }
 
-int MissionList::getNoOfWaitingMountainousMission() const {
+int MissionLists::getNoOfWaitingMountainousMission() const {
     return WaitingMountainousMissionList.getCount();
 }
 
-int MissionList::getNoOfInExecutionMountainous() const {
+int MissionLists::getNoOfInExecutionMountainous() const {
     return InExecutionMountainous.getCount();
 }
 
-int MissionList::getNoOfInExecutionEmergency() const {
+int MissionLists::getNoOfInExecutionEmergency() const {
     return InExecutionEmergency.getCount();
 }
 
-int MissionList::getNoOfInExecutionPolar() const {
+int MissionLists::getNoOfInExecutionPolar() const {
     return InExecutionPolar.getCount();
 }
 

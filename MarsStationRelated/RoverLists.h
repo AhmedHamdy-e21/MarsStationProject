@@ -2,8 +2,9 @@
 // Created by raspberry on 2021-01-10.
 //
 
-#ifndef MARSSTATIONPROJECT_ROVERLIST_H
-#define MARSSTATIONPROJECT_ROVERLIST_H
+#ifndef MARSSTATIONPROJECT_ROVERLISTS_H
+#define MARSSTATIONPROJECT_ROVERLISTS_H
+
 #include "../RoverRelated/MountainousRover.h"
 #include "../RoverRelated/PolarRover.h"
 #include "../RoverRelated/EmergencyRover.h"
@@ -15,7 +16,7 @@
 using namespace std;
 #include <iostream>
 
-class RoverList
+class RoverLists
 {
 private:
     /////////////Available Rovers
@@ -97,4 +98,4 @@ public:
     MountainousRover* getInCheckupMountainousRover();
 };
 
-#endif //MARSSTATIONPROJECT_ROVERLIST_H
+#endif //MARSSTATIONPROJECT_ROVERLISTS_H
