@@ -123,6 +123,9 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
     // Firstly peek to check whether there is Polar mission today
 
 //// //// There should be a loop here not just if
+
+//// The emergency mission need to be loaded firstly in this day. In order to be ordered in the heap
+
     while (EVs.peekFormulationEvent()->getEventDay()==CurrentDay)
     {
 
@@ -132,9 +135,13 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
         {
             // add emergency mission. first. Because you are not sure whether there is an available rover or not
             // I need a constructor that initialized by the mission.
+
+
             EmergencyMission* EM=new EmergencyMission(FE);
             MLs.addEmergencyMission(EM);
-
+            // I can recurrsively call the add here
+            assignTodaysMission(CurrentDay); //// This recurrsive call should add all emergency mission first then It'll proceed.
+            //// But I don't know how it'll perform on the other missions. I think this is okay
             // Then I need to check for rover availablility
 
 
@@ -204,4 +211,16 @@ int MarsStation::getAutoP() const
 
 void MarsStation::setAutoP(int autoP) {
     AutoP = autoP;
+}
+
+const MissionLists &MarsStation::getMLs() const {
+    return MLs;
+}
+
+const RoverLists &MarsStation::getRLs() const {
+    return RLs;
+}
+
+const EventLists &MarsStation::getEVs() const {
+    return EVs;
 }

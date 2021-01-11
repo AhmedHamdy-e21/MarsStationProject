@@ -68,6 +68,36 @@ int main() {
 
 MarsStation MR;
 MR.loadFile("../ConfigurationFile.txt");
+
+
+
+
+MR.assignTodaysMission(1);
+MR.assignTodaysMission(2);
+MR.assignTodaysMission(3);
+MR.assignTodaysMission(5);
+MR.assignTodaysMission(6);
+//MR.assignTodaysMission(10);
+//MR.assignTodaysMission(18);
+//MR.assignTodaysMission(2);
+cout<<"getNoOfAvailableEmergencyRovers :"<<MR.getRLs().getNoOfAvailableEmergencyRovers()<<endl;
+cout<<"getNoOfInMissionEmergencyRovers :"<<MR.getRLs().getNoOfInMissionEmergencyRovers()<<endl;
+cout<<"getNoOfInExecutionEmergency :"<<MR.getMLs().getNoOfInExecutionEmergency()<<endl;
+cout<<"getNoOfWaitingEmergencyMission :"<<MR.getMLs().getNoOfWaitingEmergencyMission()<<endl;
+cout<<endl;
+
+    cout<<"getNoOfAvailablePolarRovers :"<<MR.getRLs().getNoOfAvailablePolarRovers()<<endl;
+    cout<<"getNoOfInMissionPolarRovers :"<<MR.getRLs().getNoOfInMissionPolarRovers()<<endl;
+    cout<<"getNoOfInExecutionPolar :"<<MR.getMLs().getNoOfInExecutionPolar()<<endl;
+    cout<<"getNoOfWaitingPolarMission :"<<MR.getMLs().getNoOfWaitingPolarMission()<<endl;
+cout<<endl;
+
+    cout<<"getNoOfAvailableMountainousRovers :"<<MR.getRLs().getNoOfAvailableMountainousRovers()<<endl;
+    cout<<"getNoOfInMissionMountainousRovers :"<<MR.getRLs().getNoOfInMissionMountainousRovers()<<endl;
+    cout<<"getNoOfInExecutionMountainous :"<<MR.getMLs().getNoOfInExecutionMountainous()<<endl;
+    cout<<"getNoOfWaitingMountainousMission :"<<MR.getMLs().getNoOfWaitingMountainousMission()<<endl;
+
+
 //    enum Throws {R, P, S};
 //    int userInput;
 //    cout << "What is your throw : ";

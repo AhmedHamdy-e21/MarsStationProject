@@ -16,14 +16,19 @@ private:
     EventLists EVs;
     int AutoP;
 public:
+    const MissionLists &getMLs() const;
+
+    const RoverLists &getRLs() const;
+
+    const EventLists &getEVs() const;
+
     void setAutoP(int autoP);
 
-public:
     int getAutoP() const;
     // I need to keep the history of something right here. or in the Mission itself. Anywhere but just remember to do so.
     // Also don't forget to add the signify() function in mission in order to increase the significance of the emergency mission.
     // Then ISA, you're to implement the assign fuctions.
-public:
+
     MarsStation();
     void loadFile(string FileName);
     bool assignMountainousMission();
