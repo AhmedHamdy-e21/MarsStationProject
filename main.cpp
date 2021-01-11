@@ -90,6 +90,8 @@ int i=0;
 //MR.assignTodaysMission(10);
 //MR.assignTodaysMission(18);
 //MR.assignTodaysMission(2);
+
+/*
 cout<<"getNoOfAvailableEmergencyRovers :"<<MR.getRLs().getNoOfAvailableEmergencyRovers()<<endl;
 cout<<"getNoOfInMissionEmergencyRovers :"<<MR.getRLs().getNoOfInMissionEmergencyRovers()<<endl;
 cout<<"getNoOfInExecutionEmergency :"<<MR.getMLs().getNoOfInExecutionEmergency()<<endl;
@@ -109,12 +111,12 @@ cout<<endl;
 
 
   MR.getMLs().getCompletedEmergency().PrintList();
-//  MR.getMLs().getCompletedPolar().PrintList();
-//  MR.getMLs().getCompletedMountainous().PrintList();
+  MR.getMLs().getCompletedPolar().PrintList();
+  MR.getMLs().getCompletedMountainous().PrintList();
 
 //    cout<<"getNoOfWaitingEmergencyMission :"<<MR.getMLs().getNoOfWaitingEmergencyMission()<<endl;
 
-
+*/
 
 //    enum Throws {R, P, S};
 //    int userInput;

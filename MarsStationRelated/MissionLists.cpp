@@ -76,15 +76,15 @@ MissionLists::~MissionLists() {
 }
 
 int MissionLists::getNoOfCompletedPolar() const {
-    return NoOfCompletedPolar;
+    return CompletedPolar.getCount();
 }
 
 int MissionLists::getNoOfCompletedEmergency()  {
-    return NoOfCompletedEmergency;
+    return CompletedEmergency.getCount();
 }
 
 int MissionLists::getNoOfCompletedMountainous() const {
-    return NoOfCompletedMountainous;
+    return CompletedMountainous.getCount();
 }
 
 void MissionLists::setNoOfCompletedPolar(int noOfCompletedPolar) {

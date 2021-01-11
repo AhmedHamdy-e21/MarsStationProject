@@ -60,7 +60,7 @@ public:
         while (Head)
         {
             P = Head->getNext();
-//            delete Head;
+            delete Head; // This was commented //// This might cause sigFault
 //free(Head);
             Head = P;
         }
