@@ -26,7 +26,6 @@ public:
 public:
     MarsStation();
     void loadFile(string FileName);
-
     bool assignMountainousMission();
     bool assignPolarMission();
     bool assignEmergencyMission();

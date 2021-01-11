@@ -122,9 +122,10 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
     // So I need to think how I can discretize it in order to trace errors later.
     // Firstly peek to check whether there is Polar mission today
 
-
-    if (EVs.peekFormulationEvent()->getEventDay()==CurrentDay)
+//// //// There should be a loop here not just if
+    while (EVs.peekFormulationEvent()->getEventDay()==CurrentDay)
     {
+
         FormulationEvent* FE;
         FE=EVs.getFormulationEvent();
         if(FE->getMissionType()=='E')
@@ -136,12 +137,11 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
 
             // Then I need to check for rover availablility
 
+
             if(assignEmergencyMission())
             {
                 EM=MLs.getEmergencyMission();
                 MLs.addInExecutionEmergency(EM);// I need to keep the history. I may keep it as a member in the mission itself.
-
-
 
             }
 
@@ -151,12 +151,22 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
             // Don't forget to set the autoP
             MountainousMission* MM=new MountainousMission(FE,getAutoP());
             MLs.addMountainousMission(MM);
+            if(assignMountainousMission())
+            {
+                MM=MLs.getMountainousMission();
+                MLs.addInExecutionMountainous(MM);//
+            }
 
         }
         else if(FE->getMissionType()=='P')
         {
             PolarMission* PM=new PolarMission(FE);
             MLs.addPolarMission(PM);
+            if(assignPolarMission())
+            {
+                PM=MLs.getPolarMission();
+                MLs.addInExecutionPolar(PM);
+            }
         }
     }
 
