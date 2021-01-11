@@ -277,7 +277,6 @@ bool MarsStation::promoteTodaysMission(int CurrentDay)
     return false;
 }
 
-
 bool MarsStation::isCompletedToday(int CurrentDay)
 {
     /// now I have is completed function in each missions that takes the current day
@@ -319,7 +318,7 @@ void MarsStation::simulate(int CurrentDay)
     // I need to print and also I need to check when the mission is finished to transfer it to the completed
     // and add the rover to the list.
     int i=0;// This is for just experimenting
-    while(i<25)
+    while(i<40)
     {
 //        UserInterface.getProgramMode();
         assignTodaysMission(CurrentDay);
@@ -383,3 +382,10 @@ Rover* MarsStation::CompletedEmergency(EmergencyMission *EM,int CurrentDay)
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//// Now I need to get the rovers from being in mission to either available or In checkup
+
+//// Then After the Checkup I need to add them to available
