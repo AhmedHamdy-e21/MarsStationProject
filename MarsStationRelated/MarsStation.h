@@ -35,6 +35,8 @@ public:
     bool assignPolarMission();
     bool assignEmergencyMission();
     bool assignTodaysMission(int CurrentDay);
+    bool cancelTodaysMission(int CurrentDay);
+    bool promoteTodaysMission(int CurrentDay);
 
     ~MarsStation();
 };

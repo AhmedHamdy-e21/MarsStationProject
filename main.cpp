@@ -77,6 +77,8 @@ MR.assignTodaysMission(2);
 MR.assignTodaysMission(3);
 MR.assignTodaysMission(5);
 MR.assignTodaysMission(6);
+MR.assignTodaysMission(18);
+MR.assignTodaysMission(25);
 //MR.assignTodaysMission(10);
 //MR.assignTodaysMission(18);
 //MR.assignTodaysMission(2);

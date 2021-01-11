@@ -112,6 +112,7 @@ bool MarsStation::assignPolarMission()
     else return false;
 }
 
+// If smaller than or equal the current day
 bool MarsStation::assignTodaysMission(int CurrentDay)
 {
     //// First check will be on the Emergency
@@ -126,7 +127,7 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
 
 //// The emergency mission need to be loaded firstly in this day. In order to be ordered in the heap
 
-    while (EVs.peekFormulationEvent()->getEventDay()==CurrentDay)
+    while (EVs.peekFormulationEvent()->getEventDay()==CurrentDay||EVs.peekFormulationEvent()->getEventDay()<CurrentDay)
     {
 
         FormulationEvent* FE;
@@ -223,4 +224,12 @@ const RoverLists &MarsStation::getRLs() const {
 
 const EventLists &MarsStation::getEVs() const {
     return EVs;
+}
+
+bool MarsStation::cancelTodaysMission(int CurrentDay) {
+    return false;
+}
+
+bool MarsStation::promoteTodaysMission(int CurrentDay) {
+    return false;
 }
