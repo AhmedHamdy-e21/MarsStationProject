@@ -211,6 +211,9 @@ void RoverLists::addMultipleAvailableEmergencyRovers(int NumberOfEmergencyRovers
         addAvailableEmergencyRover(ER);
     }
     cout<< "\nAdded "<<AvailableEmergencyRovers.getSize()<<" Emergency Rovers to be Available\n";
+    EmergencyRover* MR;
+    cout<< "My information is: ";AvailableEmergencyRovers.peek(MR);
+    MR->Print();
 
 }
 
@@ -224,6 +227,9 @@ void RoverLists::addMultipleAvailablePolarRovers(int NumberOfPolarRovers,
         addAvailablePolarRover(PR);
     }
     cout<< "\nAdded "<<AvailablePolarRovers.getSize()<<" Polar Rovers to be Available\n";
+    PolarRover* MR;
+    cout<< "My information is: ";AvailablePolarRovers.peek(MR);
+    MR->Print();
 }
 
 void RoverLists::addMultipleAvailableMountainousRovers(int NumberOfMountainousRovers,int Speed, int CheckupDuration, int NoCheckupMissions)
@@ -235,5 +241,9 @@ void RoverLists::addMultipleAvailableMountainousRovers(int NumberOfMountainousRo
         addAvailableMountainousRover(MR);
     }
     cout<< "\nAdded "<<AvailableMountainousRovers.getSize()<<" Mountainous Rovers to be Available\n";
+    MountainousRover* MR;
+
+    cout<< "My information is: ";AvailableMountainousRovers.peek(MR);
+    MR->Print();
 }
 

@@ -34,7 +34,6 @@ void MarsStation::loadFile(string FileName)
     RLs.addMultipleAvailableMountainousRovers(M,SM,CM,N);
     RLs.addMultipleAvailablePolarRovers(P,SP,CP,N);
     inputFile >> EV;
-//    ML.setMissionList(EV);
     for (int j = 0; j < EV; j++)
     {
         string type;
@@ -48,28 +47,18 @@ void MarsStation::loadFile(string FileName)
             inputFile >> TLOC;
             inputFile >> MIDUR;
             inputFile >> SIG;
-//            FormulationEvent F_event = FormulationEvent(TYP, TLOC, MIDUR, SIG, ED, ID, &ML, &RL);
-//            Events.enqueue(F_event);
-//            Formaulation_Event.enqueue(F_event);
-            //  ML.AddMission(ED, ID, TLOC, MIDUR, SIG, TYP);
         }
-
         else if (type == "X")
         {
             inputFile >> ED;
             inputFile >> ID;
-//            CancelEvent C_event = CancelEvent(ED, ID, &ML, &RL);
-//            Events.enqueue(C_event);
-            // ML.CancelMission(ED, ID, CurrentE, CurrentM, CurrentP);;
+
         }
         else if (type == "P")
         {
             inputFile >> ED;
             inputFile >> ID;
 
-//            PromoteEvent P_event = PromoteEvent(ED, ID,&ML,&RL);
-//            Events.enqueue(P_event);
-            //ML.PromoteMission(ED, ID);
         }
     }
 

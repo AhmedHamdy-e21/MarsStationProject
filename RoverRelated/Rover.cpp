@@ -19,9 +19,8 @@ Rover::Rover(int Speed, int CheckupDuration, int NoCheckupMissions)
 
 void Rover::Print()
 {
-    cout << "\n I'm a Rover  " << this->Speed << this->CheckupDuration;
-
-
+    cout<<"\n This is the parent rover, my speed is:  "<< this->getSpeed()<<" , my number of missions before doing a checkup is: "<<this->getNoCheckupMissions() <<" , and finally my checkup duration is: "
+        <<this->getCheckupDuration()<<endl;
 }
 
 int Rover::getNoCheckupMissions() const {

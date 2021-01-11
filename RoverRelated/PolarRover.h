@@ -3,11 +3,9 @@
 class PolarRover: public Rover
 {
 public:
-    PolarRover(int Speed, int CheckupDuration, int NoCheckupMissions) : Rover(Speed, CheckupDuration, NoCheckupMissions) {};
+    PolarRover(int Speed, int CheckupDuration, int NoCheckupMissions);
 
-    void Print() override
-    {
-        cout<<"\n I'm Polar "<< this->getSpeed()<< this->getCheckupDuration();
-    }
+    void Print() override;
+
 
 };
