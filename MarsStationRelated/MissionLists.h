@@ -32,6 +32,9 @@ private:
     int NoOfInExecutionEmergency;
     int NoOfInExecutionPolar;
     /////////////Completed Missions, ##### I dont' think that I need to store them, I just keep their numbers.
+    LinkedListMissions<MountainousMission*> CompletedMountainous;
+    LinkedListMissions<EmergencyMission*> CompletedEmergency;
+    LinkedListMissions<PolarMission*> CompletedPolar;
     int NoOfCompletedPolar;
     int NoOfCompletedEmergency;
     int NoOfCompletedMountainous;
@@ -40,6 +43,8 @@ private:
     ////// I can keep this class that cute and the history is stored in the MarsStation class.
     // The Mountaneous mission can be implemented either in a linked list or a heap. I just add or delete mission so I doesn't need a heap.
     // It can be just a linked list
+
+
 
 public:
     MissionLists();
@@ -54,6 +59,9 @@ public:
     EmergencyMission* getEmergencyMission();
     int getNoOfWaitingEmergencyMission() const;
     /////////////Completed
+    LinkedListMissions<EmergencyMission *> &getCompletedEmergency() ;
+    void addCompletedEmergencyMission(EmergencyMission* EMission);
+
     void setNoOfCompletedEmergency(int noOfCompletedEmergency);
     int getNoOfCompletedEmergency() ;
     /////////////IsExecuting
@@ -61,6 +69,7 @@ public:
     void addInExecutionEmergency(EmergencyMission* EMission);
     void deleteInExecutionEmergency(int ID);
     int getNoOfInExecutionEmergency() const;
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////PolarMission
@@ -71,6 +80,9 @@ public:
     PolarMission* getPolarMission();
     int getNoOfWaitingPolarMission() const;
     /////////////Completed
+    LinkedListMissions<PolarMission *> &getCompletedPolar() ;
+    void addCompletedPolarMission(PolarMission* PMission);
+
     int getNoOfCompletedPolar() const;
     void setNoOfCompletedPolar(int noOfCompletedPolar);
     /////////////IsExecuting
@@ -88,6 +100,10 @@ public:
     void cancelMountainousMission(int ID);
     int getNoOfWaitingMountainousMission() const;
     /////////////Completed
+    LinkedListMissions<MountainousMission *> &getCompletedMountainous();
+    void addCompletedMountainousMission( MountainousMission* MMission);
+
+
     int getNoOfCompletedMountainous() const;
     void setNoOfCompletedMountainous(int noOfCompletedMountainous);
     /////////////IsExecuting

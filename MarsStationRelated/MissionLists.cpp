@@ -167,6 +167,36 @@ int MissionLists::getNoOfInExecutionPolar() const {
     return InExecutionPolar.getCount();
 }
 
+ LinkedListMissions<MountainousMission *> &MissionLists::getCompletedMountainous()  {
+    return CompletedMountainous;
+}
+
+ LinkedListMissions<EmergencyMission *> &MissionLists::getCompletedEmergency()  {
+    return CompletedEmergency;
+}
+
+ LinkedListMissions<PolarMission *> &MissionLists::getCompletedPolar()  {
+    return CompletedPolar;
+}
+
+void MissionLists::addCompletedEmergencyMission(EmergencyMission *EMission)
+{
+    CompletedEmergency.InsertBeg(EMission);
+
+}
+
+void MissionLists::addCompletedPolarMission(PolarMission *PMission)
+{
+    CompletedPolar.InsertBeg(PMission);
+
+}
+
+void MissionLists::addCompletedMountainousMission(MountainousMission *MMission)
+{
+    CompletedMountainous.InsertBeg(MMission);
+
+}
+
 
 
 

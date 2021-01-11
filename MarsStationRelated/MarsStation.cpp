@@ -336,14 +336,25 @@ Rover* MarsStation::CompletedMountainous(MountainousMission *MM)
     /// This is the completed Mission
     MountainousMission M=*MM;
     MLs.getInExecutionMountainous().DeleteNode(ID);
-
-
+    MLs.getCompletedMountainous().InsertBeg(&M);
 }
 
 Rover* MarsStation::CompletedPolar(PolarMission *PM)
 {
+    int ID;
+    ID=PM->getID();
+    /// This is the completed Mission
+    PolarMission M=*PM;
+    MLs.getInExecutionPolar().DeleteNode(ID);
+    MLs.getCompletedPolar().InsertBeg(&M);
 }
 
 Rover* MarsStation::CompletedEmergency(EmergencyMission *EM)
 {
+    int ID;
+    ID=EM->getID();
+    /// This is the completed Mission
+    EmergencyMission M=*EM;
+    MLs.getInExecutionEmergency().DeleteNode(ID);
+    MLs.getCompletedEmergency().InsertBeg(&M);
 }
