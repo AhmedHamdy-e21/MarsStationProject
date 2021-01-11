@@ -44,6 +44,7 @@ MountainousMission::MountainousMission(FormulationEvent *EV,int AutoP, int Day):
 MountainousMission::MountainousMission(MountainousMission* EV ):Mission(
         EV->getED(), EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getFormulatedDay())
 {
+    setCompletedDay(EV->getCompletedDay());
 
     setAutoP(EV->getAutoP());
 

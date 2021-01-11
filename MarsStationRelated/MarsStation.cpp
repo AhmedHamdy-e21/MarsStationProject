@@ -296,17 +296,17 @@ while(MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionMou
     if(MLs.getInExecutionPolar().FindCompleted(CurrentDay))
     {
 
-        CompletedPolar(MLs.getInExecutionPolar().FindCompleted(CurrentDay));
+        CompletedPolar(MLs.getInExecutionPolar().FindCompleted(CurrentDay),CurrentDay);
     }
     else if(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))
     {
 
-        CompletedMountainous(MLs.getInExecutionMountainous().FindCompleted(CurrentDay));
+        CompletedMountainous(MLs.getInExecutionMountainous().FindCompleted(CurrentDay),CurrentDay);
     }
     else if(MLs.getInExecutionEmergency().FindCompleted(CurrentDay))
     {
 
-        CompletedEmergency(MLs.getInExecutionEmergency().FindCompleted(CurrentDay));
+        CompletedEmergency(MLs.getInExecutionEmergency().FindCompleted(CurrentDay),CurrentDay);
     }
 }
 }
@@ -346,37 +346,40 @@ void MarsStation::eraseIDPair(int MissionID)
     IDDictionary.erase(MissionID);
 }
 
-Rover* MarsStation::CompletedMountainous(MountainousMission *MM)
+Rover* MarsStation::CompletedMountainous(MountainousMission *MM,int CurrentDay)
 {
     int ID;
     ID=MM->getID();
     /// This is the completed Mission
     MountainousMission* M=new MountainousMission(MM);
+    M->setCompletedDay(CurrentDay);
     MLs.getInExecutionMountainous().DeleteNode(ID);
     MLs.getCompletedMountainous().InsertBeg(M);
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }
-Rover* MarsStation::CompletedPolar(PolarMission *PM)
+Rover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
 {
     int ID;
     ID=PM->getID();
     /// This is the completed Mission
     PolarMission* M=new PolarMission(PM);
+    M->setCompletedDay(CurrentDay);
     MLs.getInExecutionPolar().DeleteNode(ID);
     MLs.getCompletedPolar().InsertBeg(M);
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }
 
-Rover* MarsStation::CompletedEmergency(EmergencyMission *EM)
+Rover* MarsStation::CompletedEmergency(EmergencyMission *EM,int CurrentDay)
 {
     int ID;
     ID=EM->getID();
     /// This is the completed Mission
-    EmergencyMission M=*EM;
+    EmergencyMission* M=new EmergencyMission(EM);
+    M->setCompletedDay(CurrentDay);
     MLs.getInExecutionEmergency().DeleteNode(ID);
-    MLs.getCompletedEmergency().InsertBeg(&M);
+    MLs.getCompletedEmergency().InsertBeg(M);
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }

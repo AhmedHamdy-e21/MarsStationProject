@@ -48,9 +48,9 @@ public:
     bool assignTodaysMission(int CurrentDay);
 
     //// Check for the completed missions and then transfer them to the completed list.
-    Rover* CompletedMountainous(MountainousMission* MM);
-    Rover* CompletedPolar(PolarMission* PM);
-    Rover* CompletedEmergency(EmergencyMission* EM);
+    Rover* CompletedMountainous(MountainousMission* MM,int CurrentDay);
+    Rover* CompletedPolar(PolarMission* PM,int CurrentDay);
+    Rover* CompletedEmergency(EmergencyMission* EM,int CurrentDay);
     ///// I need to implement a function that transfer Rovers from Inmission to either Checkup or Avaialble
 
 

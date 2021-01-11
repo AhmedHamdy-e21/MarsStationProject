@@ -16,7 +16,9 @@ class EmergencyMission : public Mission
 public:
     EmergencyMission();
     EmergencyMission(FormulationEvent* EV,int FormulationDay);
+
     EmergencyMission(MountainousMission* EV,int FormulationDay);
+    EmergencyMission(EmergencyMission* EV);
     EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance,int FomrulatedDay);
     void setPriority();
     int getPriority();

@@ -25,5 +25,6 @@ PolarMission::PolarMission(FormulationEvent *EV,int Day):Mission(
 PolarMission::PolarMission(PolarMission *EV) :Mission(
         EV->getED(), EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getFormulatedDay())
 {
+    setCompletedDay(EV->getCompletedDay());
 
 }

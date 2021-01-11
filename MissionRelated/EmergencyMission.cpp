@@ -43,3 +43,10 @@ EmergencyMission::EmergencyMission(MountainousMission *EV, int FormulationDay):M
 
 
 }
+
+EmergencyMission::EmergencyMission(EmergencyMission *EV):Mission(
+        EV->getED(), EV->getID(), EV->getTargetLocation(), EV-> getMissionDuration(), EV->getSignificance(),EV->getFormulatedDay())
+        {
+    setCompletedDay(EV->getCompletedDay());
+
+}
