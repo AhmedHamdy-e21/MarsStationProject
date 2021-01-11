@@ -44,7 +44,7 @@ void MaxHeap<T>::shiftDown(int i) {
     // The case that the left child is larger than the parent but before swapping the right child
     // also could be greater the both so we need to swap the right with the prant not the left that's why we keep the id
 
-    if ( r(i)<= size && vect[swapId]->getSignificance()<vect[r(i)]->getSignificance())
+    if ( r(i)<= size && vect[swapId]->getPriority()<vect[r(i)]->getPriority())
     {
         swapId= r(i);
     }
@@ -60,7 +60,7 @@ template<typename T>
 void MaxHeap<T>::shiftUp(int i) {
     if ( i > size) return;  // index that does not exist
     if ( i==1) return;
-    if ( vect[i]->getSignificance()> vect[p(i)]->getSignificance())
+    if ( vect[i]->getPriority()> vect[p(i)]->getPriority())
     {
         swap(vect[p(i)],vect[i]);
     }
@@ -108,11 +108,11 @@ template<typename T>
 int MaxHeap<T>::getSize() const {
     return size;
 }
-
-template<typename T>
-void MaxHeap<T>::maxHeapify() {
-
-}
+//
+//template<typename T>
+//void MaxHeap<T>::maxHeapify() {
+//
+//}
 
 template<typename T>
 vector<T> MaxHeap<T>::getVect() {

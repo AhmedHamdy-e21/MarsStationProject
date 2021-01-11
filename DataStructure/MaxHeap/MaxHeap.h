@@ -26,7 +26,6 @@ private:
 public:
     MaxHeap();
     vector<T> getVect();
-    void maxHeapify();
     bool isEmpty() const ;
     T getMax() const ;
     void insertItem(T value);
@@ -34,6 +33,5 @@ public:
     T extractMax();  // to popping up an item from the vector // replace with the smallest element and then eliminate
     void shiftDown(int i);
     void printHeap() const ;
-
 };
 

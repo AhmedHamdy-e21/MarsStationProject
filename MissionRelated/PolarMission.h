@@ -13,10 +13,8 @@ public:
     PolarMission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):
     Mission(ED, ID, TargetLocation, MissionDuration,Significance){};
 
-    void Print() const override
-    {
-        cout<<"\nIt's Polar mission with ID: "<< getID()<<" and Target location of "<< this->getTargetLocation()<<endl;
-    }
+    void Print() const override;
+
     ~PolarMission();
    
 };

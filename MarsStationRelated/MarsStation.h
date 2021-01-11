@@ -24,8 +24,8 @@ private:
 public:
     MarsStation();
     void loadFile(string FileName);
+
     ~MarsStation();
+
 };
-
-
 #endif //MARSSTATIONPROJECT_MARSSTATION_H

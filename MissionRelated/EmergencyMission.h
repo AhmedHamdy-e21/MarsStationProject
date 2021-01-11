@@ -8,15 +8,16 @@
 
 class EmergencyMission : public Mission
 {
+    private:
+    int priority;
 
 public:
     EmergencyMission();
-    EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance): Mission(ED, ID, TargetLocation, MissionDuration, Significance){};
+    EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance);
+    void setPriority();
+    int getPriority();
+    void Print()  const override ;//Make sure in gitkraken
 
-    void Print()  const override //Make sure in gitkraken
-    {
-        cout<<"It's emergency mission with ID"<< getID()<<" and Target location of "<< this->getTargetLocation()<<endl;
-    }
 
 };
 
