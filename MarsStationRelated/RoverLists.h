@@ -48,6 +48,8 @@ public:
     int getNoOfAvailableEmergencyRovers() const;
     void addAvailableEmergencyRover(EmergencyRover* ER);// enqueue
     EmergencyRover * getAvailableEmergencyRover();// dequeue
+    void addMultipleAvailableEmergencyRovers(int NumberOfEmergencyRovers,
+                                             int Speed, int CheckupDuration, int NoCheckupMissions );
     /////////////InMission
     const LinkedListMissions<EmergencyRover *> &getInMissionEmergencyRovers() const;
     int getNoOfInMissionEmergencyRovers() const;
@@ -66,6 +68,8 @@ public:
     int getNoOfAvailablePolarRovers() const;
     void addAvailablePolarRover(PolarRover * PR);
     PolarRover * getAvailablePolarRover();
+    void addMultipleAvailablePolarRovers(int NumberOfEmergencyRovers,
+                                         int Speed, int CheckupDuration, int NoCheckupMissions);
     /////////////InMission
     int getNoOfInMissionPolarRovers() const;
     const LinkedListMissions<PolarRover *> &getInMissionPolarRovers() const;
@@ -84,6 +88,9 @@ public:
     const LinkedQueue<MountainousRover *> &getAvailableMountainousRovers() const;
     void addAvailableMountainousRover(MountainousRover* ER);
     MountainousRover* getAvailableMountainousRover();
+    void addMultipleAvailableMountainousRovers(int AutoPint
+            ,int NumberOfEmergencyRovers,int Speed, int CheckupDuration, int NoCheckupMissions);
+
     /////////////InMission
     const LinkedListMissions<MountainousRover *> &getInMissionMountainousRovers() const;
     int getNoOfInMissionMountainousRovers() const;

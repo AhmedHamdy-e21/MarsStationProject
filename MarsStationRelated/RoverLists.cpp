@@ -200,3 +200,32 @@ MountainousRover *RoverLists::getInCheckupMountainousRover() {
     return ReturnedObj;
 }
 
+void RoverLists::addMultipleAvailableEmergencyRovers(int NumberOfEmergencyRovers
+                                                     ,int Speed, int CheckupDuration
+                                                     , int NoCheckupMissions)
+{
+     int i=0;
+    for ( i = 0; i =NumberOfEmergencyRovers ; ++i)
+    {
+        EmergencyRover* ER=new EmergencyRover(Speed,CheckupDuration,NoCheckupMissions);
+        addAvailableEmergencyRover(ER);
+    }
+    cout<< "\nAdded "<<i<<" Emergency Rovers to be Available\n";
+
+
+}
+
+void RoverLists::addMultipleAvailablePolarRovers(int NumberOfEmergencyRovers,
+                                                 int Speed, int CheckupDuration, int NoCheckupMissions)
+{
+
+
+}
+
+void RoverLists::addMultipleAvailableMountainousRovers(int AutoPint
+,int NumberOfEmergencyRovers,int Speed, int CheckupDuration, int NoCheckupMissions)
+{
+
+
+}
+
