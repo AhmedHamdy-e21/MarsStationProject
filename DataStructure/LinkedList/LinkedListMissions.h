@@ -247,6 +247,25 @@ public:
         return false;
     }
 
+
+    T FindID(int ID){
+        NodeMission<T> *p = Head;
+        while(p){
+            if(p->getItem()->getID() == ID){
+                cout<<"Found the element ";
+                p->getItem()->Print();
+                cout<<endl;
+                return p->getItem();
+            }
+            p = p->getNext();
+        }
+        cout<<"\nElement with ID: "<<ID;
+        cout<<" not found"<<endl;
+        return nullptr;
+    }
+
+
+
     T DeleteFirst(){
 //        cout<<"\nDeleting the first element"<<endl;
         T ReturnedObj;

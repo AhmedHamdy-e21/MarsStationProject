@@ -6,6 +6,7 @@
 #define MARS_MISSIONS_MANAGEMENT_EMERGENCYMISSION_H
 #include "Mission.h"
 #include "../EventRelated/FormulationEvent.h"
+#include "MountainousMission.h"
 
 class EmergencyMission : public Mission
 {
@@ -15,6 +16,7 @@ class EmergencyMission : public Mission
 public:
     EmergencyMission();
     EmergencyMission(FormulationEvent* EV,int FormulationDay);
+    EmergencyMission(MountainousMission* EV,int FormulationDay);
     EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance,int FomrulatedDay);
     void setPriority();
     int getPriority();

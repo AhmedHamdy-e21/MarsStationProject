@@ -16,6 +16,7 @@ private:
     EventLists EVs;
     int AutoP;
 public:
+
     const MissionLists &getMLs() const;
 
     const RoverLists &getRLs() const;
@@ -35,8 +36,22 @@ public:
     bool assignPolarMission();
     bool assignEmergencyMission();
     bool assignTodaysMission(int CurrentDay);
+
+    //// Check for the completed missions and then transfer them to the completed list.
+    bool isCompletedYet();
+    // Think how you will know whether it's completed or not.
     bool cancelTodaysMission(int CurrentDay);
     bool promoteTodaysMission(int CurrentDay);
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////Get Any kind of Data from here
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
     ~MarsStation();
 };

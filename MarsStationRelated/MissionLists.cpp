@@ -48,7 +48,7 @@ PolarMission *MissionLists::getPolarMission() {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const LinkedListMissions<MountainousMission*> MissionLists::getWaitingMountainousMissionList() const
+ LinkedListMissions<MountainousMission*> MissionLists::getWaitingMountainousMissionList()
 {
     return WaitingMountainousMissionList;
 }

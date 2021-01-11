@@ -96,10 +96,6 @@ fstream
 string
 -
 
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MissionLists.cpp
-MissionLists.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MissionLists.h
-
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MissionLists.h
 ../MissionRelated/Mission.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/Mission.h
@@ -132,37 +128,23 @@ MissionLists.h
 iostream
 -
 
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/EmergencyMission.cpp
-EmergencyMission.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/EmergencyMission.h
-
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/EmergencyMission.h
 Mission.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/Mission.h
 ../EventRelated/FormulationEvent.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/FormulationEvent.h
-
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/Mission.cpp
-Mission.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/Mission.h
+MountainousMission.h
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/MountainousMission.h
 
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/Mission.h
 iostream
 -
 
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/MountainousMission.cpp
-MountainousMission.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/MountainousMission.h
-
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/MountainousMission.h
 Mission.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/Mission.h
 ../EventRelated/FormulationEvent.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/FormulationEvent.h
-
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/PolarMission.cpp
-PolarMission.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/PolarMission.h
 
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MissionRelated/PolarMission.h
 Mission.h
@@ -185,10 +167,4 @@ Rover.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/RoverRelated/Rover.h
 iostream
 -
-
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/main.cpp
-iostream
--
-MarsStationRelated/MarsStation.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MarsStation.h
 

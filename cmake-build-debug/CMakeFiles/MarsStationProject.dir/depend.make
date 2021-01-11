@@ -14,6 +14,7 @@ CMakeFiles/MarsStationProject.dir/DataStructure/MaxHeap/MaxHeap.cpp.o: ../EventR
 CMakeFiles/MarsStationProject.dir/DataStructure/MaxHeap/MaxHeap.cpp.o: ../EventRelated/FormulationEvent.h
 CMakeFiles/MarsStationProject.dir/DataStructure/MaxHeap/MaxHeap.cpp.o: ../MissionRelated/EmergencyMission.h
 CMakeFiles/MarsStationProject.dir/DataStructure/MaxHeap/MaxHeap.cpp.o: ../MissionRelated/Mission.h
+CMakeFiles/MarsStationProject.dir/DataStructure/MaxHeap/MaxHeap.cpp.o: ../MissionRelated/MountainousMission.h
 
 CMakeFiles/MarsStationProject.dir/DataStructure/Queue/LinkedQueue.cpp.o: ../DataStructure/Queue/LinkedQueue.cpp
 CMakeFiles/MarsStationProject.dir/DataStructure/Queue/LinkedQueue.cpp.o: ../DataStructure/Queue/LinkedQueue.h
@@ -114,6 +115,7 @@ CMakeFiles/MarsStationProject.dir/MissionRelated/EmergencyMission.cpp.o: ../Even
 CMakeFiles/MarsStationProject.dir/MissionRelated/EmergencyMission.cpp.o: ../MissionRelated/EmergencyMission.cpp
 CMakeFiles/MarsStationProject.dir/MissionRelated/EmergencyMission.cpp.o: ../MissionRelated/EmergencyMission.h
 CMakeFiles/MarsStationProject.dir/MissionRelated/EmergencyMission.cpp.o: ../MissionRelated/Mission.h
+CMakeFiles/MarsStationProject.dir/MissionRelated/EmergencyMission.cpp.o: ../MissionRelated/MountainousMission.h
 
 CMakeFiles/MarsStationProject.dir/MissionRelated/Mission.cpp.o: ../MissionRelated/Mission.cpp
 CMakeFiles/MarsStationProject.dir/MissionRelated/Mission.cpp.o: ../MissionRelated/Mission.h

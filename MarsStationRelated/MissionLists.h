@@ -84,7 +84,7 @@ public:
     /////////////Waiting
     void addMountainousMission( MountainousMission* MMission);
     MountainousMission* getMountainousMission();
-    const LinkedListMissions<MountainousMission*> getWaitingMountainousMissionList() const;
+     LinkedListMissions<MountainousMission*> getWaitingMountainousMissionList();
     void cancelMountainousMission(int ID);
     int getNoOfWaitingMountainousMission() const;
     /////////////Completed

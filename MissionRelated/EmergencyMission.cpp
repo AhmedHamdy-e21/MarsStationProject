@@ -36,3 +36,10 @@ EmergencyMission::EmergencyMission(FormulationEvent *EV, int FormulationDay):Mis
         FormulationDay, EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getEventDay())
 {
 }
+
+EmergencyMission::EmergencyMission(MountainousMission *EV, int FormulationDay):Mission(
+        FormulationDay, EV->getID(), EV->getTargetLocation(), EV-> getMissionDuration(), EV->getSignificance(),EV->getED())
+{
+
+
+}

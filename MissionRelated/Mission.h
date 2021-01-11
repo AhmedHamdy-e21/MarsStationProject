@@ -59,7 +59,7 @@ public:
     void setFormulatedDay(int formulatedDay);
 
     int getWaitingDays() const;
-    
+
     void setWaitingDays(int waitingDays);
 
     Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance, int FomrulatedDay);

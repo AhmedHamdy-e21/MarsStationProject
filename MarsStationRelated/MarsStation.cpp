@@ -75,7 +75,6 @@ MarsStation::MarsStation() {
 }
 
 MarsStation::~MarsStation() {
-
 }
 
 bool MarsStation::assignMountainousMission()
@@ -230,10 +229,40 @@ const EventLists &MarsStation::getEVs() const {
     return EVs;
 }
 
-bool MarsStation::cancelTodaysMission(int CurrentDay) {
+bool MarsStation::cancelTodaysMission(int CurrentDay)
+{
+    while(EVs.peekCancellationEvent()->getEventDay()==CurrentDay)
+    {
+        CancelEvent* CE;
+        CE=EVs.getCancellationEvent();
+        int ID=CE->getID();
+        MLs.cancelMountainousMission(ID);// The id must of mountainous mission yaay
+        return true;
+    }
     return false;
 }
 
-bool MarsStation::promoteTodaysMission(int CurrentDay) {
+bool MarsStation::promoteTodaysMission(int CurrentDay)
+{
+    while(EVs.peekPromotionEvent()->getEventDay()==CurrentDay)
+    {
+        PromoteEvent* PE;
+        PE=EVs.getPromotionEvent();
+        int ID=PE->getID();
+        // I  need to cancel the mission and make it Emergency one so I need to get its info first
+        MountainousMission* MM=MLs.getWaitingMountainousMissionList().FindID(ID); // constructor in emergency mission to initialize this
+        if(MM)// I made it not constant
+        {
+            EmergencyMission* EM=new EmergencyMission(MLs.getWaitingMountainousMissionList().FindID(ID),CurrentDay);
+            MLs.cancelMountainousMission(ID);
+            MLs.addEmergencyMission(EM);
+        }
+    }
+    return false;
+}
+
+bool MarsStation::isCompletedYet()
+{
+
     return false;
 }
