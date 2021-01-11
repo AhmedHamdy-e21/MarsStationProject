@@ -205,27 +205,35 @@ void RoverLists::addMultipleAvailableEmergencyRovers(int NumberOfEmergencyRovers
                                                      , int NoCheckupMissions)
 {
      int i=0;
-    for ( i = 0; i =NumberOfEmergencyRovers ; ++i)
+    for ( i = 0; i <NumberOfEmergencyRovers ; ++i)
     {
         EmergencyRover* ER=new EmergencyRover(Speed,CheckupDuration,NoCheckupMissions);
         addAvailableEmergencyRover(ER);
     }
-    cout<< "\nAdded "<<i<<" Emergency Rovers to be Available\n";
-
+    cout<< "\nAdded "<<AvailableEmergencyRovers.getSize()<<" Emergency Rovers to be Available\n";
 
 }
 
-void RoverLists::addMultipleAvailablePolarRovers(int NumberOfEmergencyRovers,
+void RoverLists::addMultipleAvailablePolarRovers(int NumberOfPolarRovers,
                                                  int Speed, int CheckupDuration, int NoCheckupMissions)
 {
-
-
+    int i=0;
+    for ( i = 0; i <NumberOfPolarRovers ; ++i)
+    {
+        PolarRover* PR=new PolarRover(Speed,CheckupDuration,NoCheckupMissions);
+        addAvailablePolarRover(PR);
+    }
+    cout<< "\nAdded "<<AvailablePolarRovers.getSize()<<" Polar Rovers to be Available\n";
 }
 
-void RoverLists::addMultipleAvailableMountainousRovers(int AutoPint
-,int NumberOfEmergencyRovers,int Speed, int CheckupDuration, int NoCheckupMissions)
+void RoverLists::addMultipleAvailableMountainousRovers(int NumberOfMountainousRovers,int Speed, int CheckupDuration, int NoCheckupMissions)
 {
-
-
+    int i=0;
+    for ( i = 0; i <NumberOfMountainousRovers ; ++i)
+    {
+        MountainousRover* MR=new MountainousRover(Speed,CheckupDuration,NoCheckupMissions);
+        addAvailableMountainousRover(MR);
+    }
+    cout<< "\nAdded "<<AvailableMountainousRovers.getSize()<<" Mountainous Rovers to be Available\n";
 }
 

@@ -88,8 +88,7 @@ public:
     const LinkedQueue<MountainousRover *> &getAvailableMountainousRovers() const;
     void addAvailableMountainousRover(MountainousRover* ER);
     MountainousRover* getAvailableMountainousRover();
-    void addMultipleAvailableMountainousRovers(int AutoPint
-            ,int NumberOfEmergencyRovers,int Speed, int CheckupDuration, int NoCheckupMissions);
+    void addMultipleAvailableMountainousRovers(int NumberOfEmergencyRovers,int Speed, int CheckupDuration, int NoCheckupMissions);
 
     /////////////InMission
     const LinkedListMissions<MountainousRover *> &getInMissionMountainousRovers() const;

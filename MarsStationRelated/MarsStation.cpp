@@ -30,11 +30,9 @@ void MarsStation::loadFile(string FileName)
     inputFile >> CP;
     inputFile >> CE;
     inputFile >> AutoP;
-    RLs.addMultipleAvailableEmergencyRovers(E,SE,CE,N);
-//    RL.setERoverList(E, SE, CE);
-//    RL.setMRoverList(M, SM, CM);
-//    RL.setPRoverList(P, SP, CP);
-
+    RLs.addMultipleAvailableEmergencyRovers(E,SE,CE,N);// This is to initialize the Available Emergency Rovers.
+    RLs.addMultipleAvailableMountainousRovers(M,SM,CM,N);
+    RLs.addMultipleAvailablePolarRovers(P,SP,CP,N);
     inputFile >> EV;
 //    ML.setMissionList(EV);
     for (int j = 0; j < EV; j++)
@@ -76,7 +74,8 @@ void MarsStation::loadFile(string FileName)
     }
 
 
-    inputFile.close();}
+    inputFile.close();
+}
 
 MarsStation::MarsStation() {
 
