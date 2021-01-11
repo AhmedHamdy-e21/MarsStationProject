@@ -67,19 +67,26 @@ int main() {
 //    EM1->Print();
 
 MarsStation MR;
-//MR.loadFile("../ConfigurationFile.txt");
-
-    MR.simulate(1);
-
-/*
-
-MR.assignTodaysMission(1);
-MR.assignTodaysMission(2);
-MR.assignTodaysMission(3);
+MR.loadFile("../ConfigurationFile.txt");
+int i=0;
+//while(i<26)
+//{
+//    MR.simulate(18);
 MR.assignTodaysMission(5);
-MR.assignTodaysMission(6);
-MR.assignTodaysMission(18);
-MR.assignTodaysMission(25);
+MR.promoteTodaysMission(19);
+    i++;
+//}
+
+
+
+
+//MR.assignTodaysMission(1);
+//MR.assignTodaysMission(2);
+//MR.assignTodaysMission(3);
+//MR.assignTodaysMission(5);
+//MR.assignTodaysMission(6);
+//MR.assignTodaysMission(18);
+//MR.assignTodaysMission(25);
 //MR.assignTodaysMission(10);
 //MR.assignTodaysMission(18);
 //MR.assignTodaysMission(2);
@@ -99,7 +106,7 @@ cout<<endl;
     cout<<"getNoOfInMissionMountainousRovers :"<<MR.getRLs().getNoOfInMissionMountainousRovers()<<endl;
     cout<<"getNoOfInExecutionMountainous :"<<MR.getMLs().getNoOfInExecutionMountainous()<<endl;
     cout<<"getNoOfWaitingMountainousMission :"<<MR.getMLs().getNoOfWaitingMountainousMission()<<endl;
-*/
+
 
 
 //    enum Throws {R, P, S};

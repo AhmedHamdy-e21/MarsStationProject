@@ -275,13 +275,15 @@ void MarsStation::simulate(int CurrentDay)
     // I need to print and also I need to check when the mission is finished to transfer it to the completed
     // and add the rover to the list.
     int i=0;// This is for just experimenting
-    while(i<7)
+    while(i<26)
     {
         UserInterface.getProgramMode();
         assignTodaysMission(CurrentDay);
         cancelTodaysMission(CurrentDay);
         promoteTodaysMission(CurrentDay);
         i++;
+        cout<<CurrentDay;
+        CurrentDay++;
     }
 
     // return when there is nothing to do
