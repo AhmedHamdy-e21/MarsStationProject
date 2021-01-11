@@ -21,86 +21,55 @@ private:
     int CompletedDay;
     int FormulatedDay;
     int WaitingDays;
-
 public:
-    void setCompletedDay(int completedDay) ;
+    bool isFormulationDayStamp() const;
 
-    void setFormulatedDay(int formulatedDay) ;
+    void setFormulationDayStamp(bool formulationDayStamp);
 
-    void setWaitingDays(int waitingDays) ;
+    int getTargetLocation() const;
 
-    int getCompletedDay() const ;
+    void setTargetLocation(int targetLocation);
 
-    int getFormulatedDay() const {
-        return FormulatedDay;
-    }
+    int getMissionDuration() const;
 
-    int getWaitingDays() const {
-        return WaitingDays;
-    }
+    void setMissionDuration(int missionDuration);
+
+    int getSignificance() const;
+
+    void setSignificance(int significance);
+
+    bool isCompletedMission() const;
+
+    void setCompletedMission(bool completedMission);
+
+    int getID() const;
+
+    void setID(int id);
+
+    int getED() const;
+
+    void setED(int ed);
+
+    int getCompletedDay() const;
+
+    void setCompletedDay(int completedDay);
+
+    int getFormulatedDay() const;
+
+    void setFormulatedDay(int formulatedDay);
+
+    int getWaitingDays() const;
+    
+    void setWaitingDays(int waitingDays);
 
     Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance, int FomrulatedDay);
 
     Mission();
 
 
-    virtual int getID()const;
 
+    virtual void Print() const;
 
-
-    virtual void setID(int ID);
-
-
-
-    virtual void setED(int ED);// i'm not sure the event day on the miission or on the or on the event
-
-    virtual int getED()
-    {
-        return this->ED;
-    }
-
-    void setTargetLocation(int TargetLocation)
-    {
-        this->TargetLocation=TargetLocation;
-    }
-    int getTargetLocation() const
-    {
-        return this->TargetLocation;
-    }
-
-    int getMissionDuration() const
-    {
-        return this->MissionDuration;
-    }
-    void setMisisonDuration(int MissionDuration)
-    {
-        this->MissionDuration=MissionDuration;
-    }
-
-    void setSignificance(int Significance)
-    {
-        this->Significance=Significance;
-    }
-    int getSignificance()
-    {
-        return this->Significance;
-    }
-
-    // Calculate completed missions according to ..
-    void setCompletedMission(bool BOOL)
-    {
-        CompletedMission=BOOL;
-
-    }
-    bool getCompletedMission()
-    {
-        return CompletedMission;
-    }
-
-    virtual void Print() const
-    {
-        cout<<"In mission "<<"With ID: "<<getID();
-    }
 
 
 
