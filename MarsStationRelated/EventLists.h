@@ -5,6 +5,7 @@
 #ifndef MARSSTATIONPROJECT_EVENTLISTS_H
 #define MARSSTATIONPROJECT_EVENTLISTS_H
 #include "../DataStructure/Queue/LinkedQueue.h"
+#include "../DataStructure/Queue/NodeQ.cpp"
 #include "../EventRelated/FormulationEvent.h"
 #include "../EventRelated/CancelEvent.h"
 #include "../EventRelated/PromoteEvent.h"
