@@ -23,21 +23,13 @@ private:
     int WaitingDays;
 
 public:
-    void setCompletedDay(int completedDay) {
-        CompletedDay = completedDay;
-    }
+    void setCompletedDay(int completedDay) ;
 
-    void setFormulatedDay(int formulatedDay) {
-        FormulatedDay = formulatedDay;
-    }
+    void setFormulatedDay(int formulatedDay) ;
 
-    void setWaitingDays(int waitingDays) {
-        WaitingDays = FormulatedDay-ED;
-    }
+    void setWaitingDays(int waitingDays) ;
 
-    int getCompletedDay() const {
-        return CompletedDay;
-    }
+    int getCompletedDay() const ;
 
     int getFormulatedDay() const {
         return FormulatedDay;
@@ -47,43 +39,21 @@ public:
         return WaitingDays;
     }
 
-    Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance, int FomrulatedDay)
-    {
-        setFormulatedDay(FomrulatedDay);
-        setED(ED);
-        setCompletedMission(false);
-        setMisisonDuration(MissionDuration);
-        setSignificance(Significance);
-        setTargetLocation(TargetLocation);
-        setID(ID);
-    }
-    Mission()
-    {
-        setCompletedMission(false);
-        setMisisonDuration(0);
-        setSignificance(0);
-        setTargetLocation(0);
-//        setID(ID);
+    Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance, int FomrulatedDay);
 
-    };
+    Mission();
 
 
-    virtual int getID()const
-    {
-        return ID;
-    }
+    virtual int getID()const;
 
 
-    virtual void setID(int ID)
-    {
-        this->ID = ID;
-    }
+
+    virtual void setID(int ID);
 
 
-    virtual void setED(int ED)// i'm not sure the event day on the miission or on the or on the event
-    {
-        this->ED=ED;
-    }
+
+    virtual void setED(int ED);// i'm not sure the event day on the miission or on the or on the event
+
     virtual int getED()
     {
         return this->ED;
