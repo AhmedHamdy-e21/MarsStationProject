@@ -77,13 +77,14 @@ MarsStation::MarsStation() {
 MarsStation::~MarsStation() {
 }
 
-bool MarsStation::assignMountainousMission()
+bool MarsStation::assignMountainousMission(int & ID)
 {
     if(RLs.peekAvailableMountainousRover())
     {
         MountainousRover* MR;
         MR=RLs.getAvailableMountainousRover();
         RLs.addInMissionMountainousRover(MR);
+        ID=MR->getId();
         return true;
     }
     else if(RLs.peekAvailableEmergencyRover())
@@ -91,6 +92,7 @@ bool MarsStation::assignMountainousMission()
         EmergencyRover* ER;
         ER=RLs.getAvailableEmergencyRover();
         RLs.addInMissionEmergencyRover(ER);
+        ID=ER->getId();
         return true;
     }
     else false;
@@ -100,7 +102,7 @@ bool MarsStation::assignMountainousMission()
 //// The other assignment large function will check the type of events and create the corresponding missions.
 //// Then just call the subroutine assign to switch the status.
 
-bool MarsStation::assignPolarMission()
+bool MarsStation::assignPolarMission(int &ID)
 {
     // peak function is redundut because the get either return a rover or null. So I don't need to peak rover.
     // But I'll continue and check like make it as if isAvailable function.
@@ -110,6 +112,7 @@ bool MarsStation::assignPolarMission()
         PolarRover* PR;
         PR=RLs.getAvailablePolarRover();
         RLs.addInMissionPolarRover(PR);
+        ID=PR->getId();
         return true;
     }
     else return false;
@@ -135,6 +138,8 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
 
         FormulationEvent* FE;
         FE=EVs.getFormulationEvent();
+        int MissionID;
+        int RoverID;
         if(FE->getMissionType()=='E')
         {
             // add emergency mission. first. Because you are not sure whether there is an available rover or not
@@ -149,11 +154,13 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
             // Then I need to check for rover availablility
 
 
-            if(assignEmergencyMission())
+
+            MissionID=EM->getED();
+            if(assignEmergencyMission(RoverID))
             {
                 EM=MLs.getEmergencyMission();
                 MLs.addInExecutionEmergency(EM);// I need to keep the history. I may keep it as a member in the mission itself.
-
+                insertIDPair(MissionID,RoverID);// This is to keep both IDs
             }
 
         }
@@ -162,10 +169,13 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
             // Don't forget to set the autoP
             MountainousMission* MM=new MountainousMission(FE,getAutoP(), CurrentDay);
             MLs.addMountainousMission(MM);
-            if(assignMountainousMission())
+            MissionID=MM->getED();
+
+            if(assignMountainousMission(RoverID))
             {
                 MM=MLs.getMountainousMission();
                 MLs.addInExecutionMountainous(MM);//
+                insertIDPair(MissionID,RoverID);
             }
 
         }
@@ -173,23 +183,28 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
         {
             PolarMission* PM=new PolarMission(FE, CurrentDay);
             MLs.addPolarMission(PM);
-            if(assignPolarMission())
+            MissionID=PM->getED();
+
+            if(assignPolarMission(RoverID))
             {
                 PM=MLs.getPolarMission();
                 MLs.addInExecutionPolar(PM);
+                insertIDPair(MissionID,RoverID);
             }
         }
     }
 
 }
 
-bool MarsStation::assignEmergencyMission()
+bool MarsStation::assignEmergencyMission(int& ID)
 {
+
     if(RLs.peekAvailableEmergencyRover())
     { // add to the Emergency if there isn't Mountainous one
         EmergencyRover* ER;
         ER=RLs.getAvailableEmergencyRover();
         RLs.addInMissionEmergencyRover(ER);
+        ID=ER->getId();
         return true;
     }
     else if(RLs.peekAvailableMountainousRover())
@@ -197,9 +212,10 @@ bool MarsStation::assignEmergencyMission()
         MountainousRover* MR;
         MR=RLs.getAvailableMountainousRover();
         RLs.addInMissionMountainousRover(MR);
+        ID=MR->getId();
         return true;
     }
-    else if (assignPolarMission())
+    else if (assignPolarMission(ID))
     {
         return true;
     }
@@ -265,6 +281,7 @@ bool MarsStation::isCompletedYet(int CurrentDay)
 {
     /// now I have is completed function in each missions that takes the current day
     /// I need to loop on the Inexecution List. O.o I need to trace which robots has which mission
+    /// Done 
 
     /// I can store them in dictionary like
 

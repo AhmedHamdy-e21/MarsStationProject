@@ -42,9 +42,9 @@ public:
 
     MarsStation();
     void loadFile(string FileName);
-    bool assignMountainousMission();
-    bool assignPolarMission();
-    bool assignEmergencyMission();
+    bool assignMountainousMission(int & ID);
+    bool assignPolarMission(int &ID);
+    bool assignEmergencyMission(int& ID);
     bool assignTodaysMission(int CurrentDay);
 
     //// Check for the completed missions and then transfer them to the completed list.
