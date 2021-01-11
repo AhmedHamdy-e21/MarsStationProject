@@ -116,9 +116,9 @@ public:
 
     bool DeleteNode(int ID)
     {
-        cout<<"\nDeleting Mission of ID "<<ID;
+//        cout<<"\nDeleting Mission of ID "<<ID;
 //        value->Print();
-        cout<<endl;
+//        cout<<endl;
         if(Head == nullptr){
             return false;
         }
@@ -178,9 +178,9 @@ public:
 
 
     bool DeleteNodes(const T &value){
-        cout<<"\nDeleting all the elements of value ";
-        value->Print();
-        cout<<endl;
+//        cout<<"\nDeleting all the elements of value ";
+//        value->Print();
+//        cout<<endl;
 
 
         if(Head == nullptr){return false;}
@@ -234,16 +234,16 @@ public:
         NodeMission<T> *p = Head;
         while(p){
             if(p->getItem()->getID() == Key->getID()){
-                cout<<"Found the element ";
-                Key->Print();
-                cout<<endl;
+//                cout<<"Found the element ";
+//                Key->Print();
+//                cout<<endl;
                 return true;
             }
             p = p->getNext();
         }
-        cout<<"\nElement ";
-        Key->Print();
-        cout<<" not found"<<endl;
+//        cout<<"\nElement ";
+//        Key->Print();
+//        cout<<" not found"<<endl;
         return false;
     }
 
@@ -257,9 +257,9 @@ public:
         while(p){
             if(p->getItem()->isCompletedMission(CurrentDay))
             {
-                cout<<"Found the element ";
-                p->getItem()->Print();
-                cout<<endl;
+//                cout<<"Found the element ";
+//                p->getItem()->Print();
+//                cout<<endl;
                 return p->getItem();
             }
             p = p->getNext();
@@ -274,15 +274,15 @@ public:
         NodeMission<T> *p = Head;
         while(p){
             if(p->getItem()->getID() == ID){
-                cout<<"Found the element ";
-                p->getItem()->Print();
-                cout<<endl;
+//                cout<<"Found the element ";
+//                p->getItem()->Print();
+//                cout<<endl;
                 return p->getItem();
             }
             p = p->getNext();
         }
-        cout<<"\nElement with ID: "<<ID;
-        cout<<" not found"<<endl;
+//        cout<<"\nElement with ID: "<<ID;
+//        cout<<" not found"<<endl;
         return nullptr;
     }
 

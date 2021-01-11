@@ -326,7 +326,7 @@ void MarsStation::simulate(int CurrentDay)
         isCompletedToday( CurrentDay);
         cancelTodaysMission(CurrentDay);
         promoteTodaysMission(CurrentDay);
-        cout<<CurrentDay;
+//        cout<<CurrentDay;
         CurrentDay++;
         i++;
     }
