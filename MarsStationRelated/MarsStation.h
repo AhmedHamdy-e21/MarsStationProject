@@ -48,11 +48,10 @@ public:
     bool assignTodaysMission(int CurrentDay);
 
     //// Check for the completed missions and then transfer them to the completed list.
-    Rover* CompletedMountainous(MountainousMission* MM,int CurrentDay);
-    Rover* CompletedPolar(PolarMission* PM,int CurrentDay);
-    Rover* CompletedEmergency(EmergencyMission* EM,int CurrentDay);
+    MountainousRover* CompletedMountainous(MountainousMission* MM,int CurrentDay);
+    PolarRover* CompletedPolar(PolarMission* PM,int CurrentDay);
+    EmergencyRover* CompletedEmergency(EmergencyMission* EM,int CurrentDay);
     ///// I need to implement a function that transfer Rovers from Inmission to either Checkup or Avaialble
-
 
     ///////////////
 
@@ -64,12 +63,23 @@ public:
     void simulate(int CurrentDay);
 
 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//// Now I need to get the rovers from being in mission to either available or In checkup
+//// Then After the Checkup I need to add them to available.
+bool transferInMissionMountainousRover( MountainousRover* MR);
+bool transferInMissionPolarRover(PolarRover* PR);
+bool transferInMissionEmergencyRover(EmergencyRover* EM);
+
+
+
+
+
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////Get Any kind of Data from here
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 
 

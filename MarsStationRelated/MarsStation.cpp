@@ -13,10 +13,10 @@ void MarsStation::loadFile(string FileName)
         cerr << "Error opening the file" << endl;
         exit(1);
     }
-    else
-    {
-        cout << "I open the file now" << endl;
-    }
+//    else
+//    {
+////        cout << "I open the file now" << endl;
+//    }
     int M, P, E, SM, SP, SE, N, CM, CP, CE, AutoP, EV, ED, ID, TLOC, MIDUR, SIG;
     char F, TYP;
     inputFile >> M;
@@ -295,17 +295,18 @@ while(MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionMou
     if(MLs.getInExecutionPolar().FindCompleted(CurrentDay))
     {
 
-        CompletedPolar(MLs.getInExecutionPolar().FindCompleted(CurrentDay),CurrentDay);
+
+        transferInMissionPolarRover(CompletedPolar(MLs.getInExecutionPolar().FindCompleted(CurrentDay),CurrentDay));
     }
     else if(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))
     {
 
-        CompletedMountainous(MLs.getInExecutionMountainous().FindCompleted(CurrentDay),CurrentDay);
+        transferInMissionMountainousRover(CompletedMountainous(MLs.getInExecutionMountainous().FindCompleted(CurrentDay),CurrentDay));
     }
     else if(MLs.getInExecutionEmergency().FindCompleted(CurrentDay))
     {
 
-        CompletedEmergency(MLs.getInExecutionEmergency().FindCompleted(CurrentDay),CurrentDay);
+        transferInMissionEmergencyRover(CompletedEmergency(MLs.getInExecutionEmergency().FindCompleted(CurrentDay),CurrentDay));
     }
 }
 }
@@ -345,7 +346,7 @@ void MarsStation::eraseIDPair(int MissionID)
     IDDictionary.erase(MissionID);
 }
 
-Rover* MarsStation::CompletedMountainous(MountainousMission *MM,int CurrentDay)
+MountainousRover* MarsStation::CompletedMountainous(MountainousMission *MM,int CurrentDay)
 {
     int ID;
     ID=MM->getID();
@@ -357,7 +358,7 @@ Rover* MarsStation::CompletedMountainous(MountainousMission *MM,int CurrentDay)
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }
-Rover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
+PolarRover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
 {
     int ID;
     ID=PM->getID();
@@ -370,7 +371,7 @@ Rover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
     eraseIDPair(ID);
 }
 
-Rover* MarsStation::CompletedEmergency(EmergencyMission *EM,int CurrentDay)
+EmergencyRover* MarsStation::CompletedEmergency(EmergencyMission *EM,int CurrentDay)
 {
     int ID;
     ID=EM->getID();
@@ -383,9 +384,30 @@ Rover* MarsStation::CompletedEmergency(EmergencyMission *EM,int CurrentDay)
     eraseIDPair(ID);
 }
 
+bool MarsStation::transferInMissionMountainousRover(MountainousRover *MR)
+{
+    //// Firstly, I need to delete it from the InMission status
+    //// Then, add it either to Checkup or Available by checking the number of missions before duration
+    //// This need to be a function there in the rover parent
+    MR->incrementNoOfExecutedMissions();// This is to add the number of executing mission first.
+    // Then I need to check whether to checkup or not
+
+    return false;
+}
+
+bool MarsStation::transferInMissionPolarRover(PolarRover *PR)
+{
+
+    return false;
+}
+
+bool MarsStation::transferInMissionEmergencyRover(EmergencyRover *EM)
+{
+
+    return false;
+}
 
 
-//////////////////////////////////////////////////////////////////////////////////////////
-//// Now I need to get the rovers from being in mission to either available or In checkup
 
-//// Then After the Checkup I need to add them to available
+
+
