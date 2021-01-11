@@ -27,11 +27,11 @@ public:
     void insertIDPair(int MissionID,int RoverID);
     void eraseIDPair(int MissionID);
 
-    const MissionLists &getMLs() const;
+     MissionLists &getMLs() ;
 
-    const RoverLists &getRLs() const;
+     RoverLists &getRLs() ;
 
-    const EventLists &getEVs() const;
+     EventLists &getEVs() ;
 
     void setAutoP(int autoP);
 

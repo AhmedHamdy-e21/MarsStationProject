@@ -108,6 +108,13 @@ cout<<endl;
     cout<<"getNoOfWaitingMountainousMission :"<<MR.getMLs().getNoOfWaitingMountainousMission()<<endl;
 
 
+//  MR.getMLs().getCompletedEmergency().PrintList();
+  MR.getMLs().getCompletedPolar().PrintList();
+//  MR.getMLs().getCompletedMountainous().PrintList();
+
+//    cout<<"getNoOfWaitingEmergencyMission :"<<MR.getMLs().getNoOfWaitingEmergencyMission()<<endl;
+
+
 
 //    enum Throws {R, P, S};
 //    int userInput;

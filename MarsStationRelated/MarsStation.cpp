@@ -233,15 +233,15 @@ void MarsStation::setAutoP(int autoP) {
     AutoP = autoP;
 }
 
-const MissionLists &MarsStation::getMLs() const {
+ MissionLists &MarsStation::getMLs()  {
     return MLs;
 }
 
-const RoverLists &MarsStation::getRLs() const {
+ RoverLists &MarsStation::getRLs()  {
     return RLs;
 }
 
-const EventLists &MarsStation::getEVs() const {
+ EventLists &MarsStation::getEVs()  {
     return EVs;
 }
 
@@ -351,9 +351,9 @@ Rover* MarsStation::CompletedMountainous(MountainousMission *MM)
     int ID;
     ID=MM->getID();
     /// This is the completed Mission
-    MountainousMission M=*MM;
+    MountainousMission* M=new MountainousMission(MM);
     MLs.getInExecutionMountainous().DeleteNode(ID);
-    MLs.getCompletedMountainous().InsertBeg(&M);
+    MLs.getCompletedMountainous().InsertBeg(M);
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }

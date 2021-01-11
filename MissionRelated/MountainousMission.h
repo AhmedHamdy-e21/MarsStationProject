@@ -11,7 +11,11 @@ class MountainousMission : public Mission
 private:
             int AutoP;
 public:
+    int getAutoP() const;
+
+public:
         MountainousMission();
+        MountainousMission(MountainousMission* EV);
         MountainousMission(FormulationEvent* EV,int AutoP, int Day);
         MountainousMission(int AutoP, int ED, int ID, int TargetLocation, int MissionDuration, int Significance);
         void setAutoP(int AutoP);
