@@ -247,6 +247,28 @@ public:
         return false;
     }
 
+    // This loops on the list to find the completed missions then return it.
+    // I need to find all completedmissions. So I can just find one and
+
+    /// This is only for Missions.
+    /// This might make errors in rover lists.
+    T FindCompleted(int CurrentDay){
+        NodeMission<T> *p = Head;
+        while(p){
+            if(p->getItem()->isCompletedMission(CurrentDay))
+            {
+                cout<<"Found the element ";
+                p->getItem()->Print();
+                cout<<endl;
+                return p->getItem();
+            }
+            p = p->getNext();
+        }
+        cout<<"\n completed Missions: ";
+        cout<<" not found"<<endl;
+        return nullptr;
+    }
+
 
     T FindID(int ID){
         NodeMission<T> *p = Head;

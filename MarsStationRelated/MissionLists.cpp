@@ -17,7 +17,7 @@ EmergencyMission *MissionLists::getEmergencyMission() {
     EmergencyMission *Em = WaitingEmergencyMissionHeap.extractMax();;
     return Em;
 }
-const MaxHeap<EmergencyMission*> MissionLists::getWaitingEmergencyMissionHeap() const
+ MaxHeap<EmergencyMission*> MissionLists::getWaitingEmergencyMissionHeap()
 {
     return WaitingEmergencyMissionHeap;
 }
@@ -29,7 +29,7 @@ void MissionLists::addEmergencyMission(EmergencyMission *EMission)
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const LinkedQueue<PolarMission*> MissionLists::getWaitingPolarMissionQueue() const
+ LinkedQueue<PolarMission*> MissionLists::getWaitingPolarMissionQueue()
 {
     return WaitingPolarMissionQueue;
 }
@@ -99,15 +99,15 @@ void MissionLists::setNoOfCompletedMountainous(int noOfCompletedMountainous) {
     NoOfCompletedMountainous = noOfCompletedMountainous;
 }
 
-const LinkedListMissions<MountainousMission *> &MissionLists::getInExecutionMountainous() const {
+ LinkedListMissions<MountainousMission *> &MissionLists::getInExecutionMountainous()  {
     return InExecutionMountainous;
 }
 
-const LinkedListMissions<EmergencyMission *> &MissionLists::getInExecutionEmergency() const {
+ LinkedListMissions<EmergencyMission *> &MissionLists::getInExecutionEmergency()  {
     return InExecutionEmergency;
 }
 
-const LinkedListMissions<PolarMission *> &MissionLists::getInExecutionPolar() const {
+ LinkedListMissions<PolarMission *> &MissionLists::getInExecutionPolar()  {
     return InExecutionPolar;
 }
 

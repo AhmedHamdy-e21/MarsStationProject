@@ -49,15 +49,15 @@ public:
 /////////////EmergencyMission
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////Waiting
-    const MaxHeap<EmergencyMission*> getWaitingEmergencyMissionHeap() const;
+     MaxHeap<EmergencyMission*> getWaitingEmergencyMissionHeap() ;
     void addEmergencyMission(EmergencyMission* EMission);
     EmergencyMission* getEmergencyMission();
     int getNoOfWaitingEmergencyMission() const;
     /////////////Completed
     void setNoOfCompletedEmergency(int noOfCompletedEmergency);
-    int getNoOfCompletedEmergency() const;
+    int getNoOfCompletedEmergency() ;
     /////////////IsExecuting
-    const LinkedListMissions<EmergencyMission *> &getInExecutionEmergency() const;
+     LinkedListMissions<EmergencyMission *> &getInExecutionEmergency() ;
     void addInExecutionEmergency(EmergencyMission* EMission);
     void deleteInExecutionEmergency(int ID);
     int getNoOfInExecutionEmergency() const;
@@ -66,7 +66,7 @@ public:
 /////////////PolarMission
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////Waiting
-    const LinkedQueue<PolarMission*> getWaitingPolarMissionQueue() const;
+     LinkedQueue<PolarMission*> getWaitingPolarMissionQueue() ;
     void addPolarMission(PolarMission* PMission);
     PolarMission* getPolarMission();
     int getNoOfWaitingPolarMission() const;
@@ -74,7 +74,7 @@ public:
     int getNoOfCompletedPolar() const;
     void setNoOfCompletedPolar(int noOfCompletedPolar);
     /////////////IsExecuting
-    const LinkedListMissions<PolarMission *> &getInExecutionPolar() const;
+     LinkedListMissions<PolarMission *> &getInExecutionPolar() ;
     void addInExecutionPolar(PolarMission* EMission);
     void deleteInExecutionPolar(int ID);
     int getNoOfInExecutionPolar() const;
@@ -91,7 +91,7 @@ public:
     int getNoOfCompletedMountainous() const;
     void setNoOfCompletedMountainous(int noOfCompletedMountainous);
     /////////////IsExecuting
-    const LinkedListMissions<MountainousMission *> &getInExecutionMountainous() const;
+     LinkedListMissions<MountainousMission *> &getInExecutionMountainous() ;
     void addInExecutionMountainous(MountainousMission* EMission);
     void deleteInExecutionMountainous(int ID);
     int getNoOfInExecutionMountainous() const;

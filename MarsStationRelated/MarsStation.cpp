@@ -277,15 +277,21 @@ bool MarsStation::promoteTodaysMission(int CurrentDay)
     return false;
 }
 
-bool MarsStation::isCompletedYet(int CurrentDay)
+
+bool MarsStation::isCompletedToday(int CurrentDay)
 {
     /// now I have is completed function in each missions that takes the current day
     /// I need to loop on the Inexecution List. O.o I need to trace which robots has which mission
-    /// Done 
+    /// Done Mapping the IDs
 
     /// I can store them in dictionary like
+    //// Don't forget to set the completed Day.
+    //// And free the robot,
+    //// Then check whether it can go to available or go to checkup
 
-
+    MLs.getInExecutionPolar();
+    MLs.getInExecutionEmergency();
+    MLs.getInExecutionMountainous();
 
     return false;
 }
@@ -321,4 +327,23 @@ void MarsStation::insertIDPair(int MissionID, int RoverID)
 void MarsStation::eraseIDPair(int MissionID)
 {
     IDDictionary.erase(MissionID);
+}
+
+Rover* MarsStation::CompletedMountainous(MountainousMission *MM)
+{
+    int ID;
+    ID=MM->getID();
+    /// This is the completed Mission
+    MountainousMission M=*MM;
+    MLs.getInExecutionMountainous().DeleteNode(ID);
+
+
+}
+
+Rover* MarsStation::CompletedPolar(PolarMission *PM)
+{
+}
+
+Rover* MarsStation::CompletedEmergency(EmergencyMission *EM)
+{
 }

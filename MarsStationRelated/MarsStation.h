@@ -48,7 +48,11 @@ public:
     bool assignTodaysMission(int CurrentDay);
 
     //// Check for the completed missions and then transfer them to the completed list.
-    bool isCompletedYet(int CurrentDay);
+    Rover* CompletedMountainous(MountainousMission* MM);
+    Rover* CompletedPolar(PolarMission* PM);
+    Rover* CompletedEmergency(EmergencyMission* EM);
+    bool isCompletedToday(int CurrentDay);
+
     // Think how you will know whether it's completed or not.
     bool cancelTodaysMission(int CurrentDay);
     bool promoteTodaysMission(int CurrentDay);
