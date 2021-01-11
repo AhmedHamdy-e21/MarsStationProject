@@ -1,7 +1,7 @@
 #include "EmergencyRover.h"
 
-EmergencyRover::EmergencyRover(int Speed, int CheckupDuration, int NoCheckupMissions)
-: Rover(Speed, CheckupDuration,NoCheckupMissions)
+EmergencyRover::EmergencyRover(int Speed, int CheckupDuration, int NoCheckupMissions,int ID)
+: Rover(Speed, CheckupDuration,NoCheckupMissions,ID)
 {
 }
 

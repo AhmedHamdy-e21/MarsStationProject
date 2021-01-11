@@ -5,8 +5,8 @@ void MountainousRover::Print() {
         <<this->getCheckupDuration()<<endl;
 }
 
-MountainousRover::MountainousRover(int Speed, int CheckupDuration, int NoCheckupMissions) : Rover(Speed,
+MountainousRover::MountainousRover(int Speed, int CheckupDuration, int NoCheckupMissions, int ID) : Rover(Speed,
                                                                                                   CheckupDuration,
-                                                                                                  NoCheckupMissions) {
+                                                                                                  NoCheckupMissions,ID) {
 
 }

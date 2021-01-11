@@ -32,9 +32,13 @@ void MarsStation::loadFile(string FileName)
     inputFile >> AutoP;
     setAutoP(AutoP);
 
-    RLs.addMultipleAvailableEmergencyRovers(E,SE,CE,N);// This is to initialize the Available Emergency Rovers.
+
     RLs.addMultipleAvailableMountainousRovers(M,SM,CM,N);
+
     RLs.addMultipleAvailablePolarRovers(P,SP,CP,N);
+
+    RLs.addMultipleAvailableEmergencyRovers(E,SE,CE,N);
+    // This is to initialize the Available Emergency Rovers.
     inputFile >> EV;
     for (int j = 0; j < EV; j++)
     {

@@ -14,10 +14,17 @@ private:
     float Speed;
     int MissionStartTime;
     int MissionDuration;
+    int ID;
+public:
+    void setId(int id);
+
+public:
+    int getId() const;
+
 public:
     Rover();
 
-    Rover(int Speed, int CheckupDuration,int NoCheckupMissions);
+    Rover(int Speed, int CheckupDuration,int NoCheckupMissions,int ID);
 
     void setNoCheckupMissions(int noCheckupMissions);
 

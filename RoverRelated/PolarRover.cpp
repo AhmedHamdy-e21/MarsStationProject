@@ -5,7 +5,7 @@ void PolarRover::Print() {
         <<this->getCheckupDuration()<<endl;
 }
 
-PolarRover::PolarRover(int Speed, int CheckupDuration, int NoCheckupMissions) : Rover(Speed, CheckupDuration,
-                                                                                      NoCheckupMissions) {
+PolarRover::PolarRover(int Speed, int CheckupDuration, int NoCheckupMissions,int ID) : Rover(Speed, CheckupDuration,
+                                                                                      NoCheckupMissions,ID) {
 
 }
