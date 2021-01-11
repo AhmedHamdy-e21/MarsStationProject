@@ -53,22 +53,14 @@ void MarsStation::loadFile(string FileName)
             inputFile >> ED;
             inputFile >> ID;
             EVs.addCancellationEvent(ID,ED);
-            CancelEvent* CV;
-            EVs.getCancellationEventList().peek(CV);
-            CV->Print();
         }
         else if (type == "P")
         {
             inputFile >> ED;
             inputFile >> ID;
             EVs.addPromotionEvent(ED,ID);
-            PromoteEvent* CV;
-            EVs.getPromotionEventList().peek(CV);
-            CV->Print();
         }
     }
-
-
     inputFile.close();
 }
 

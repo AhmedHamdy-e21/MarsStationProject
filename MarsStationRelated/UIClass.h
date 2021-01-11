@@ -1,6 +1,16 @@
 //
 // Created by raspberry on 2021-01-08.
 //
+/*
+#include<unistd.h>
+unsigned int microsecond = 1000000;
+usleep(3 * microsecond);//sleeps for 3 second
+*/
+
+
+
+#include<unistd.h>
+
 
 #ifndef MARS_MISSIONS_MANAGEMENT_UICLASS_H
 #define MARS_MISSIONS_MANAGEMENT_UICLASS_H
@@ -29,7 +39,8 @@ public:
     }
     static void sleep(int milliseconds)// block the program for some time needed in the step by step
     {
-
+        unsigned int microsecond = 1000000;
+        sleep(milliseconds * microsecond);//sleeps for 3 second
     }
 
     void addToWaitingString(string text)// add to the string of the waiting missions it's like// Waiting missiont// In-Execution etc
