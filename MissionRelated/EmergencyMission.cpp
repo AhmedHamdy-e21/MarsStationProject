@@ -30,3 +30,8 @@ void EmergencyMission::setPriority()
 
     this->priority=((0.01*getTargetLocation())+getMissionDuration()+(3*getSignificance())-getED());
 }
+
+EmergencyMission::EmergencyMission(FormulationEvent *EV):Mission(
+        EV->getEventDay(), EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance())
+{
+}

@@ -4,20 +4,30 @@
 
 #ifndef MARSSTATIONPROJECT_EVENT_H
 #define MARSSTATIONPROJECT_EVENT_H
-// I don't think that I need to store the event type here. but anyways lets see
+
+
 using namespace std;
 #include <iostream>
 class Event
 {
 private:
+    char EvenType;
+public:
+    void setEvenType(char evenType);
+
+public:
+    char getEvenType() const;
+
+private:
     int EventDay;
     int ID;
 public:
-    Event(int eventDay, int id);
+    Event(int eventDay, int id,char EventType);
     int getEventDay() const;
     int getID() const;
     void setEventDay(int eventDay);
     void setId(int id);
+//    virtual char getMissionType()=0;
     virtual void Print();
 };
 

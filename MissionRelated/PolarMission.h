@@ -5,11 +5,12 @@
 #ifndef MARS_MISSIONS_MANAGEMENT_POLARMISSION_H
 #define MARS_MISSIONS_MANAGEMENT_POLARMISSION_H
 #include "Mission.h"
-
+#include "../EventRelated/FormulationEvent.h"
 class PolarMission : public Mission
 {
 public:
     PolarMission();
+    PolarMission(FormulationEvent* EV);
     PolarMission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):
     Mission(ED, ID, TargetLocation, MissionDuration,Significance){};
 

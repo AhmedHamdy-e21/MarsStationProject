@@ -4,7 +4,7 @@
 
 #include "CancelEvent.h"
 
-CancelEvent::CancelEvent(int ID,int ED):Event(ED,ID)
+CancelEvent::CancelEvent(int ID,int ED):Event(ED,ID,'C')
 {}
 
 void CancelEvent::Print() {

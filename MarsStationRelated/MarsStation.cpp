@@ -30,6 +30,8 @@ void MarsStation::loadFile(string FileName)
     inputFile >> CP;
     inputFile >> CE;
     inputFile >> AutoP;
+    setAutoP(AutoP);
+
     RLs.addMultipleAvailableEmergencyRovers(E,SE,CE,N);// This is to initialize the Available Emergency Rovers.
     RLs.addMultipleAvailableMountainousRovers(M,SM,CM,N);
     RLs.addMultipleAvailablePolarRovers(P,SP,CP,N);
@@ -115,26 +117,47 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
     //// First check will be on the Emergency
     // Then Mountainous.
     // Then Polar.
-
-
     // So the assign function must be generic for all types
     // It'll be large and huge.
     // So I need to think how I can discretize it in order to trace errors later.
-
     // Firstly peek to check whether there is Polar mission today
+
+
     if (EVs.peekFormulationEvent()->getEventDay()==CurrentDay)
     {
-        // check the type of mission and add it accordingly
-        // add polar mission.
-        PolarMission* PM;
-        MLs.addPolarMission();
-        // Check for the availability of rovers
-        if(RLs.peekAvailablePolarRover())
+        FormulationEvent* FE;
+        FE=EVs.getFormulationEvent();
+        if(FE->getMissionType()=='E')
+        {
+            // add emergency mission. first. Because you are not sure whether there is an available rover or not
+            // I need a constructor that initialized by the mission.
+            EmergencyMission* EM=new EmergencyMission(FE);
+            MLs.addEmergencyMission(EM);
 
-        // Assign the mission to the rover.
-        // get the mission into in execution status
-        // get the robot into in mission status
+            // Then I need to check for rover availablility
 
+            if(assignEmergencyMission())
+            {
+                EM=MLs.getEmergencyMission();
+                MLs.addInExecutionEmergency(EM);// I need to keep the history. I may keep it as a member in the mission itself.
+
+
+
+            }
+
+        }
+        else if(FE->getMissionType()=='M')
+        {
+            // Don't forget to set the autoP
+            MountainousMission* MM=new MountainousMission(FE,getAutoP());
+            MLs.addMountainousMission(MM);
+
+        }
+        else if(FE->getMissionType()=='P')
+        {
+            PolarMission* PM=new PolarMission(FE);
+            MLs.addPolarMission(PM);
+        }
     }
 
 }
@@ -162,4 +185,13 @@ bool MarsStation::assignEmergencyMission()
     return false;
 
 
+}
+
+int MarsStation::getAutoP() const
+{
+    return AutoP;
+}
+
+void MarsStation::setAutoP(int autoP) {
+    AutoP = autoP;
 }

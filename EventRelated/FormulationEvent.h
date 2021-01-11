@@ -13,6 +13,7 @@ private:
     int TargetLocation;
     int MissionDuration;
     int Significance;
+
 public:
 
     FormulationEvent(int ID,int ED,char missionType, int targetLocation, int missionDuration, int significance);

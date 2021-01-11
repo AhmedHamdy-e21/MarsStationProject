@@ -36,8 +36,10 @@ int FormulationEvent::getSignificance() const {
     return Significance;
 }
 
-FormulationEvent::FormulationEvent(int ID,int ED,char missionType, int targetLocation, int missionDuration, int significance):Event(ED, ID)
+FormulationEvent::FormulationEvent(int ID,int ED,char missionType, int targetLocation, int missionDuration, int significance):
+Event(ED, ID,'F')
           {
+
               setMissionType(missionType), setTargetLocation(targetLocation), setMissionDuration(missionDuration),
                       setSignificance(significance);
 
