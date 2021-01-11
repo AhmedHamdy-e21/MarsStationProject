@@ -10,9 +10,9 @@ class PolarMission : public Mission
 {
 public:
     PolarMission();
-    PolarMission(FormulationEvent* EV);
-    PolarMission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):
-    Mission(ED, ID, TargetLocation, MissionDuration,Significance){};
+    PolarMission(FormulationEvent* EV, int Day);
+//    PolarMission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):
+//    Mission(ED, ID, TargetLocation, MissionDuration,Significance){};
 
     void Print() const override;
 

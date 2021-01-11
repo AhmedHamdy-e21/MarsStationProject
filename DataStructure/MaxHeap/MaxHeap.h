@@ -17,7 +17,7 @@ private:
 public:
     int getSize() const;
 private:
-    EmergencyMission * M=new EmergencyMission(-1,-1,-1,-1,-1);
+    EmergencyMission * M=new EmergencyMission(-1,-1,-1,-1,-1,-1);
     vector<EmergencyMission*>vect={M};
     /// Functions the position of the parent
     int p(int i) {return i>>1;}; // i/2

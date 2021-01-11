@@ -10,8 +10,8 @@ void EmergencyMission::Print() const {
     }
 }
 
-EmergencyMission::EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance) : Mission(
-        ED, ID, TargetLocation, MissionDuration, Significance) {
+EmergencyMission::EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance,int FomrulatedDay) : Mission(
+        ED, ID, TargetLocation, MissionDuration, Significance,FomrulatedDay) {
 
 }
 
@@ -31,7 +31,8 @@ void EmergencyMission::setPriority()
     this->priority=((0.01*getTargetLocation())+getMissionDuration()+(3*getSignificance())-getED());
 }
 
-EmergencyMission::EmergencyMission(FormulationEvent *EV):Mission(
-        EV->getEventDay(), EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance())
+EmergencyMission::EmergencyMission(FormulationEvent *EV, int FormulationDay):Mission(
+
+        FormulationDay, EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getEventDay())
 {
 }

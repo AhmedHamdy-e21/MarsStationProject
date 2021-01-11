@@ -17,7 +17,7 @@ void PolarMission::Print() const {
 
 }
 
-PolarMission::PolarMission(FormulationEvent *EV):Mission(
-        EV->getEventDay(), EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance()) {
+PolarMission::PolarMission(FormulationEvent *EV,int Day):Mission(
+        Day, EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getEventDay()) {
 
 }

@@ -26,8 +26,8 @@ void MountainousMission::Print() const {
 
 }
 
-MountainousMission::MountainousMission(FormulationEvent *EV,int AutoP):Mission(
-        EV->getEventDay(), EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance()) {
+MountainousMission::MountainousMission(FormulationEvent *EV,int AutoP, int Day):Mission(
+        Day, EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getEventDay()) {
     setAutoP(AutoP);
 
 }

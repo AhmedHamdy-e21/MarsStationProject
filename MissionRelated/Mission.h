@@ -18,10 +18,42 @@ private:
     bool CompletedMission;
     int ID;
     int ED;
+    int CompletedDay;
+public:
+    void setCompletedDay(int completedDay) {
+        CompletedDay = completedDay;
+    }
+
+    void setFormulatedDay(int formulatedDay) {
+        FormulatedDay = formulatedDay;
+    }
+
+    void setWaitingDays(int waitingDays) {
+        WaitingDays = waitingDays;
+    }
+
+private:
+    int FormulatedDay;
+    int WaitingDays;
+public:
+    int getCompletedDay() const {
+        return CompletedDay;
+    }
+
+    int getFormulatedDay() const {
+        return FormulatedDay;
+    }
+
+    int getWaitingDays() const {
+        return WaitingDays;
+    }
 
 public:
-    Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance)
+
+    Mission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance, int FomrulatedDay)
     {
+        setFormulatedDay(FomrulatedDay);
+
         setED(ED);
 
         setCompletedMission(false);

@@ -142,7 +142,7 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
             // I need a constructor that initialized by the mission.
 
 
-            EmergencyMission* EM=new EmergencyMission(FE);
+            EmergencyMission* EM=new EmergencyMission(FE, CurrentDay);
             MLs.addEmergencyMission(EM);
             // I can recurrsively call the add here
             assignTodaysMission(CurrentDay); //// This recurrsive call should add all emergency mission first then It'll proceed.
@@ -161,7 +161,7 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
         else if(FE->getMissionType()=='M')
         {
             // Don't forget to set the autoP
-            MountainousMission* MM=new MountainousMission(FE,getAutoP());
+            MountainousMission* MM=new MountainousMission(FE,getAutoP(), CurrentDay);
             MLs.addMountainousMission(MM);
             if(assignMountainousMission())
             {
@@ -172,7 +172,7 @@ bool MarsStation::assignTodaysMission(int CurrentDay)
         }
         else if(FE->getMissionType()=='P')
         {
-            PolarMission* PM=new PolarMission(FE);
+            PolarMission* PM=new PolarMission(FE, CurrentDay);
             MLs.addPolarMission(PM);
             if(assignPolarMission())
             {

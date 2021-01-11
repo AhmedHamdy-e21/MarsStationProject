@@ -12,7 +12,7 @@ private:
             int AutoP;
 public:
         MountainousMission();
-        MountainousMission(FormulationEvent* EV,int AutoP);
+        MountainousMission(FormulationEvent* EV,int AutoP, int Day);
         MountainousMission(int AutoP, int ED, int ID, int TargetLocation, int MissionDuration, int Significance);
         void setAutoP(int AutoP);
          void Print() const override ; //Make sure in gitkraken

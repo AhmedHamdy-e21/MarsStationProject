@@ -14,8 +14,8 @@ class EmergencyMission : public Mission
 
 public:
     EmergencyMission();
-    EmergencyMission(FormulationEvent* EV);
-    EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance);
+    EmergencyMission(FormulationEvent* EV,int FormulationDay);
+    EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance,int FomrulatedDay);
     void setPriority();
     int getPriority();
     void Print()  const override ;//Make sure in gitkraken
