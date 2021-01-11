@@ -60,7 +60,11 @@ Event.h
 Event.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/Event.h
 
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PrompteEvent.h
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PromoteEvent.cpp
+PromoteEvent.h
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PromoteEvent.h
+
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PromoteEvent.h
 Event.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/Event.h
 
@@ -75,8 +79,8 @@ EventLists.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/FormulationEvent.h
 ../EventRelated/CancelEvent.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/CancelEvent.h
-../EventRelated/PrompteEvent.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PrompteEvent.h
+../EventRelated/PromoteEvent.h
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PromoteEvent.h
 
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MarsStation.cpp
 MarsStation.h
@@ -89,8 +93,8 @@ MarsStation.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/RoverLists.h
 ../EventRelated/FormulationEvent.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/FormulationEvent.h
-../EventRelated/PrompteEvent.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PrompteEvent.h
+../EventRelated/PromoteEvent.h
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PromoteEvent.h
 ../EventRelated/CancelEvent.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/CancelEvent.h
 ../EventRelated/Event.h
@@ -117,10 +121,6 @@ string
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/Queue/LinkedQueue.h
 ../DataStructure/Queue/NodeQ.cpp
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/Queue/NodeQ.cpp
-
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/RoverLists.cpp
-RoverLists.h
-/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/RoverLists.h
 
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/RoverLists.h
 ../RoverRelated/MountainousRover.h
