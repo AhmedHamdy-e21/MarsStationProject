@@ -219,7 +219,7 @@ void RoverLists::addMultipleAvailableEmergencyRovers(int NumberOfEmergencyRovers
 void RoverLists::addMultipleAvailablePolarRovers(int NumberOfPolarRovers,int Speed, int CheckupDuration, int NoCheckupMissions,int ID)
 {
     int i=0;
-    int n=getNoOfAvailablePolarRovers(); // This is to generate ids for rovers
+    int n=getNoOfAvailableMountainousRovers(); // This is to generate ids for rovers
     for ( i = 0; i <NumberOfPolarRovers ; ++i)
     {
         PolarRover* PR=new PolarRover(Speed,CheckupDuration,NoCheckupMissions,i+n);

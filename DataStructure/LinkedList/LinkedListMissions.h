@@ -207,7 +207,7 @@ public:
     }
 
     void DeleteLast(){
-        cout<<"\nDeleting the last element"<<endl;
+//        cout<<"\nDeleting the last element"<<endl;
         if(Head == nullptr){
             return;
         }
@@ -248,7 +248,7 @@ public:
     }
 
     T DeleteFirst(){
-        cout<<"\nDeleting the first element"<<endl;
+//        cout<<"\nDeleting the first element"<<endl;
         T ReturnedObj;
         if(Head)
         {
