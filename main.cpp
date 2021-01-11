@@ -16,9 +16,7 @@
 //#include "DataStructure/MaxHeap/MaxHeap.cpp"
 //#include "DataStructure/Queue/LinkedQueue.h"
 //#include "DataStructure/Queue/NodeQ.cpp"
-
 #include  "MarsStationRelated/MarsStation.h"
-
 
 int main() {
 
@@ -67,7 +65,14 @@ int main() {
 //    RL.getInMissionEmergencyRovers().PrintList();
 //    EM1=RL.getInMissionEmergencyRover();
 //    EM1->Print();
-MarsStation MR;
-MR.loadFile("../ConfigurationFile.txt");
+
+//MarsStation MR;
+//MR.loadFile("../ConfigurationFile.txt");
+    enum Throws {R, P, S};
+    int userInput;
+    cout << "What is your throw : ";
+    cin >> userInput;
+    Throws userThrow = (Throws)userInput;
+    cout<<userThrow;
     return 0;
 }

@@ -1,18 +1,13 @@
 //
 // Created by raspberry on 2021-01-10.
 //
-
 #ifndef MARSSTATIONPROJECT_MARSSTATION_H
 #define MARSSTATIONPROJECT_MARSSTATION_H
-//#include "../DataStructure/Queue/LinkedQueue.cpp"
-
 #include  "../MarsStationRelated/MissionLists.h"
 #include  "../MarsStationRelated/RoverLists.h"
 #include "EventLists.h"
 #include <fstream>
 #include <string>
-
-
 class MarsStation
 {
 private:
@@ -25,8 +20,6 @@ private:
 public:
     MarsStation();
     void loadFile(string FileName);
-
     ~MarsStation();
-
 };
 #endif //MARSSTATIONPROJECT_MARSSTATION_H

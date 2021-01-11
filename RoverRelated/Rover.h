@@ -16,7 +16,9 @@ private:
     int MissionDuration;
 public:
     Rover();
+
     Rover(int Speed, int CheckupDuration,int NoCheckupMissions);
+
     void setNoCheckupMissions(int noCheckupMissions);
 
     void setCheckupDuration(int checkupDuration);
