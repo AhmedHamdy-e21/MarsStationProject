@@ -144,56 +144,47 @@ bool LinkedQueue<T>:: dequeue(T& frntEntry)
 		backPtr = nullptr ;
 
 	// Free memory reserved for the dequeued node
-    nodeToDeletePtr = nullptr; // I did just a little memory leak right here because I don't know why it keeps giving me error msg.
-    // so these little bytes won't affect the memory ISA.
-    // Also professional programmers like those who developed google chrome are okay with leaking some memories.
+    nodeToDeletePtr = nullptr;
+    ///// Here i did memory leak on purpose.
+    //// As i actually need the mission to be passed to another data structure by just pointing to it.
+    //// More clearly, when mission is assigned, it moves from waiting to inexecution. so I just make inexecution list
+    //// points to its register, and the waiting list points to null.
+    //// So by doing this , there is no memory leak.
 
-    delete [] nodeToDeletePtr;
+    //// But then when it moves to the inexecution list. it's a linked list which deals with freeing the memory.
+    //// And for other usage of the queue, I'll always keep in mind to pass the same pointers till the end of the program
+    //// I'll store this in the history and then delete it in the final destructor.
+
+
+    //// THE REASON that I implemented it that way, because i think it's faster in compilation as I don't need at each time
+    //// to delete and create obj of the same data. so I just point to the same obj each time. I think this is more efficient maybe.
+
+
+    //// Also in order to avoid obj slicing, I need to always deal with pointers in order for the polymorphism to work correctly.
+
+
+//    delete [] nodeToDeletePtr;
 //    free( nodeToDeletePtr);
     size--;
-
-
 	return true;
 }
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-Function: peek
-copies the front of this queue to the passed param. The operation does not modify the queue.
-
-Input: None.
-Output: The front of the queue.
-*/
 
 template <typename T>
 bool LinkedQueue<T>:: peek(T& frntEntry) const 
 {
 	if(isEmpty())
 		return false;
-
 	frntEntry = frontPtr->getItem();
 	return true;
-
 }
 ///////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 template <typename T>
 LinkedQueue<T>::~LinkedQueue()
 {
-	//Note that the cout statements here is just for learning purpose
-	//They should be normally removed from the destructor
-//	cout<<"\nStarting LinkedQueue destructor...";
-//	cout<<"\nFreeing all nodes in the queue...";
-
-	//Free all nodes in the queue
 	T temp;
 	while(dequeue(temp));
 
-//	cout<<"\n Is LinkedQueue Empty now?? ==> "<<boolalpha<<isEmpty();
-//	cout<<"\nEnding LinkedQueue destructor..."<<endl;
 }
 
 template<typename T>
