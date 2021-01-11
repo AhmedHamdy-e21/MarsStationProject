@@ -71,10 +71,10 @@ MR.loadFile("../ConfigurationFile.txt");
 int i=0;
 //while(i<26)
 //{
-//    MR.simulate(18);
-MR.assignTodaysMission(5);
-MR.promoteTodaysMission(19);
-    i++;
+    MR.simulate(1);
+//MR.assignTodaysMission(5);
+//MR.promoteTodaysMission(19);
+//    i++;
 //}
 
 

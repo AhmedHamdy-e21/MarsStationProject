@@ -79,7 +79,7 @@ int MissionLists::getNoOfCompletedPolar() const {
     return NoOfCompletedPolar;
 }
 
-int MissionLists::getNoOfCompletedEmergency() const {
+int MissionLists::getNoOfCompletedEmergency()  {
     return NoOfCompletedEmergency;
 }
 

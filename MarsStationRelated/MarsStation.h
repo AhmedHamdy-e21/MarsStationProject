@@ -51,6 +51,11 @@ public:
     Rover* CompletedMountainous(MountainousMission* MM);
     Rover* CompletedPolar(PolarMission* PM);
     Rover* CompletedEmergency(EmergencyMission* EM);
+    ///// I need to implement a function that transfer Rovers from Inmission to either Checkup or Avaialble
+
+
+    ///////////////
+
     bool isCompletedToday(int CurrentDay);
 
     // Think how you will know whether it's completed or not.

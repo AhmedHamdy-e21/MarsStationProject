@@ -289,11 +289,26 @@ bool MarsStation::isCompletedToday(int CurrentDay)
     //// And free the robot,
     //// Then check whether it can go to available or go to checkup
 
-    MLs.getInExecutionPolar();
-    MLs.getInExecutionEmergency();
-    MLs.getInExecutionMountainous();
+    //// Use the FindCompleted method.
 
-    return false;
+while(MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionMountainous().FindCompleted(CurrentDay)||MLs.getInExecutionEmergency().FindCompleted(CurrentDay))
+{
+    if(MLs.getInExecutionPolar().FindCompleted(CurrentDay))
+    {
+
+        CompletedPolar(MLs.getInExecutionPolar().FindCompleted(CurrentDay));
+    }
+    else if(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))
+    {
+
+        CompletedMountainous(MLs.getInExecutionMountainous().FindCompleted(CurrentDay));
+    }
+    else if(MLs.getInExecutionEmergency().FindCompleted(CurrentDay))
+    {
+
+        CompletedEmergency(MLs.getInExecutionEmergency().FindCompleted(CurrentDay));
+    }
+}
 }
 
 void MarsStation::simulate(int CurrentDay)
@@ -304,14 +319,16 @@ void MarsStation::simulate(int CurrentDay)
     // I need to print and also I need to check when the mission is finished to transfer it to the completed
     // and add the rover to the list.
     int i=0;// This is for just experimenting
-    while(i<26)
+    while(i<25)
     {
-        UserInterface.getProgramMode();
+//        UserInterface.getProgramMode();
         assignTodaysMission(CurrentDay);
+        isCompletedToday( CurrentDay);
         cancelTodaysMission(CurrentDay);
         promoteTodaysMission(CurrentDay);
         cout<<CurrentDay;
         CurrentDay++;
+        i++;
     }
 
     // return when there is nothing to do
@@ -337,6 +354,8 @@ Rover* MarsStation::CompletedMountainous(MountainousMission *MM)
     MountainousMission M=*MM;
     MLs.getInExecutionMountainous().DeleteNode(ID);
     MLs.getCompletedMountainous().InsertBeg(&M);
+    //// Here I can Delete the pair
+    eraseIDPair(ID);
 }
 
 Rover* MarsStation::CompletedPolar(PolarMission *PM)
@@ -347,6 +366,8 @@ Rover* MarsStation::CompletedPolar(PolarMission *PM)
     PolarMission M=*PM;
     MLs.getInExecutionPolar().DeleteNode(ID);
     MLs.getCompletedPolar().InsertBeg(&M);
+    //// Here I can Delete the pair
+    eraseIDPair(ID);
 }
 
 Rover* MarsStation::CompletedEmergency(EmergencyMission *EM)
@@ -357,4 +378,6 @@ Rover* MarsStation::CompletedEmergency(EmergencyMission *EM)
     EmergencyMission M=*EM;
     MLs.getInExecutionEmergency().DeleteNode(ID);
     MLs.getCompletedEmergency().InsertBeg(&M);
+    //// Here I can Delete the pair
+    eraseIDPair(ID);
 }

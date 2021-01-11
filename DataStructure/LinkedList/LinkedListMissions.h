@@ -264,8 +264,8 @@ public:
             }
             p = p->getNext();
         }
-        cout<<"\n completed Missions: ";
-        cout<<" not found"<<endl;
+//        cout<<"\n completed Missions: ";
+//        cout<<" not found"<<endl;
         return nullptr;
     }
 
