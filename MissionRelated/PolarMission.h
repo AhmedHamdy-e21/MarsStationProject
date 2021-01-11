@@ -11,6 +11,7 @@ class PolarMission : public Mission
 public:
     PolarMission();
     PolarMission(FormulationEvent* EV, int Day);
+    PolarMission(PolarMission* EV);
 //    PolarMission(int ED,int ID,int TargetLocation,int MissionDuration,int Significance):
 //    Mission(ED, ID, TargetLocation, MissionDuration,Significance){};
 

@@ -357,15 +357,14 @@ Rover* MarsStation::CompletedMountainous(MountainousMission *MM)
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }
-
 Rover* MarsStation::CompletedPolar(PolarMission *PM)
 {
     int ID;
     ID=PM->getID();
     /// This is the completed Mission
-    PolarMission M=*PM;
+    PolarMission* M=new PolarMission(PM);
     MLs.getInExecutionPolar().DeleteNode(ID);
-    MLs.getCompletedPolar().InsertBeg(&M);
+    MLs.getCompletedPolar().InsertBeg(M);
     //// Here I can Delete the pair
     eraseIDPair(ID);
 }
