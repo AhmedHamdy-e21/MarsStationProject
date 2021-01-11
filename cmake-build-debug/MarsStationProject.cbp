@@ -100,6 +100,9 @@
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/MaxHeap/MaxHeap.h">
 			<Option target="MarsStationProject"/>
 		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/Queue/LinkedQueue.cpp">
+			<Option target="MarsStationProject"/>
+		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/Queue/LinkedQueue.h">
 			<Option target="MarsStationProject"/>
 		</Unit>

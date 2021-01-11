@@ -224,6 +224,33 @@ DataStructure/MaxHeap/MaxHeap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/DataStructure/MaxHeap/MaxHeap.cpp.s
 .PHONY : DataStructure/MaxHeap/MaxHeap.cpp.s
 
+DataStructure/Queue/LinkedQueue.o: DataStructure/Queue/LinkedQueue.cpp.o
+
+.PHONY : DataStructure/Queue/LinkedQueue.o
+
+# target to build an object file
+DataStructure/Queue/LinkedQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/DataStructure/Queue/LinkedQueue.cpp.o
+.PHONY : DataStructure/Queue/LinkedQueue.cpp.o
+
+DataStructure/Queue/LinkedQueue.i: DataStructure/Queue/LinkedQueue.cpp.i
+
+.PHONY : DataStructure/Queue/LinkedQueue.i
+
+# target to preprocess a source file
+DataStructure/Queue/LinkedQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/DataStructure/Queue/LinkedQueue.cpp.i
+.PHONY : DataStructure/Queue/LinkedQueue.cpp.i
+
+DataStructure/Queue/LinkedQueue.s: DataStructure/Queue/LinkedQueue.cpp.s
+
+.PHONY : DataStructure/Queue/LinkedQueue.s
+
+# target to generate assembly for a file
+DataStructure/Queue/LinkedQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/DataStructure/Queue/LinkedQueue.cpp.s
+.PHONY : DataStructure/Queue/LinkedQueue.cpp.s
+
 DataStructure/Queue/NodeQ.o: DataStructure/Queue/NodeQ.cpp.o
 
 .PHONY : DataStructure/Queue/NodeQ.o
@@ -755,6 +782,9 @@ help:
 	@echo "... DataStructure/MaxHeap/MaxHeap.o"
 	@echo "... DataStructure/MaxHeap/MaxHeap.i"
 	@echo "... DataStructure/MaxHeap/MaxHeap.s"
+	@echo "... DataStructure/Queue/LinkedQueue.o"
+	@echo "... DataStructure/Queue/LinkedQueue.i"
+	@echo "... DataStructure/Queue/LinkedQueue.s"
 	@echo "... DataStructure/Queue/NodeQ.o"
 	@echo "... DataStructure/Queue/NodeQ.i"
 	@echo "... DataStructure/Queue/NodeQ.s"

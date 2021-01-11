@@ -3,7 +3,7 @@
 //
 
 #include "RoverLists.h"
-
+#include "../DataStructure/Queue/LinkedQueue.cpp"
 const LinkedQueue<EmergencyRover *> &RoverLists::getAvailableEmergencyRovers() const {
     return AvailableEmergencyRovers;
 }

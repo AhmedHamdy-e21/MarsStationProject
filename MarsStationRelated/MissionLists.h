@@ -8,7 +8,8 @@
 #include "../MissionRelated/MountainousMission.h"
 #include "../DataStructure/LinkedList/LinkedListMissions.h"
 #include "../DataStructure/MaxHeap/MaxHeap.cpp"
-#include "../DataStructure/Queue/LinkedQueue.h"
+//#include "../DataStructure/Queue/LinkedQueue.h"
+#include "../DataStructure/Queue/LinkedQueue.cpp"
 #include "../DataStructure/Queue/NodeQ.cpp"
 
 //#include "../DataStructure/Queue/NodeQ.h"

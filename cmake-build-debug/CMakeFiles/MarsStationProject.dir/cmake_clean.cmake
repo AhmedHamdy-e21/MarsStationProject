@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MarsStationProject.dir/DataStructure/LinkedList/LinkedListMissions.cpp.o"
   "CMakeFiles/MarsStationProject.dir/DataStructure/LinkedList/NodeMission.cpp.o"
   "CMakeFiles/MarsStationProject.dir/DataStructure/MaxHeap/MaxHeap.cpp.o"
+  "CMakeFiles/MarsStationProject.dir/DataStructure/Queue/LinkedQueue.cpp.o"
   "CMakeFiles/MarsStationProject.dir/DataStructure/Queue/NodeQ.cpp.o"
   "CMakeFiles/MarsStationProject.dir/EventRelated/CancelEvent.cpp.o"
   "CMakeFiles/MarsStationProject.dir/EventRelated/Event.cpp.o"
