@@ -10,6 +10,8 @@ class PromoteEvent: public Event
 {
 public:
     PromoteEvent(int ED, int ID);
+    void Print() override;
+
 
 };
 

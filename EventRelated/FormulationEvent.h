@@ -5,19 +5,19 @@
 #ifndef MARSSTATIONPROJECT_FORMULATIONEVENT_H
 #define MARSSTATIONPROJECT_FORMULATIONEVENT_H
 #include "Event.h"
-enum type { M, P , E};
+
 class FormulationEvent : public Event
 {
 private:
-    type MissionType;
+    char MissionType;
     int TargetLocation;
     int MissionDuration;
     int Significance;
 public:
 
-    FormulationEvent(int ID,int ED,type missionType, int targetLocation, int missionDuration, int significance);
+    FormulationEvent(int ID,int ED,char missionType, int targetLocation, int missionDuration, int significance);
 
-    type getMissionType() const;
+    char getMissionType() const;
 
     int getTargetLocation() const;
 
@@ -25,13 +25,14 @@ public:
 
     int getSignificance() const;
 
-    void setMissionType(type missionType);
+    void setMissionType(char missionType);
 
     void setTargetLocation(int targetLocation);
 
     void setMissionDuration(int missionDuration);
 
     void setSignificance(int significance);
+    void Print() override;
 
     virtual ~FormulationEvent();
 

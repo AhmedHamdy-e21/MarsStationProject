@@ -46,19 +46,25 @@ void MarsStation::loadFile(string FileName)
             inputFile >> TLOC;
             inputFile >> MIDUR;
             inputFile >> SIG;
-
+            EVs.addFormulationEvent(ID,ED,TYP,TLOC,MIDUR,SIG); // It's loading correctly, I check it in the debugging mode
         }
         else if (type == "X")
         {
             inputFile >> ED;
             inputFile >> ID;
-
+            EVs.addCancellationEvent(ID,ED);
+            CancelEvent* CV;
+            EVs.getCancellationEventList().peek(CV);
+            CV->Print();
         }
         else if (type == "P")
         {
             inputFile >> ED;
             inputFile >> ID;
-
+            EVs.addPromotionEvent(ED,ID);
+            PromoteEvent* CV;
+            EVs.getPromotionEventList().peek(CV);
+            CV->Print();
         }
     }
 

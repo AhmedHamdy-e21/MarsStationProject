@@ -10,6 +10,7 @@ class CancelEvent:public Event
 {
 public:
     CancelEvent(int ID,int ED);
+    void Print() override;
 
 };
 

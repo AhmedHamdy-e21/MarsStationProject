@@ -19,8 +19,9 @@ const LinkedQueue<PromoteEvent *> &EventLists::getPromotionEventList() const
     return PromotionEventList;
 }
 
-void EventLists::addFormulationEvent(FormulationEvent* FE)
+void EventLists::addFormulationEvent(int ID,int ED,char missionType, int targetLocation, int missionDuration, int significance)
 {
+    FormulationEvent* FE=new FormulationEvent(ID,ED,missionType,targetLocation,missionDuration,significance);
     FormulationEventList.enqueue(FE);
 
 }
@@ -32,8 +33,10 @@ FormulationEvent *EventLists::getFormulationEvent()
     return Ev;
 }
 
-void EventLists::addCancellationEvent(CancelEvent * CE)
+void EventLists::addCancellationEvent(int ID,int ED)
+
 {
+    CancelEvent* CE=new CancelEvent(ID,ED);
     CancellationEventList.enqueue(CE);
 
 }
@@ -45,8 +48,9 @@ CancelEvent *EventLists::getCancellationEvent()
     return Ev;
 }
 
-void EventLists::addPromotionEvent(PromoteEvent * PE)
+void EventLists::addPromotionEvent(int ED, int ID)
 {
+    PromoteEvent* PE=new PromoteEvent(ED,ID);
     PromotionEventList.enqueue(PE);
 }
 
