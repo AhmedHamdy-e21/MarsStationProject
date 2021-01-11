@@ -31,9 +31,9 @@ void EmergencyMission::setPriority()
     this->priority=((0.01*getTargetLocation())+getMissionDuration()+(3*getSignificance())-getED());
 }
 
-EmergencyMission::EmergencyMission(FormulationEvent *EV, int FormulationDay):Mission(
+EmergencyMission::EmergencyMission(FormulationEvent *EV, int ExecutionDay):Mission(
 
-        FormulationDay, EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getEventDay())
+        ExecutionDay, EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getEventDay())// The getEventDay is the formulation
 {
 }
 

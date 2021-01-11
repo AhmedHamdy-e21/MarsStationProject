@@ -38,7 +38,7 @@ public:
 
     void setSignificance(int significance);
 
-    bool isCompletedMission() const;
+    bool isCompletedMission(int CurrentDay) ;
 
     void setCompletedMission(bool completedMission);
 

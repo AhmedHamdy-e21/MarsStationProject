@@ -62,7 +62,13 @@ void Mission::setSignificance(int significance) {
     Significance = significance;
 }
 
-bool Mission::isCompletedMission() const {
+bool Mission::isCompletedMission(int CurrentDay)
+{
+    if( CurrentDay==(getED()+getMissionDuration()))
+    {
+        setCompletedMission(true);
+    }
+
     return CompletedMission;
 }
 

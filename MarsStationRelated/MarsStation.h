@@ -9,14 +9,23 @@
 #include <fstream>
 #include <string>
 #include "UIClass.h"
+#include <map>
 class MarsStation
 {
 private:
     MissionLists MLs;
     RoverLists RLs;
     EventLists EVs;
+    // I need to map the mission ids to the rovers id using map simply
+
+
+    map<int, int> IDDictionary;
+
     int AutoP;
 public:
+
+    void insertIDPair(int MissionID,int RoverID);
+    void eraseIDPair(int MissionID);
 
     const MissionLists &getMLs() const;
 
@@ -39,7 +48,7 @@ public:
     bool assignTodaysMission(int CurrentDay);
 
     //// Check for the completed missions and then transfer them to the completed list.
-    bool isCompletedYet();
+    bool isCompletedYet(int CurrentDay);
     // Think how you will know whether it's completed or not.
     bool cancelTodaysMission(int CurrentDay);
     bool promoteTodaysMission(int CurrentDay);

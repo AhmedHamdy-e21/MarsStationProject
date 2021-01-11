@@ -71,7 +71,7 @@ void MarsStation::loadFile(string FileName)
 }
 
 MarsStation::MarsStation() {
-
+//    this->IDDictionary.insert({-1,-1});
 }
 
 MarsStation::~MarsStation() {
@@ -261,8 +261,14 @@ bool MarsStation::promoteTodaysMission(int CurrentDay)
     return false;
 }
 
-bool MarsStation::isCompletedYet()
+bool MarsStation::isCompletedYet(int CurrentDay)
 {
+    /// now I have is completed function in each missions that takes the current day
+    /// I need to loop on the Inexecution List. O.o I need to trace which robots has which mission
+
+    /// I can store them in dictionary like
+
+
 
     return false;
 }
@@ -281,7 +287,6 @@ void MarsStation::simulate(int CurrentDay)
         assignTodaysMission(CurrentDay);
         cancelTodaysMission(CurrentDay);
         promoteTodaysMission(CurrentDay);
-        i++;
         cout<<CurrentDay;
         CurrentDay++;
     }
@@ -289,4 +294,14 @@ void MarsStation::simulate(int CurrentDay)
     // return when there is nothing to do
     //return;
 
+}
+
+void MarsStation::insertIDPair(int MissionID, int RoverID)
+{
+    IDDictionary.insert({MissionID,RoverID});
+}
+
+void MarsStation::eraseIDPair(int MissionID)
+{
+    IDDictionary.erase(MissionID);
 }
