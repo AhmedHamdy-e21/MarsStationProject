@@ -42,6 +42,7 @@ public:
     // Think how you will know whether it's completed or not.
     bool cancelTodaysMission(int CurrentDay);
     bool promoteTodaysMission(int CurrentDay);
+    void simulate(int CurrentDay);
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

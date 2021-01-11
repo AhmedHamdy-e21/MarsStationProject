@@ -266,3 +266,15 @@ bool MarsStation::isCompletedYet()
 
     return false;
 }
+
+void MarsStation::simulate(int CurrentDay)
+{
+
+    
+
+
+
+    // return when there is nothing to do
+    //return;
+
+}
