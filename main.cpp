@@ -68,7 +68,6 @@ int main() {
 //    EM1=RL.getInMissionEmergencyRover();
 //    EM1->Print();
 MarsStation MR;
-MR.loadFile("ConfigurationFile.txt");
-
+MR.loadFile("../ConfigurationFile.txt");
     return 0;
 }

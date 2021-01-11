@@ -7,7 +7,7 @@ void MarsStation::loadFile(string FileName)
 {
     ifstream inputFile;
 
-    inputFile.open("../Input Sample.txt");
+    inputFile.open(FileName);
     // Check for Error:
     if (inputFile.fail()) {
         cerr << "Error opening the file" << endl;
@@ -40,13 +40,13 @@ void MarsStation::loadFile(string FileName)
         inputFile >> type;
         if (type == "F")
         {
-
             inputFile >> TYP;
             inputFile >> ED;
             inputFile >> ID;
             inputFile >> TLOC;
             inputFile >> MIDUR;
             inputFile >> SIG;
+
         }
         else if (type == "X")
         {

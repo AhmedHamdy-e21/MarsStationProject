@@ -332,32 +332,59 @@ EventRelated/FormulationEvent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/EventRelated/FormulationEvent.cpp.s
 .PHONY : EventRelated/FormulationEvent.cpp.s
 
-EventRelated/PrompteEvent.o: EventRelated/PrompteEvent.cpp.o
+EventRelated/PromoteEvent.o: EventRelated/PromoteEvent.cpp.o
 
-.PHONY : EventRelated/PrompteEvent.o
+.PHONY : EventRelated/PromoteEvent.o
 
 # target to build an object file
-EventRelated/PrompteEvent.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/EventRelated/PrompteEvent.cpp.o
-.PHONY : EventRelated/PrompteEvent.cpp.o
+EventRelated/PromoteEvent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/EventRelated/PromoteEvent.cpp.o
+.PHONY : EventRelated/PromoteEvent.cpp.o
 
-EventRelated/PrompteEvent.i: EventRelated/PrompteEvent.cpp.i
+EventRelated/PromoteEvent.i: EventRelated/PromoteEvent.cpp.i
 
-.PHONY : EventRelated/PrompteEvent.i
+.PHONY : EventRelated/PromoteEvent.i
 
 # target to preprocess a source file
-EventRelated/PrompteEvent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/EventRelated/PrompteEvent.cpp.i
-.PHONY : EventRelated/PrompteEvent.cpp.i
+EventRelated/PromoteEvent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/EventRelated/PromoteEvent.cpp.i
+.PHONY : EventRelated/PromoteEvent.cpp.i
 
-EventRelated/PrompteEvent.s: EventRelated/PrompteEvent.cpp.s
+EventRelated/PromoteEvent.s: EventRelated/PromoteEvent.cpp.s
 
-.PHONY : EventRelated/PrompteEvent.s
+.PHONY : EventRelated/PromoteEvent.s
 
 # target to generate assembly for a file
-EventRelated/PrompteEvent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/EventRelated/PrompteEvent.cpp.s
-.PHONY : EventRelated/PrompteEvent.cpp.s
+EventRelated/PromoteEvent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/EventRelated/PromoteEvent.cpp.s
+.PHONY : EventRelated/PromoteEvent.cpp.s
+
+MarsStationRelated/EventLists.o: MarsStationRelated/EventLists.cpp.o
+
+.PHONY : MarsStationRelated/EventLists.o
+
+# target to build an object file
+MarsStationRelated/EventLists.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/EventLists.cpp.o
+.PHONY : MarsStationRelated/EventLists.cpp.o
+
+MarsStationRelated/EventLists.i: MarsStationRelated/EventLists.cpp.i
+
+.PHONY : MarsStationRelated/EventLists.i
+
+# target to preprocess a source file
+MarsStationRelated/EventLists.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/EventLists.cpp.i
+.PHONY : MarsStationRelated/EventLists.cpp.i
+
+MarsStationRelated/EventLists.s: MarsStationRelated/EventLists.cpp.s
+
+.PHONY : MarsStationRelated/EventLists.s
+
+# target to generate assembly for a file
+MarsStationRelated/EventLists.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MarsStationProject.dir/build.make CMakeFiles/MarsStationProject.dir/MarsStationRelated/EventLists.cpp.s
+.PHONY : MarsStationRelated/EventLists.cpp.s
 
 MarsStationRelated/MarsStation.o: MarsStationRelated/MarsStation.cpp.o
 
@@ -740,9 +767,12 @@ help:
 	@echo "... EventRelated/FormulationEvent.o"
 	@echo "... EventRelated/FormulationEvent.i"
 	@echo "... EventRelated/FormulationEvent.s"
-	@echo "... EventRelated/PrompteEvent.o"
-	@echo "... EventRelated/PrompteEvent.i"
-	@echo "... EventRelated/PrompteEvent.s"
+	@echo "... EventRelated/PromoteEvent.o"
+	@echo "... EventRelated/PromoteEvent.i"
+	@echo "... EventRelated/PromoteEvent.s"
+	@echo "... MarsStationRelated/EventLists.o"
+	@echo "... MarsStationRelated/EventLists.i"
+	@echo "... MarsStationRelated/EventLists.s"
 	@echo "... MarsStationRelated/MarsStation.o"
 	@echo "... MarsStationRelated/MarsStation.i"
 	@echo "... MarsStationRelated/MarsStation.s"

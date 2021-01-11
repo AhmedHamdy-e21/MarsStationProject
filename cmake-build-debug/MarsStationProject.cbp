@@ -130,10 +130,16 @@
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/FormulationEvent.h">
 			<Option target="MarsStationProject"/>
 		</Unit>
-		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PrompteEvent.cpp">
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PromoteEvent.cpp">
 			<Option target="MarsStationProject"/>
 		</Unit>
-		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PrompteEvent.h">
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/EventRelated/PromoteEvent.h">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/EventLists.cpp">
+			<Option target="MarsStationProject"/>
+		</Unit>
+		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/EventLists.h">
 			<Option target="MarsStationProject"/>
 		</Unit>
 		<Unit filename="/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MarsStation.cpp">
