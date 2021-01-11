@@ -52,6 +52,14 @@ void UIClass::addToEmergencyString(int N)
     cout<<" ["<<N<<"] ";
 }
 
+UIClass::UIClass() {
+
+}
+
+UIClass::~UIClass() {
+
+}
+
 
 
 

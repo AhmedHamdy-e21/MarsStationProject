@@ -8,6 +8,7 @@
 #include "EventLists.h"
 #include <fstream>
 #include <string>
+#include "UIClass.h"
 class MarsStation
 {
 private:

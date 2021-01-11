@@ -13,6 +13,7 @@ private:
     PROG_MODE mode;
 
 public:
+    UIClass();
     PROG_MODE getProgramMode();
     void printString(string text);
     void waitForUser();// needed in the interactive mode to wait the user input
@@ -22,6 +23,7 @@ public:
     void addToCompletedString(string text);
     void addToPolarString(int N);
     void addToEmergencyString(int N);
+    ~UIClass();
 
 };
 #endif //MARS_MISSIONS_MANAGEMENT_UICLASS_H

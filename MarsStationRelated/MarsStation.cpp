@@ -269,8 +269,18 @@ bool MarsStation::isCompletedYet()
 
 void MarsStation::simulate(int CurrentDay)
 {
+    /// The condition when everything return false
+    UIClass UserInterface;
 
-    
+    while(true)
+    {
+        UserInterface.getProgramMode();
+
+
+
+    }
+
+
 
 
 
