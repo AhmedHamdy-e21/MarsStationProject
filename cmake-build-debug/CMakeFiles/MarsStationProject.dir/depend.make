@@ -67,6 +67,7 @@ CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MarsS
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MarsStationRelated/MarsStation.h
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MarsStationRelated/MissionLists.h
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MarsStationRelated/RoverLists.h
+CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MarsStationRelated/UIClass.h
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MissionRelated/EmergencyMission.h
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MissionRelated/Mission.h
 CMakeFiles/MarsStationProject.dir/MarsStationRelated/MarsStation.cpp.o: ../MissionRelated/MountainousMission.h
@@ -164,6 +165,7 @@ CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MarsStationRelated/EventLists.h
 CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MarsStationRelated/MarsStation.h
 CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MarsStationRelated/MissionLists.h
 CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MarsStationRelated/RoverLists.h
+CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MarsStationRelated/UIClass.h
 CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MissionRelated/EmergencyMission.h
 CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MissionRelated/Mission.h
 CMakeFiles/MarsStationProject.dir/main.cpp.o: ../MissionRelated/MountainousMission.h

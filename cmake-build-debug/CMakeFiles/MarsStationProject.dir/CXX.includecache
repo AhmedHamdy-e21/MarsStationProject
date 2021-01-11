@@ -95,6 +95,8 @@ fstream
 -
 string
 -
+UIClass.h
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/UIClass.h
 
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/MissionLists.h
 ../MissionRelated/Mission.h
@@ -125,6 +127,12 @@ string
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/Queue/LinkedQueue.h
 ../DataStructure/LinkedList/LinkedListMissions.h
 /home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/DataStructure/LinkedList/LinkedListMissions.h
+iostream
+-
+
+/home/raspberry/Desktop/Fall 2020/CIE 205 - Data Structures and Algorithm Analysis/Project/MarsStationProject/MarsStationProject/MarsStationRelated/UIClass.h
+unistd.h
+-
 iostream
 -
 

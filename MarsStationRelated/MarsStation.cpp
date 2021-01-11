@@ -271,18 +271,18 @@ void MarsStation::simulate(int CurrentDay)
 {
     /// The condition when everything return false
     UIClass UserInterface;
-
-    while(true)
+    loadFile("../ConfigurationFile.txt");
+    // I need to print and also I need to check when the mission is finished to transfer it to the completed
+    // and add the rover to the list.
+    int i=0;// This is for just experimenting
+    while(i<7)
     {
         UserInterface.getProgramMode();
-
-
-
+        assignTodaysMission(CurrentDay);
+        cancelTodaysMission(CurrentDay);
+        promoteTodaysMission(CurrentDay);
+        i++;
     }
-
-
-
-
 
     // return when there is nothing to do
     //return;
