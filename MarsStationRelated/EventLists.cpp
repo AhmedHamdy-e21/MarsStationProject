@@ -60,3 +60,24 @@ PromoteEvent *EventLists::getPromotionEvent()
     PromotionEventList.dequeue(Ev);
     return Ev;
 }
+
+FormulationEvent *EventLists::peekFormulationEvent()
+{
+    FormulationEvent * FE;
+    FormulationEventList.peek(FE);
+    return FE;
+}
+
+CancelEvent *EventLists::peekCancellationEvent() {
+    CancelEvent * CE;
+    CancellationEventList.peek(CE);
+    return CE;
+
+}
+
+PromoteEvent *EventLists::peekPromotionEvent()
+{
+    PromoteEvent * PE;
+    PromotionEventList.peek(PE);
+    return PE;
+}

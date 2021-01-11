@@ -210,10 +210,10 @@ void RoverLists::addMultipleAvailableEmergencyRovers(int NumberOfEmergencyRovers
         EmergencyRover* ER=new EmergencyRover(Speed,CheckupDuration,NoCheckupMissions);
         addAvailableEmergencyRover(ER);
     }
-    cout<< "\nAdded "<<AvailableEmergencyRovers.getSize()<<" Emergency Rovers to be Available\n";
-    EmergencyRover* MR;
-    cout<< "My information is: ";AvailableEmergencyRovers.peek(MR);
-    MR->Print();
+//    cout<< "\nAdded "<<AvailableEmergencyRovers.getSize()<<" Emergency Rovers to be Available\n";
+//    EmergencyRover* MR;
+//    cout<< "My information is: ";AvailableEmergencyRovers.peek(MR);
+//    MR->Print();
 
 }
 
@@ -226,10 +226,10 @@ void RoverLists::addMultipleAvailablePolarRovers(int NumberOfPolarRovers,
         PolarRover* PR=new PolarRover(Speed,CheckupDuration,NoCheckupMissions);
         addAvailablePolarRover(PR);
     }
-    cout<< "\nAdded "<<AvailablePolarRovers.getSize()<<" Polar Rovers to be Available\n";
-    PolarRover* MR;
-    cout<< "My information is: ";AvailablePolarRovers.peek(MR);
-    MR->Print();
+//    cout<< "\nAdded "<<AvailablePolarRovers.getSize()<<" Polar Rovers to be Available\n";
+//    PolarRover* MR;
+//    cout<< "My information is: ";AvailablePolarRovers.peek(MR);
+//    MR->Print();
 }
 
 void RoverLists::addMultipleAvailableMountainousRovers(int NumberOfMountainousRovers,int Speed, int CheckupDuration, int NoCheckupMissions)
@@ -240,10 +240,31 @@ void RoverLists::addMultipleAvailableMountainousRovers(int NumberOfMountainousRo
         MountainousRover* MR=new MountainousRover(Speed,CheckupDuration,NoCheckupMissions);
         addAvailableMountainousRover(MR);
     }
-    cout<< "\nAdded "<<AvailableMountainousRovers.getSize()<<" Mountainous Rovers to be Available\n";
-    MountainousRover* MR;
+//    cout<< "\nAdded "<<AvailableMountainousRovers.getSize()<<" Mountainous Rovers to be Available\n";
+//    MountainousRover* MR;
+//
+//    cout<< "My information is: ";AvailableMountainousRovers.peek(MR);
+//    MR->Print();
+}
 
-    cout<< "My information is: ";AvailableMountainousRovers.peek(MR);
-    MR->Print();
+EmergencyRover *RoverLists::peekAvailableEmergencyRover()
+{
+    EmergencyRover* ER;
+    AvailableEmergencyRovers.peek(ER);
+    return ER;
+}
+
+PolarRover *RoverLists::peekAvailablePolarRover()
+{
+    PolarRover* PR;
+    AvailablePolarRovers.peek(PR);
+    return PR;
+}
+
+MountainousRover *RoverLists::peekAvailableMountainousRover()
+{
+    MountainousRover* MR;
+    AvailableMountainousRovers.peek(MR);
+    return MR;
 }
 

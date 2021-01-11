@@ -20,6 +20,12 @@ private:
 public:
     MarsStation();
     void loadFile(string FileName);
+
+    bool assignMountainousMission();
+    bool assignPolarMission();
+    bool assignEmergencyMission();
+    bool assignTodaysMission(int CurrentDay);
+
     ~MarsStation();
 };
 #endif //MARSSTATIONPROJECT_MARSSTATION_H
