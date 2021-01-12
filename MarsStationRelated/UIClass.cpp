@@ -31,17 +31,17 @@ void UIClass::sleep(int milliseconds)
 
 void UIClass::addToWaitingString()
 {
-    cout<<"Waiting Missions:        ";
+    cout<<"\nWaiting Missions:        ";
 }
 
 void UIClass::addToInExecutionString()
 {
-    cout<<"InExecution Missions:       ";
+    cout<<"\nInExecution Missions:       ";
 }
 
 void UIClass::addToCompletedString()
 {
-    cout<<"Completed Missions:      ";
+    cout<<"\nCompleted Missions:      ";
 }
 void UIClass::addToPolarString(int N)
 {
@@ -63,7 +63,7 @@ UIClass::~UIClass() {
 void UIClass::addToAvailableRoversString()
 {
 
-    cout<<"\nAvailable Rovers:      "<<
+    cout<<"\nAvailable Rovers:      ";
 }
 
 void UIClass::addToMountainousString(int N)

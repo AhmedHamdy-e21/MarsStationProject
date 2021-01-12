@@ -346,7 +346,7 @@ public:
 
             NodeMission<T> *p = Head->getNext();
             delete Head;
-//            Head = p; // This is not a memory leak, I pointed already to this
+            Head = p; // This is not a memory leak, I pointed already to this
             count--;
         }
         return ReturnedObj;

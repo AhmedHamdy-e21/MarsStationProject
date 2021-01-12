@@ -319,18 +319,20 @@ return true;
 void MarsStation::simulate(int CurrentDay)
 {
     /// The condition when everything return false
-    UIClass UserInterface;
     loadFile("../ConfigurationFile.txt");
     // I need to print and also I need to check when the mission is finished to transfer it to the completed
     // and add the rover to the list.
     int i=0;// This is for just experimenting
     while(i<30)
     {
-//        UserInterface.getProgramMode();
+
+        //// There will be conditions on the modes here
+         printInteractiveMode();
         assignTodaysMission(CurrentDay);
         isCompletedToday( CurrentDay);
         cancelTodaysMission(CurrentDay);
         promoteTodaysMission(CurrentDay);
+
 //        cout<<CurrentDay;
         CurrentDay++;
         i++;
@@ -351,6 +353,7 @@ void MarsStation::eraseIDPair(int MissionID)
     IDDictionary.erase(MissionID);
 }
 
+
 MountainousRover* MarsStation::CompletedMountainous(MountainousMission *MM,int CurrentDay)
 {
     int ID;
@@ -370,6 +373,7 @@ MountainousRover* MarsStation::CompletedMountainous(MountainousMission *MM,int C
 
 }
 
+
 PolarRover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
 {
     int ID;
@@ -387,6 +391,7 @@ PolarRover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
 
 }
 
+
 EmergencyRover* MarsStation::CompletedEmergency(EmergencyMission *EM,int CurrentDay)
 {
     int ID;
@@ -401,6 +406,7 @@ EmergencyRover* MarsStation::CompletedEmergency(EmergencyMission *EM,int Current
     eraseIDPair(ID);
     return RLs.getInMissionEmergencyRovers().FindID(RoverID);
 }
+
 
 bool MarsStation::transferInMissionMountainousRover(MountainousRover *MR)
 
@@ -438,6 +444,7 @@ bool MarsStation::transferInMissionMountainousRover(MountainousRover *MR)
     return false;
 }
 
+
 bool MarsStation::transferInMissionPolarRover(PolarRover *PR)
 {
 
@@ -459,6 +466,7 @@ bool MarsStation::transferInMissionPolarRover(PolarRover *PR)
 
     return false;
 }
+
 
 bool MarsStation::transferInMissionEmergencyRover(EmergencyRover *EM)
 {
@@ -482,9 +490,11 @@ bool MarsStation::transferInMissionEmergencyRover(EmergencyRover *EM)
     return false;
 }
 
+
 int MarsStation::returnRoverID(int MissionID) {
     return this->IDDictionary[MissionID];
 }
+
 
 void MarsStation::AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs, vector<int> &AvailablePolarRoversIDs,
                                      vector<int> &AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover *> MRQueue,
@@ -525,13 +535,13 @@ void MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsID
                                 vector<int> &AvailableEmergencyMissionsIDs, LinkedListMissions<MountainousMission *> MMList,
                                 LinkedQueue<PolarMission *> PMQueue, MaxHeap<EmergencyMission *> EMHeap)
 {
-    MountainousMission* M;
-    M=MMList.DeleteFirst();
-    while(M)
+//    MountainousMission* M;
+    int ID;
+    while(MMList.getHead())
     {
-        AvailableMountainousMissionsIDs.push_back(M->getID());
-        delete M; // To avoid memory leak
-        M=MMList.DeleteFirst();
+        ID=MMList.getHead()->getItem()->getID();
+        AvailableMountainousMissionsIDs.push_back(ID);
+        MMList.DeleteFirst();
     }
 
     bool BoolPolarID;
@@ -558,37 +568,30 @@ void MarsStation::CompletedMissionsIDs(vector<int> &CompletedMountainousMissions
                                   vector<int> &CompletedEmergencyMissionsIDs, LinkedListMissions<MountainousMission *> MMList,
                                        LinkedListMissions<PolarMission *> PMList, LinkedListMissions<EmergencyMission *> EMList)
 {
-    MountainousMission* M;
-    M=MMList.DeleteFirst();
-    while(M)
+    int ID;
+    while(MMList.getHead())
     {
-        CompletedMountainousMissionsIDs.push_back(M->getID());
-        delete M; // To avoid memory leak
-        M=MMList.DeleteFirst();
+        ID=MMList.getHead()->getItem()->getID();
+        CompletedMountainousMissionsIDs.push_back(ID);
+        MMList.DeleteFirst();
     }
 
 
-    PolarMission* P;
-    P=PMList.DeleteFirst();
-
-    while(P)
+    while(PMList.getHead())
     {
-        CompletedPolarMissionsIDs.push_back(M->getID());
-        delete P; // To avoid memory leak
-        P=PMList.DeleteFirst();
+        ID=PMList.getHead()->getItem()->getID();
+        CompletedPolarMissionsIDs.push_back(ID);
+        PMList.DeleteFirst();
     }
 
 
-    EmergencyMission* E;
-    E=EMList.DeleteFirst();
-    while(E)
+    while(EMList.getHead())
     {
-        CompletedEmergencyMissionsIDs.push_back(E->getID());
-        delete E;
-        E=EMList.DeleteFirst();
+        ID=EMList.getHead()->getItem()->getID();
+        CompletedEmergencyMissionsIDs.push_back(ID);
+        EMList.DeleteFirst();
     }
 }
-
 
 
 
@@ -598,34 +601,28 @@ void MarsStation::InExecutionMissionsIDs(vector<int> &InExecutionMountainousMiss
                                          LinkedListMissions<MountainousMission *> MMList, LinkedListMissions<PolarMission *> PMList,
                                          LinkedListMissions<EmergencyMission *> EMList)
 {
-    MountainousMission* M;
-    M=MMList.DeleteFirst();
-    while(M)
+    int ID;
+    while(MMList.getHead())
     {
-        InExecutionMountainousMissionsIDs.push_back(M->getID());
-        delete M; // To avoid memory leak
-        M=MMList.DeleteFirst();
+        ID=MMList.getHead()->getItem()->getID();
+        InExecutionMountainousMissionsIDs.push_back(ID);
+        MMList.DeleteFirst();
     }
 
 
-    PolarMission* P;
-    P=PMList.DeleteFirst();
-
-    while(P)
+    while(PMList.getHead())
     {
-        InExecutionPolarMissionsIDs.push_back(M->getID());
-        delete P; // To avoid memory leak
-        P=PMList.DeleteFirst();
+        ID=PMList.getHead()->getItem()->getID();
+        InExecutionPolarMissionsIDs.push_back(ID);
+        PMList.DeleteFirst();
     }
 
 
-    EmergencyMission* E;
-    E=EMList.DeleteFirst();
-    while(E)
+    while(EMList.getHead())
     {
-        InExecutionEmergencyMissionsIDs.push_back(E->getID());
-        delete E;
-        E=EMList.DeleteFirst();
+        ID=EMList.getHead()->getItem()->getID();
+        InExecutionEmergencyMissionsIDs.push_back(ID);
+        EMList.DeleteFirst();
     }
 }
 
@@ -673,7 +670,7 @@ void MarsStation::printInteractiveMode() {
 
 ////// Waiting Missions
 
-    UIclass.addToWaitingString()
+    UIclass.addToWaitingString();
 
     for (auto i = AvailableMountainousMissionsIDs.begin(); i != AvailableMountainousMissionsIDs.end(); ++i)
     {UIclass.addToMountainousString(*i);}
