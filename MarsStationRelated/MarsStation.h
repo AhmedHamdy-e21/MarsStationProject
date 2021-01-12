@@ -10,6 +10,8 @@
 #include <string>
 #include "UIClass.h"
 #include <map>
+#include <vector>
+#include <algorithm>
 class MarsStation
 {
 private:
@@ -45,13 +47,22 @@ public:
     bool assignEmergencyMission(int& ID);
     bool assignTodaysMission(int CurrentDay);
 
+    ///////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////UNDER CONSTRUCTION
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
     //// Check for the completed missions and then transfer them to the completed list.
     MountainousRover* CompletedMountainous(MountainousMission* MM,int CurrentDay);
     PolarRover* CompletedPolar(PolarMission* PM,int CurrentDay);
     EmergencyRover* CompletedEmergency(EmergencyMission* EM,int CurrentDay);
     ///// I need to implement a function that transfer Rovers from Inmission to either Checkup or Avaialble
 
-    ///////////////
 
     bool isCompletedToday(int CurrentDay);
 
@@ -59,9 +70,6 @@ public:
     bool cancelTodaysMission(int CurrentDay);
     bool promoteTodaysMission(int CurrentDay);
     void simulate(int CurrentDay);
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //// Now I need to get the rovers from being in mission to either available or In checkup
@@ -71,15 +79,12 @@ bool transferInMissionPolarRover(PolarRover* PR);
 bool transferInMissionEmergencyRover(EmergencyRover* EM);
 
 
-
-
-
-
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////Get Any kind of Data from here
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+// The data is passed by value in order to copy it and get the availble rovers ids
+void AvailableRoversIDs(vector<int>& AvailableMountainousRoversIDs, vector<int>& AvailablePolarRoversIDs, vector<int>& AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover*> MRQueue, LinkedQueue<PolarRover*> PRQueue, LinkedQueue<EmergencyRover*> ERQueue);
+void WaitingMissionsIDs(vector<int>& AvailableMountainousMissionsIDs, vector<int>& AvailablePolarMissionsIDs, vector<int>& AvailableEmergencyMissionsIDs, LinkedQueue<MountainousMission*> MMQueue, LinkedQueue<PolarMission*> PMQueue, LinkedQueue<EmergencyMission*> EMQueue);
 
     ~MarsStation();
 };

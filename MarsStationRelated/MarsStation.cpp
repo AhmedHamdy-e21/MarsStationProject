@@ -486,6 +486,73 @@ int MarsStation::returnRoverID(int MissionID) {
     return this->IDDictionary[MissionID];
 }
 
+void MarsStation::AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs, vector<int> &AvailablePolarRoversIDs,
+                                     vector<int> &AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover *> MRQueue,
+                                     LinkedQueue<PolarRover *> PRQueue, LinkedQueue<EmergencyRover *> ERQueue) {
+    /// So we will simply dequeue and then get the IDs
+    //// This would be better here if I implemented it by linked list maybe. I mean available rover. But it's just good for this function purpose not generally.
+    // The IDs is return in the form of vector and I will pop the IDs there in the print function
+    bool BoolMountainousID;
+    MountainousRover* M;
+    BoolMountainousID=MRQueue.dequeue(M);
+    while(BoolMountainousID)
+    {
+        AvailableMountainousRoversIDs.push_back(M->getID());
+        BoolMountainousID=MRQueue.dequeue(M);
+    }
+    bool BoolPolarID;
+    PolarRover* P;
+    BoolPolarID=PRQueue.dequeue(P);
+    while(BoolPolarID)
+    {
+        AvailablePolarRoversIDs.push_back(P->getID());
+        BoolPolarID=PRQueue.dequeue(P);
+    }
+    bool BoolEmergencyID;
+    EmergencyRover* E;
+    BoolEmergencyID=ERQueue.dequeue(E);
+    while(BoolEmergencyID)
+    {
+        AvailableEmergencyRoversIDs.push_back(E->getID());
+        BoolEmergencyID=ERQueue.dequeue(E);
+    }
+    ///// So this vector is used in order to get all IDs
+
+
+}
+
+void
+MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsIDs, vector<int> &AvailablePolarMissionsIDs,
+                                vector<int> &AvailableEmergencyMissionsIDs, LinkedQueue<MountainousMission *> MMQueue,
+                                LinkedQueue<PolarMission *> PMQueue, LinkedQueue<EmergencyMission *> EMQueue)
+{
+    bool BoolMountainousID;
+    MountainousMission* M;
+    BoolMountainousID=MMQueue.dequeue(M);
+    while(BoolMountainousID)
+    {
+        AvailableMountainousMissionsIDs.push_back(M->getID());
+        BoolMountainousID=MMQueue.dequeue(M);
+    }
+    bool BoolPolarID;
+    PolarMission* P;
+    BoolPolarID=PMQueue.dequeue(P);
+    while(BoolPolarID)
+    {
+        AvailablePolarMissionsIDs.push_back(P->getID());
+        BoolPolarID=PMQueue.dequeue(P);
+    }
+    bool BoolEmergencyID;
+    EmergencyMission* E;
+    BoolEmergencyID=EMQueue.dequeue(E);
+    while(BoolEmergencyID)
+    {
+        AvailableEmergencyMissionsIDs.push_back(E->getID());
+        BoolEmergencyID=EMQueue.dequeue(E);
+    }
+
+}
+
 
 
 
