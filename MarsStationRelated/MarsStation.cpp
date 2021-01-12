@@ -487,14 +487,14 @@ int MarsStation::returnRoverID(int MissionID) {
 }
 
 void MarsStation::AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs, vector<int> &AvailablePolarRoversIDs,
-                                     vector<int> &AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover *> MRQueue,
-                                     LinkedQueue<PolarRover *> PRQueue, LinkedQueue<EmergencyRover *> ERQueue) {
+                                     vector<int> &AvailableEmergencyRoversIDs, LinkedListMissions<MountainousRover *> MRQueue,
+                                     LinkedQueue<PolarRover *> PRQueue, MaxHeap<EmergencyRover *> ERQueue) {
     /// So we will simply dequeue and then get the IDs
     //// This would be better here if I implemented it by linked list maybe. I mean available rover. But it's just good for this function purpose not generally.
     // The IDs is return in the form of vector and I will pop the IDs there in the print function
     bool BoolMountainousID;
     MountainousRover* M;
-    BoolMountainousID=MRQueue.dequeue(M);
+    BoolMountainousID=MRQueue.get(M);
     while(BoolMountainousID)
     {
         AvailableMountainousRoversIDs.push_back(M->getID());
@@ -509,20 +509,18 @@ void MarsStation::AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs,
         BoolPolarID=PRQueue.dequeue(P);
     }
     bool BoolEmergencyID;
-    EmergencyRover* E;
-    BoolEmergencyID=ERQueue.dequeue(E);
-    while(BoolEmergencyID)
+    EmergencyRover* E= ERQueue.extractMax();
+    while(E)
     {
         AvailableEmergencyRoversIDs.push_back(E->getID());
-        BoolEmergencyID=ERQueue.dequeue(E);
+        E= ERQueue.extractMax();
     }
     ///// So this vector is used in order to get all IDs
 
 
 }
 
-void
-MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsIDs, vector<int> &AvailablePolarMissionsIDs,
+void MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsIDs, vector<int> &AvailablePolarMissionsIDs,
                                 vector<int> &AvailableEmergencyMissionsIDs, LinkedQueue<MountainousMission *> MMQueue,
                                 LinkedQueue<PolarMission *> PMQueue, LinkedQueue<EmergencyMission *> EMQueue)
 {
@@ -553,8 +551,7 @@ MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsIDs, ve
 
 }
 
-void
-MarsStation::CompletedMissionsIDs(vector<int> &CompletedMountainousMissionsIDs, vector<int> &CompletedPolarMissionsIDs,
+void MarsStation::CompletedMissionsIDs(vector<int> &CompletedMountainousMissionsIDs, vector<int> &CompletedPolarMissionsIDs,
                                   vector<int> &CompletedEmergencyMissionsIDs, LinkedQueue<MountainousMission *> MMList,
                                   LinkedQueue<PolarMission *> PMList, LinkedQueue<EmergencyMission *> EMList)
 {

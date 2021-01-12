@@ -75,7 +75,12 @@ void MaxHeap<T>::shiftUp(int i) {
 }
 
 template<typename T>
-T MaxHeap<T>::extractMax() {
+T MaxHeap<T>::extractMax()
+{
+    if (size == 0)
+    {
+        return nullptr;   // What if the vector is empty?
+    }
     T maxNum= vect[1];
     // I need to put a condition if there is only an element so we just return it
     if (size ==1)
@@ -88,6 +93,8 @@ T MaxHeap<T>::extractMax() {
     shiftDown(1);
     vect.resize(size);
     return maxNum;
+
+
 }
 
 template<typename T>
