@@ -553,6 +553,73 @@ MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsIDs, ve
 
 }
 
+void
+MarsStation::CompletedMissionsIDs(vector<int> &CompletedMountainousMissionsIDs, vector<int> &CompletedPolarMissionsIDs,
+                                  vector<int> &CompletedEmergencyMissionsIDs, LinkedQueue<MountainousMission *> MMList,
+                                  LinkedQueue<PolarMission *> PMList, LinkedQueue<EmergencyMission *> EMList)
+{
+
+    bool BoolMountainousID;
+    MountainousMission* M;
+    BoolMountainousID=MMList.dequeue(M);
+    while(BoolMountainousID)
+    {
+        CompletedMountainousMissionsIDs.push_back(M->getID());
+        BoolMountainousID=MMList.dequeue(M);
+    }
+    bool BoolPolarID;
+    PolarMission* P;
+    BoolPolarID=PMList.dequeue(P);
+    while(BoolPolarID)
+    {
+        CompletedPolarMissionsIDs.push_back(P->getID());
+        BoolPolarID=PMList.dequeue(P);
+    }
+    bool BoolEmergencyID;
+    EmergencyMission* E;
+    BoolEmergencyID=EMList.dequeue(E);
+    while(BoolEmergencyID)
+    {
+        CompletedEmergencyMissionsIDs.push_back(E->getID());
+        BoolEmergencyID=EMList.dequeue(E);
+    }
+}
+
+void MarsStation::InExecutionMissionsIDs(vector<int> &InExecutionMountainousMissionsIDs,
+                                         vector<int> &InExecutionPolarMissionsIDs,
+                                         vector<int> &InExecutionEmergencyMissionsIDs,
+                                         LinkedQueue<MountainousMission *> MMList, LinkedQueue<PolarMission *> PMList,
+                                         LinkedQueue<EmergencyMission *> EMList)
+{
+
+
+    bool BoolMountainousID;
+    MountainousMission* M;
+    BoolMountainousID=MMList.dequeue(M);
+    while(BoolMountainousID)
+    {
+        InExecutionMountainousMissionsIDs.push_back(M->getID());
+        BoolMountainousID=MMList.dequeue(M);
+    }
+    bool BoolPolarID;
+    PolarMission* P;
+    BoolPolarID=PMList.dequeue(P);
+    while(BoolPolarID)
+    {
+        InExecutionPolarMissionsIDs.push_back(P->getID());
+        BoolPolarID=PMList.dequeue(P);
+    }
+    bool BoolEmergencyID;
+    EmergencyMission* E;
+    BoolEmergencyID=EMList.dequeue(E);
+    while(BoolEmergencyID)
+    {
+        InExecutionEmergencyMissionsIDs.push_back(E->getID());
+        BoolEmergencyID=EMList.dequeue(E);
+    }
+
+}
+
 
 
 

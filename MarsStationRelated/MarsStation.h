@@ -85,7 +85,8 @@ bool transferInMissionEmergencyRover(EmergencyRover* EM);
 // The data is passed by value in order to copy it and get the availble rovers ids
 void AvailableRoversIDs(vector<int>& AvailableMountainousRoversIDs, vector<int>& AvailablePolarRoversIDs, vector<int>& AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover*> MRQueue, LinkedQueue<PolarRover*> PRQueue, LinkedQueue<EmergencyRover*> ERQueue);
 void WaitingMissionsIDs(vector<int>& AvailableMountainousMissionsIDs, vector<int>& AvailablePolarMissionsIDs, vector<int>& AvailableEmergencyMissionsIDs, LinkedQueue<MountainousMission*> MMQueue, LinkedQueue<PolarMission*> PMQueue, LinkedQueue<EmergencyMission*> EMQueue);
-
+void InExecutionMissionsIDs(vector<int>& InExecutionMountainousMissionsIDs, vector<int>& InExecutionPolarMissionsIDs, vector<int>& InExecutionEmergencyMissionsIDs, LinkedQueue<MountainousMission*> MMList, LinkedQueue<PolarMission*> PMList, LinkedQueue<EmergencyMission*> EMList);
+void CompletedMissionsIDs(vector<int>& CompletedMountainousMissionsIDs, vector<int>& CompletedPolarMissionsIDs, vector<int>& CompletedEmergencyMissionsIDs, LinkedQueue<MountainousMission*> MMList, LinkedQueue<PolarMission*> PMList, LinkedQueue<EmergencyMission*> EMList);
     ~MarsStation();
 };
 #endif //MARSSTATIONPROJECT_MARSSTATION_H
