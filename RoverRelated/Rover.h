@@ -10,7 +10,7 @@ using namespace std;
 class Rover {
 private:
 	int NoCheckupMissions;
-	int NoOfExecutedMissions;
+	int NoOfExecutedMissions=0;
 public:
     int getNoOfExecutedMissions() const;
 
@@ -23,10 +23,10 @@ private:
     int MissionDuration;
     int ID;
 public:
-    void setId(int id);
+    void setID(int id);
 
 public:
-    int getId() const;
+    int getID() const;
 
 public:
     Rover();

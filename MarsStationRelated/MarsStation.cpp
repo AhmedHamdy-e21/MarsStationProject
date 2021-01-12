@@ -84,7 +84,7 @@ bool MarsStation::assignMountainousMission(int & ID)
         MountainousRover* MR;
         MR=RLs.getAvailableMountainousRover();
         RLs.addInMissionMountainousRover(MR);
-        ID=MR->getId();
+        ID= MR->getID();
         return true;
     }
     else if(RLs.peekAvailableEmergencyRover())
@@ -92,7 +92,7 @@ bool MarsStation::assignMountainousMission(int & ID)
         EmergencyRover* ER;
         ER=RLs.getAvailableEmergencyRover();
         RLs.addInMissionEmergencyRover(ER);
-        ID=ER->getId();
+        ID= ER->getID();
         return true;
     }
     else false;
@@ -112,7 +112,7 @@ bool MarsStation::assignPolarMission(int &ID)
         PolarRover* PR;
         PR=RLs.getAvailablePolarRover();
         RLs.addInMissionPolarRover(PR);
-        ID=PR->getId();
+        ID= PR->getID();
         return true;
     }
     else return false;
@@ -204,7 +204,7 @@ bool MarsStation::assignEmergencyMission(int& ID)
         EmergencyRover* ER;
         ER=RLs.getAvailableEmergencyRover();
         RLs.addInMissionEmergencyRover(ER);
-        ID=ER->getId();
+        ID= ER->getID();
         return true;
     }
     else if(RLs.peekAvailableMountainousRover())
@@ -212,7 +212,7 @@ bool MarsStation::assignEmergencyMission(int& ID)
         MountainousRover* MR;
         MR=RLs.getAvailableMountainousRover();
         RLs.addInMissionMountainousRover(MR);
-        ID=MR->getId();
+        ID= MR->getID();
         return true;
     }
     else if (assignPolarMission(ID))
@@ -290,15 +290,17 @@ bool MarsStation::isCompletedToday(int CurrentDay)
 
     //// Use the FindCompleted method.
 
-while(MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionMountainous().FindCompleted(CurrentDay)||MLs.getInExecutionEmergency().FindCompleted(CurrentDay))
+//    MountainousMission* MM=;
+//// For some reason when I check for MM in the while loop it doesn't see it as null, because it's now updated within the loop
+// I'll call it in each step for now.
+while(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))//||MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionEmergency().FindCompleted(CurrentDay)
 {
     if(MLs.getInExecutionPolar().FindCompleted(CurrentDay))
     {
 
-
         transferInMissionPolarRover(CompletedPolar(MLs.getInExecutionPolar().FindCompleted(CurrentDay),CurrentDay));
     }
-    else if(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))
+     if(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))
     {
 
         transferInMissionMountainousRover(CompletedMountainous(MLs.getInExecutionMountainous().FindCompleted(CurrentDay),CurrentDay));
@@ -308,7 +310,9 @@ while(MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionMou
 
         transferInMissionEmergencyRover(CompletedEmergency(MLs.getInExecutionEmergency().FindCompleted(CurrentDay),CurrentDay));
     }
+    MountainousMission* MM=MLs.getInExecutionMountainous().FindCompleted(CurrentDay);
 }
+
 }
 
 void MarsStation::simulate(int CurrentDay)
@@ -319,7 +323,7 @@ void MarsStation::simulate(int CurrentDay)
     // I need to print and also I need to check when the mission is finished to transfer it to the completed
     // and add the rover to the list.
     int i=0;// This is for just experimenting
-    while(i<40)
+    while(i<30)
     {
 //        UserInterface.getProgramMode();
         assignTodaysMission(CurrentDay);
@@ -356,8 +360,15 @@ MountainousRover* MarsStation::CompletedMountainous(MountainousMission *MM,int C
     MLs.getInExecutionMountainous().DeleteNode(ID);
     MLs.getCompletedMountainous().InsertBeg(M);
     //// Here I can Delete the pair
+    int RoverID=returnRoverID(ID);
     eraseIDPair(ID);
+    return RLs.getInMissionMountainousRovers().FindID(RoverID);
+    //// Where is the return ??!
+
+
+
 }
+
 PolarRover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
 {
     int ID;
@@ -385,12 +396,37 @@ EmergencyRover* MarsStation::CompletedEmergency(EmergencyMission *EM,int Current
 }
 
 bool MarsStation::transferInMissionMountainousRover(MountainousRover *MR)
+
 {
+
+
     //// Firstly, I need to delete it from the InMission status
     //// Then, add it either to Checkup or Available by checking the number of missions before duration
     //// This need to be a function there in the rover parent
-    MR->incrementNoOfExecutedMissions();// This is to add the number of executing mission first.
+    ;// This is to add the number of executing mission first.
     // Then I need to check whether to checkup or not
+    //// Don't forget that I need to delete the rover from the Inmission List
+    // I can make get function in the linked list, this will be better, or just generating another rover.
+
+    if(MR)
+    {
+        int ID=MR->getID();
+        MR->incrementNoOfExecutedMissions();
+
+
+        if (MR->isCheckUp()) {
+
+            MountainousRover *NewRover = new MountainousRover(MR);
+            RLs.getInMissionMountainousRovers().DeleteNode(ID); /// I need to delete this
+            RLs.addInCheckupMountainousRover(NewRover);// This line extract the node and add to the checkup
+            return true;
+        } else {
+            MountainousRover *NewRover = new MountainousRover(MR);
+            RLs.getInMissionMountainousRovers().DeleteNode(ID);
+            RLs.addAvailableMountainousRover(NewRover);
+            return true;
+        }
+    }
 
     return false;
 }
@@ -398,13 +434,49 @@ bool MarsStation::transferInMissionMountainousRover(MountainousRover *MR)
 bool MarsStation::transferInMissionPolarRover(PolarRover *PR)
 {
 
+    PR->incrementNoOfExecutedMissions();// This is to add the number of executing mission first.
+    // Then I need to check whether to checkup or not
+    //// Don't forget that I need to delete the rover from the Inmission List
+    // I can make get function in the linked list, this will be better, or just generating another rover.
+
+    if(PR->isCheckUp())
+    {
+        RLs.addInCheckupPolarRover(RLs.getInMissionPolarRovers().extractNode(PR->getID()));// This line extract the node and add to the checkup
+        return true;
+    }
+    else
+    {
+        RLs.addAvailablePolarRover(RLs.getInMissionPolarRovers().extractNode(PR->getID()));
+        return true;
+    }
+
     return false;
 }
 
 bool MarsStation::transferInMissionEmergencyRover(EmergencyRover *EM)
 {
 
+    EM->incrementNoOfExecutedMissions();// This is to add the number of executing mission first.
+    // Then I need to check whether to checkup or not
+    //// Don't forget that I need to delete the rover from the Inmission List
+    // I can make get function in the linked list, this will be better, or just generating another rover.
+
+    if(EM->isCheckUp())
+    {
+        RLs.addInCheckupEmergencyRover(RLs.getInMissionEmergencyRovers().extractNode(EM->getID()));// This line extract the node and add to the checkup
+        return true;
+    }
+    else
+    {
+        RLs.addAvailableEmergencyRover(RLs.getInMissionEmergencyRovers().extractNode(EM->getID()));
+        return true;
+    }
+
     return false;
+}
+
+int MarsStation::returnRoverID(int MissionID) {
+    return this->IDDictionary[MissionID];
 }
 
 

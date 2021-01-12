@@ -67,8 +67,10 @@ int main() {
 //    EM1->Print();
 
 MarsStation MR;
+//MR.insertIDPair(1,2);
+//cout<<MR.returnRoverID(1);
 MR.loadFile("../ConfigurationFile.txt");
-int i=0;
+//int i=0;
 //while(i<26)
 //{
     MR.simulate(1);
@@ -117,6 +119,8 @@ cout<<endl;
 //    cout<<"getNoOfWaitingEmergencyMission :"<<MR.getMLs().getNoOfWaitingEmergencyMission()<<endl;
 
 */
+
+
 
 //    enum Throws {R, P, S};
 //    int userInput;

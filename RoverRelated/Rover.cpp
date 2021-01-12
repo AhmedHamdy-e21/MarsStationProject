@@ -12,7 +12,7 @@ Rover::Rover()
 Rover::Rover(int Speed, int CheckupDuration, int NoCheckupMissions,int ID)
 {
     setNoOfExecutedMissions(0);
-    setId(ID);
+    setID(ID);
     setSpeed(Speed);
     setCheckupDuration(CheckupDuration);
     setNoCheckupMissions(NoCheckupMissions);
@@ -65,11 +65,11 @@ void Rover::setMissionDuration(int missionDuration) {
     MissionDuration = missionDuration;
 }
 
-int Rover::getId() const {
+int Rover::getID() const {
     return ID;
 }
 
-void Rover::setId(int id) {
+void Rover::setID(int id) {
     ID = id;
 }
 
@@ -88,6 +88,15 @@ void Rover::incrementNoOfExecutedMissions()
 
 bool Rover::isCheckUp()
 {
-    
+    if (getNoOfExecutedMissions()==getNoCheckupMissions())
+    {
+        return true;
+    }
     return false;
 }
+
+Rover::~Rover() {
+
+}
+
+

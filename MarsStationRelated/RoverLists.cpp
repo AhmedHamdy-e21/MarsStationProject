@@ -28,15 +28,15 @@ int RoverLists::getNoOfAvailableMountainousRovers() const {
     return AvailableMountainousRovers.getSize();
 }
 
-const LinkedListMissions<EmergencyRover *> &RoverLists::getInMissionEmergencyRovers() const {
+ LinkedListMissions<EmergencyRover *> &RoverLists::getInMissionEmergencyRovers()  {
     return InMissionEmergencyRovers;
 }
 
-const LinkedListMissions<PolarRover *> &RoverLists::getInMissionPolarRovers() const {
+ LinkedListMissions<PolarRover *> &RoverLists::getInMissionPolarRovers()  {
     return InMissionPolarRovers;
 }
 
-const LinkedListMissions<MountainousRover *> &RoverLists::getInMissionMountainousRovers() const {
+ LinkedListMissions<MountainousRover *> &RoverLists::getInMissionMountainousRovers()  {
     return InMissionMountainousRovers;
 }
 

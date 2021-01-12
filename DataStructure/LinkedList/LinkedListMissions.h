@@ -130,7 +130,9 @@ public:
         NodeMission<T> *p = Head;
         NodeMission<T> *q = p->getNext();
 
-        while(q){
+        while(q)
+        {
+
             if(q->getItem()->getID()==ID){
                 p->setNext(q->getNext());
                 delete q;
@@ -142,6 +144,52 @@ public:
         }
         return false;
     }
+
+
+    T extractNode(int ID)
+    {
+        T ReturnedObj;
+//        cout<<"\nDeleting Mission of ID "<<ID;
+//        value->Print();
+//        cout<<endl;
+        if(Head == nullptr){
+            return nullptr;
+        }
+        if(Head->getItem()->getID()== ID){
+            /////
+                if(Head)
+                {
+                    ReturnedObj=Head->getItem();
+
+
+                    NodeMission<T> *p = Head->getNext();
+                    delete Head;
+                    Head = p;
+                    count--;
+                }
+                return ReturnedObj;
+            //////////////////
+        }
+        NodeMission<T> *p = Head;
+        NodeMission<T> *q = p->getNext();
+
+        while(q){
+            if(q->getItem()->getID()==ID)
+            {
+                ReturnedObj=q->getItem();
+                p->setNext(q->getNext());
+                delete q;
+                count--;
+                return ReturnedObj;
+            }
+            p = q;
+            q = p->getNext();
+        }
+        return nullptr;
+    }
+
+
+
 
 
 

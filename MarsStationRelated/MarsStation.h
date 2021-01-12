@@ -26,6 +26,7 @@ public:
 
     void insertIDPair(int MissionID,int RoverID);
     void eraseIDPair(int MissionID);
+    int returnRoverID(int MissionID);
 
      MissionLists &getMLs() ;
 
