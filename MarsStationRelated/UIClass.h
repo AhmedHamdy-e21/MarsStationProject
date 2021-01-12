@@ -18,11 +18,13 @@ public:
     void printString(string text);
     void waitForUser();// needed in the interactive mode to wait the user input
     static void sleep(int milliseconds);// block the program for some time needed in the step by step
-    void addToWaitingString(string text);// add to the string of the waiting missions it's like// Waiting missiont// In-Execution etc
-    void addToInExecutionString(string text);
-    void addToCompletedString(string text);
+    void addToWaitingString();// add to the string of the waiting missions it's like// Waiting missiont// In-Execution etc
+    void addToInExecutionString();
+    void addToCompletedString();
+    void addToAvailableRoversString();
     void addToPolarString(int N);
     void addToEmergencyString(int N);
+    void addToMountainousString(int N);
     ~UIClass();
 
 };

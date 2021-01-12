@@ -487,14 +487,14 @@ int MarsStation::returnRoverID(int MissionID) {
 }
 
 void MarsStation::AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs, vector<int> &AvailablePolarRoversIDs,
-                                     vector<int> &AvailableEmergencyRoversIDs, LinkedListMissions<MountainousRover *> MRQueue,
-                                     LinkedQueue<PolarRover *> PRQueue, MaxHeap<EmergencyRover *> ERQueue) {
+                                     vector<int> &AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover *> MRQueue,
+                                     LinkedQueue<PolarRover *> PRQueue, LinkedQueue<EmergencyRover *> ERQueue) {
     /// So we will simply dequeue and then get the IDs
     //// This would be better here if I implemented it by linked list maybe. I mean available rover. But it's just good for this function purpose not generally.
     // The IDs is return in the form of vector and I will pop the IDs there in the print function
     bool BoolMountainousID;
     MountainousRover* M;
-    BoolMountainousID=MRQueue.get(M);
+    BoolMountainousID=MRQueue.dequeue(M);
     while(BoolMountainousID)
     {
         AvailableMountainousRoversIDs.push_back(M->getID());
@@ -509,11 +509,12 @@ void MarsStation::AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs,
         BoolPolarID=PRQueue.dequeue(P);
     }
     bool BoolEmergencyID;
-    EmergencyRover* E= ERQueue.extractMax();
-    while(E)
+    EmergencyRover* E;
+    BoolEmergencyID=ERQueue.dequeue(E);
+    while(BoolEmergencyID)
     {
         AvailableEmergencyRoversIDs.push_back(E->getID());
-        E= ERQueue.extractMax();
+        BoolEmergencyID=ERQueue.dequeue(E);
     }
     ///// So this vector is used in order to get all IDs
 
@@ -521,17 +522,18 @@ void MarsStation::AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs,
 }
 
 void MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsIDs, vector<int> &AvailablePolarMissionsIDs,
-                                vector<int> &AvailableEmergencyMissionsIDs, LinkedQueue<MountainousMission *> MMQueue,
-                                LinkedQueue<PolarMission *> PMQueue, LinkedQueue<EmergencyMission *> EMQueue)
+                                vector<int> &AvailableEmergencyMissionsIDs, LinkedListMissions<MountainousMission *> MMList,
+                                LinkedQueue<PolarMission *> PMQueue, MaxHeap<EmergencyMission *> EMHeap)
 {
-    bool BoolMountainousID;
     MountainousMission* M;
-    BoolMountainousID=MMQueue.dequeue(M);
-    while(BoolMountainousID)
+    M=MMList.DeleteFirst();
+    while(M)
     {
         AvailableMountainousMissionsIDs.push_back(M->getID());
-        BoolMountainousID=MMQueue.dequeue(M);
+        delete M; // To avoid memory leak
+        M=MMList.DeleteFirst();
     }
+
     bool BoolPolarID;
     PolarMission* P;
     BoolPolarID=PMQueue.dequeue(P);
@@ -540,80 +542,172 @@ void MarsStation::WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsID
         AvailablePolarMissionsIDs.push_back(P->getID());
         BoolPolarID=PMQueue.dequeue(P);
     }
-    bool BoolEmergencyID;
+
     EmergencyMission* E;
-    BoolEmergencyID=EMQueue.dequeue(E);
-    while(BoolEmergencyID)
+    E=EMHeap.extractMax();
+    while(E)
     {
         AvailableEmergencyMissionsIDs.push_back(E->getID());
-        BoolEmergencyID=EMQueue.dequeue(E);
+        delete E;
+        E=EMHeap.extractMax();
     }
 
 }
 
 void MarsStation::CompletedMissionsIDs(vector<int> &CompletedMountainousMissionsIDs, vector<int> &CompletedPolarMissionsIDs,
-                                  vector<int> &CompletedEmergencyMissionsIDs, LinkedQueue<MountainousMission *> MMList,
-                                  LinkedQueue<PolarMission *> PMList, LinkedQueue<EmergencyMission *> EMList)
+                                  vector<int> &CompletedEmergencyMissionsIDs, LinkedListMissions<MountainousMission *> MMList,
+                                       LinkedListMissions<PolarMission *> PMList, LinkedListMissions<EmergencyMission *> EMList)
 {
-
-    bool BoolMountainousID;
     MountainousMission* M;
-    BoolMountainousID=MMList.dequeue(M);
-    while(BoolMountainousID)
+    M=MMList.DeleteFirst();
+    while(M)
     {
         CompletedMountainousMissionsIDs.push_back(M->getID());
-        BoolMountainousID=MMList.dequeue(M);
+        delete M; // To avoid memory leak
+        M=MMList.DeleteFirst();
     }
-    bool BoolPolarID;
+
+
     PolarMission* P;
-    BoolPolarID=PMList.dequeue(P);
-    while(BoolPolarID)
+    P=PMList.DeleteFirst();
+
+    while(P)
     {
-        CompletedPolarMissionsIDs.push_back(P->getID());
-        BoolPolarID=PMList.dequeue(P);
+        CompletedPolarMissionsIDs.push_back(M->getID());
+        delete P; // To avoid memory leak
+        P=PMList.DeleteFirst();
     }
-    bool BoolEmergencyID;
+
+
     EmergencyMission* E;
-    BoolEmergencyID=EMList.dequeue(E);
-    while(BoolEmergencyID)
+    E=EMList.DeleteFirst();
+    while(E)
     {
         CompletedEmergencyMissionsIDs.push_back(E->getID());
-        BoolEmergencyID=EMList.dequeue(E);
+        delete E;
+        E=EMList.DeleteFirst();
     }
 }
+
+
+
 
 void MarsStation::InExecutionMissionsIDs(vector<int> &InExecutionMountainousMissionsIDs,
                                          vector<int> &InExecutionPolarMissionsIDs,
                                          vector<int> &InExecutionEmergencyMissionsIDs,
-                                         LinkedQueue<MountainousMission *> MMList, LinkedQueue<PolarMission *> PMList,
-                                         LinkedQueue<EmergencyMission *> EMList)
+                                         LinkedListMissions<MountainousMission *> MMList, LinkedListMissions<PolarMission *> PMList,
+                                         LinkedListMissions<EmergencyMission *> EMList)
 {
-
-
-    bool BoolMountainousID;
     MountainousMission* M;
-    BoolMountainousID=MMList.dequeue(M);
-    while(BoolMountainousID)
+    M=MMList.DeleteFirst();
+    while(M)
     {
         InExecutionMountainousMissionsIDs.push_back(M->getID());
-        BoolMountainousID=MMList.dequeue(M);
+        delete M; // To avoid memory leak
+        M=MMList.DeleteFirst();
     }
-    bool BoolPolarID;
+
+
     PolarMission* P;
-    BoolPolarID=PMList.dequeue(P);
-    while(BoolPolarID)
+    P=PMList.DeleteFirst();
+
+    while(P)
     {
-        InExecutionPolarMissionsIDs.push_back(P->getID());
-        BoolPolarID=PMList.dequeue(P);
+        InExecutionPolarMissionsIDs.push_back(M->getID());
+        delete P; // To avoid memory leak
+        P=PMList.DeleteFirst();
     }
-    bool BoolEmergencyID;
+
+
     EmergencyMission* E;
-    BoolEmergencyID=EMList.dequeue(E);
-    while(BoolEmergencyID)
+    E=EMList.DeleteFirst();
+    while(E)
     {
         InExecutionEmergencyMissionsIDs.push_back(E->getID());
-        BoolEmergencyID=EMList.dequeue(E);
+        delete E;
+        E=EMList.DeleteFirst();
     }
+}
+
+void MarsStation::printInteractiveMode() {
+    vector<int>AvailableMountainousRoversIDs;
+    vector<int> AvailablePolarRoversIDs;
+    vector<int> AvailableEmergencyRoversIDs;
+
+    AvailableRoversIDs(AvailableMountainousRoversIDs, AvailablePolarRoversIDs,  AvailableEmergencyRoversIDs, RLs.getAvailableMountainousRovers(),  RLs.getAvailablePolarRovers(),  RLs.getAvailableEmergencyRovers());
+
+    vector<int> AvailableMountainousMissionsIDs;
+    vector<int> AvailablePolarMissionsIDs;
+    vector<int> AvailableEmergencyMissionsIDs;
+
+    WaitingMissionsIDs( AvailableMountainousMissionsIDs,  AvailablePolarMissionsIDs, AvailableEmergencyMissionsIDs, MLs.getWaitingMountainousMissionList(),MLs.getWaitingPolarMissionQueue(),MLs.getWaitingEmergencyMissionHeap());
+
+    vector<int> CompletedMountainousMissionsIDs;
+    vector<int> CompletedPolarMissionsIDs;
+    vector<int> CompletedEmergencyMissionsIDs;
+    CompletedMissionsIDs(CompletedMountainousMissionsIDs, CompletedPolarMissionsIDs,
+                         CompletedEmergencyMissionsIDs, MLs.getCompletedMountainous(),MLs.getCompletedPolar(),MLs.getCompletedEmergency());
+
+
+    vector<int> InExecutionMountainousMissionsIDs;
+    vector<int> InExecutionEmergencyMissionsIDs;
+    vector<int> InExecutionPolarMissionsIDs;
+    InExecutionMissionsIDs(InExecutionMountainousMissionsIDs,
+                           InExecutionPolarMissionsIDs,
+                           InExecutionEmergencyMissionsIDs, MLs.getInExecutionMountainous(),MLs.getInExecutionPolar(),MLs.getInExecutionEmergency());
+
+
+
+
+    ////// Avaialble rovers
+    UIclass.addToAvailableRoversString();
+    for (auto i = AvailableMountainousRoversIDs.begin(); i != AvailableMountainousRoversIDs.end(); ++i)
+    {UIclass.addToMountainousString(*i);}
+
+    for (auto i = AvailablePolarRoversIDs.begin(); i != AvailablePolarRoversIDs.end(); ++i)
+    {UIclass.addToPolarString(*i);}
+
+    for (auto i = AvailableEmergencyRoversIDs.begin(); i != AvailableEmergencyRoversIDs.end(); ++i)
+    {UIclass.addToEmergencyString(*i);}
+
+
+////// Waiting Missions
+
+    UIclass.addToWaitingString()
+
+    for (auto i = AvailableMountainousMissionsIDs.begin(); i != AvailableMountainousMissionsIDs.end(); ++i)
+    {UIclass.addToMountainousString(*i);}
+
+    for (auto i = AvailablePolarMissionsIDs.begin(); i != AvailablePolarMissionsIDs.end(); ++i)
+    {UIclass.addToPolarString(*i);}
+
+    for (auto i = AvailableEmergencyMissionsIDs.begin(); i != AvailableEmergencyMissionsIDs.end(); ++i)
+    {UIclass.addToEmergencyString(*i);}
+
+
+
+////// InExecution Missions
+    UIclass.addToInExecutionString();
+    for (auto i = InExecutionMountainousMissionsIDs.begin(); i != InExecutionMountainousMissionsIDs.end(); ++i)
+    {UIclass.addToMountainousString(*i);}
+
+    for (auto i = InExecutionEmergencyMissionsIDs.begin(); i != InExecutionEmergencyMissionsIDs.end(); ++i)
+    {UIclass.addToPolarString(*i);}
+
+    for (auto i = InExecutionPolarMissionsIDs.begin(); i != InExecutionPolarMissionsIDs.end(); ++i)
+    {UIclass.addToEmergencyString(*i);}
+
+
+////// Completed Missions
+    UIclass.addToCompletedString();
+    for (auto i = CompletedMountainousMissionsIDs.begin(); i != CompletedMountainousMissionsIDs.end(); ++i)
+    {UIclass.addToMountainousString(*i);}
+
+    for (auto i = CompletedPolarMissionsIDs.begin(); i != CompletedPolarMissionsIDs.end(); ++i)
+    {UIclass.addToPolarString(*i);}
+
+    for (auto i = CompletedEmergencyMissionsIDs.begin(); i != CompletedEmergencyMissionsIDs.end(); ++i)
+    {UIclass.addToEmergencyString(*i);}
 
 }
 

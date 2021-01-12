@@ -5,6 +5,7 @@
 #define MARSSTATIONPROJECT_MARSSTATION_H
 #include  "../MarsStationRelated/MissionLists.h"
 #include  "../MarsStationRelated/RoverLists.h"
+#include "UIClass.h"
 #include "EventLists.h"
 #include <fstream>
 #include <string>
@@ -18,6 +19,7 @@ private:
     MissionLists MLs;
     RoverLists RLs;
     EventLists EVs;
+    UIClass UIclass;
     // I need to map the mission ids to the rovers id using map simply
     map<int, int> IDDictionary;
     int AutoP;
@@ -92,42 +94,34 @@ bool transferInMissionEmergencyRover(EmergencyRover* EM);
 /////////////Get Any kind of Data from here
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // The data is passed by value in order to copy it and get the availble rovers ids
-void AvailableRoversIDs(vector<int>& AvailableMountainousRoversIDs, vector<int>& AvailablePolarRoversIDs, vector<int>& AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover*> MRQueue, LinkedQueue<PolarRover*> PRQueue, LinkedQueue<EmergencyRover*> ERQueue);
-void WaitingMissionsIDs(vector<int>& AvailableMountainousMissionsIDs, vector<int>& AvailablePolarMissionsIDs, vector<int>& AvailableEmergencyMissionsIDs, LinkedQueue<MountainousMission*> MMQueue, LinkedQueue<PolarMission*> PMQueue, LinkedQueue<EmergencyMission*> EMQueue);
-void InExecutionMissionsIDs(vector<int>& InExecutionMountainousMissionsIDs, vector<int>& InExecutionPolarMissionsIDs, vector<int>& InExecutionEmergencyMissionsIDs, LinkedQueue<MountainousMission*> MMList, LinkedQueue<PolarMission*> PMList, LinkedQueue<EmergencyMission*> EMList);
-void CompletedMissionsIDs(vector<int>& CompletedMountainousMissionsIDs, vector<int>& CompletedPolarMissionsIDs, vector<int>& CompletedEmergencyMissionsIDs, LinkedQueue<MountainousMission*> MMList, LinkedQueue<PolarMission*> PMList, LinkedQueue<EmergencyMission*> EMList);
+void AvailableRoversIDs(vector<int> &AvailableMountainousRoversIDs, vector<int> &AvailablePolarRoversIDs,
+                        vector<int> &AvailableEmergencyRoversIDs, LinkedQueue<MountainousRover *> MRQueue,
+                        LinkedQueue<PolarRover *> PRQueue, LinkedQueue<EmergencyRover *> ERQueue);
+
+
+
+
+void WaitingMissionsIDs(vector<int> &AvailableMountainousMissionsIDs, vector<int> &AvailablePolarMissionsIDs,
+                        vector<int> &AvailableEmergencyMissionsIDs, LinkedListMissions<MountainousMission *> MMList,
+                        LinkedQueue<PolarMission *> PMQueue, MaxHeap<EmergencyMission *> EMHeap);
+
+void InExecutionMissionsIDs(vector<int> &InExecutionMountainousMissionsIDs,
+                            vector<int> &InExecutionPolarMissionsIDs,
+                            vector<int> &InExecutionEmergencyMissionsIDs,
+                            LinkedListMissions<MountainousMission *> MMList, LinkedListMissions<PolarMission *> PMList,
+                            LinkedListMissions<EmergencyMission *> EMList);
+
+void CompletedMissionsIDs(vector<int> &CompletedMountainousMissionsIDs, vector<int> &CompletedPolarMissionsIDs,
+                          vector<int> &CompletedEmergencyMissionsIDs, LinkedListMissions<MountainousMission *> MMList,
+                          LinkedListMissions<PolarMission *> PMList, LinkedListMissions<EmergencyMission *> EMList);
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////Simulator Related
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void printInteractiveMode(int CurrentDay)
-{
-    vector<int>AvailableMountainousRoversIDs;
-    vector<int> AvailablePolarRoversIDs;
-    vector<int> AvailableEmergencyRoversIDs;
+void printInteractiveMode();
 
-    AvailableRoversIDs(AvailableMountainousRoversIDs, AvailablePolarRoversIDs,  AvailableEmergencyRoversIDs, RLs.getAvailableMountainousRovers(),  RLs.getAvailablePolarRovers(),  RLs.getAvailableEmergencyRovers());
-
-    vector<int> AvailableMountainousMissionsIDs;
-    vector<int> AvailablePolarMissionsIDs;
-    vector<int> AvailableEmergencyMissionsIDs;
-
-    WaitingMissionsIDs( AvailableMountainousMissionsIDs,  AvailablePolarMissionsIDs, AvailableEmergencyMissionsIDs,  ,  PMQueue,  EMQueue);
-
-    vector<int> CompletedMountainousMissionsIDs;
-    vector<int> CompletedPolarMissionsIDs;
-    vector<int> CompletedEmergencyMissionsIDs;
-
-    vector<int> InExecutionMountainousMissionsIDs;
-    vector<int> InExecutionEmergencyMissionsIDs;
-    vector<int> InExecutionPolarMissionsIDs;
-
-    for (auto i = path.begin(); i != path.end(); ++i)
-        std::cout << *i << ' ';
-
-}
 
     ~MarsStation();
 };

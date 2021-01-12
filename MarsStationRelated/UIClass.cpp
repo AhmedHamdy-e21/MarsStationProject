@@ -29,17 +29,17 @@ void UIClass::sleep(int milliseconds)
     sleep(milliseconds * microsecond);//sleeps for 3 second
 }
 
-void UIClass::addToWaitingString(string text)
+void UIClass::addToWaitingString()
 {
     cout<<"Waiting Missions:        ";
 }
 
-void UIClass::addToInExecutionString(string text)
+void UIClass::addToInExecutionString()
 {
     cout<<"InExecution Missions:       ";
 }
 
-void UIClass::addToCompletedString(string text)
+void UIClass::addToCompletedString()
 {
     cout<<"Completed Missions:      ";
 }
@@ -57,6 +57,18 @@ UIClass::UIClass() {
 }
 
 UIClass::~UIClass() {
+
+}
+
+void UIClass::addToAvailableRoversString()
+{
+
+    cout<<"\nAvailable Rovers:      "<<
+}
+
+void UIClass::addToMountainousString(int N)
+{
+    cout<<" "<<N<<" ";
 
 }
 
