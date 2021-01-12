@@ -72,6 +72,12 @@ void UIClass::addToMountainousString(int N)
 
 }
 
+void UIClass::printCurrentDay(int CurrentDay)
+{
+    cout<<"\n\n\n"<<"Current Day:       "<<CurrentDay<<endl;
+
+}
+
 
 
 

@@ -69,7 +69,7 @@ int main() {
 MarsStation MR;
 //MR.insertIDPair(1,2);
 //cout<<MR.returnRoverID(1);
-MR.loadFile("../ConfigurationFile.txt");
+//MR.loadFile("../ConfigurationFile.txt");
 //int i=0;
 //while(i<26)
 //{

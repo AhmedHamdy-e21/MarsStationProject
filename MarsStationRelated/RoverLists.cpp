@@ -203,7 +203,7 @@ MountainousRover *RoverLists::getInCheckupMountainousRover() {
 void RoverLists::addMultipleAvailableEmergencyRovers(int NumberOfEmergencyRovers,int Speed, int CheckupDuration, int NoCheckupMissions,int ID)
 {
      int i=0;
-     int n=getNoOfAvailablePolarRovers()+getNoOfAvailableMountainousRovers();
+     int n=(getNoOfAvailablePolarRovers()+getNoOfAvailableMountainousRovers());
     for ( i = 0; i <NumberOfEmergencyRovers ; ++i)
     {
         EmergencyRover* ER=new EmergencyRover(Speed,CheckupDuration,NoCheckupMissions,i+n);
@@ -220,6 +220,7 @@ void RoverLists::addMultipleAvailablePolarRovers(int NumberOfPolarRovers,int Spe
 {
     int i=0;
     int n=getNoOfAvailableMountainousRovers(); // This is to generate ids for rovers
+
     for ( i = 0; i <NumberOfPolarRovers ; ++i)
     {
         PolarRover* PR=new PolarRover(Speed,CheckupDuration,NoCheckupMissions,i+n);

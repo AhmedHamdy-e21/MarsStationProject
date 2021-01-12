@@ -22,6 +22,7 @@ public:
     void addToInExecutionString();
     void addToCompletedString();
     void addToAvailableRoversString();
+    void printCurrentDay(int CurrentDay);
     void addToPolarString(int N);
     void addToEmergencyString(int N);
     void addToMountainousString(int N);

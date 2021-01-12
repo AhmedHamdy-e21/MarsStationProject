@@ -38,6 +38,7 @@ void MarsStation::loadFile(string FileName)
     RLs.addMultipleAvailablePolarRovers(P,SP,CP,N);
 
     RLs.addMultipleAvailableEmergencyRovers(E,SE,CE,N);
+
     // This is to initialize the Available Emergency Rovers.
     inputFile >> EV;
     for (int j = 0; j < EV; j++)
@@ -327,7 +328,7 @@ void MarsStation::simulate(int CurrentDay)
     {
 
         //// There will be conditions on the modes here
-         printInteractiveMode();
+         printInteractiveMode(CurrentDay);
         assignTodaysMission(CurrentDay);
         isCompletedToday( CurrentDay);
         cancelTodaysMission(CurrentDay);
@@ -626,7 +627,7 @@ void MarsStation::InExecutionMissionsIDs(vector<int> &InExecutionMountainousMiss
     }
 }
 
-void MarsStation::printInteractiveMode() {
+void MarsStation::printInteractiveMode(int CurrentDay) {
     vector<int>AvailableMountainousRoversIDs;
     vector<int> AvailablePolarRoversIDs;
     vector<int> AvailableEmergencyRoversIDs;
@@ -705,6 +706,8 @@ void MarsStation::printInteractiveMode() {
 
     for (auto i = CompletedEmergencyMissionsIDs.begin(); i != CompletedEmergencyMissionsIDs.end(); ++i)
     {UIclass.addToEmergencyString(*i);}
+
+    UIclass.printCurrentDay(CurrentDay);
 
 }
 

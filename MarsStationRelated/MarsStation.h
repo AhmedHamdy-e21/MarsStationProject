@@ -118,7 +118,7 @@ void CompletedMissionsIDs(vector<int> &CompletedMountainousMissionsIDs, vector<i
 /////////////Simulator Related
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void printInteractiveMode();
+void printInteractiveMode(int CurrentDay);
 
 
     ~MarsStation();
