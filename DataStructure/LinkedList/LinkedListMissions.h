@@ -191,7 +191,14 @@ public:
 
 
 
-
+bool isEmpty()
+{
+        if (count==0)
+        {
+            return true;
+        }
+        else return false;
+}
 
 //
 //    bool DeleteNode(const T &value)
