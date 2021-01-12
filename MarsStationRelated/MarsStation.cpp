@@ -293,7 +293,7 @@ bool MarsStation::isCompletedToday(int CurrentDay)
 //    MountainousMission* MM=;
 //// For some reason when I check for MM in the while loop it doesn't see it as null, because it's now updated within the loop
 // I'll call it in each step for now.
-while(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))//||MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionEmergency().FindCompleted(CurrentDay)
+while(MLs.getInExecutionMountainous().FindCompleted(CurrentDay)||MLs.getInExecutionPolar().FindCompleted(CurrentDay)||MLs.getInExecutionEmergency().FindCompleted(CurrentDay))
 {
     if(MLs.getInExecutionPolar().FindCompleted(CurrentDay))
     {
