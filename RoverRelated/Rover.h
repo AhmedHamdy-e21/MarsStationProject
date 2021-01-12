@@ -11,24 +11,20 @@ class Rover {
 private:
 	int NoCheckupMissions;
 	int NoOfExecutedMissions=0;
-public:
-    int getNoOfExecutedMissions() const;
-
-    void setNoOfExecutedMissions(int noOfExecutedMissions);
-
-private:
     int CheckupDuration;
     float Speed;
     int MissionStartTime;
     int MissionDuration;
     int ID;
 public:
+    int getNoOfExecutedMissions() const;
+
+    void setNoOfExecutedMissions(int noOfExecutedMissions);
+
     void setID(int id);
 
-public:
     int getID() const;
 
-public:
     Rover();
 
     Rover(int Speed, int CheckupDuration,int NoCheckupMissions,int ID);

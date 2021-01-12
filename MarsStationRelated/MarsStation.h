@@ -17,10 +17,7 @@ private:
     RoverLists RLs;
     EventLists EVs;
     // I need to map the mission ids to the rovers id using map simply
-
-
     map<int, int> IDDictionary;
-
     int AutoP;
 public:
 

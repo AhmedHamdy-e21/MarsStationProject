@@ -22,23 +22,23 @@ private:
     LinkedQueue<EmergencyRover*> AvailableEmergencyRovers;
     LinkedQueue<PolarRover*> AvailablePolarRovers;
     LinkedQueue<MountainousRover*> AvailableMountainousRovers;
-    int NoOfAvailableEmergencyRover;
-    int NoOfAvailablePolarRover;
-    int NoOfAvailableMountainousRover;
+    int NoOfAvailableEmergencyRover=0;
+    int NoOfAvailablePolarRover=0;
+    int NoOfAvailableMountainousRover=0;
     /////////////InMission Rovers
     LinkedListMissions<EmergencyRover*> InMissionEmergencyRovers;
     LinkedListMissions<PolarRover*> InMissionPolarRovers;
     LinkedListMissions<MountainousRover*> InMissionMountainousRovers;
-    int NoOfInMissionEmergencyRover;
-    int NoOfInMissionPolarRover;
-    int NoOfInMissionMountainousRover;
+    int NoOfInMissionEmergencyRover=0;
+    int NoOfInMissionPolarRover=0;
+    int NoOfInMissionMountainousRover=0;
     /////////////InCheckup Rovers
     LinkedListMissions<EmergencyRover*> InCheckupEmergencyRovers;
     LinkedListMissions<PolarRover*> InCheckupPolarRovers;
     LinkedListMissions<MountainousRover*> InCheckupMountainousRovers;
-    int NoOfInCheckupEmergencyRover;
-    int NoOfInCheckupPolarRover;
-    int NoOfInCheckupMountainousRover;
+    int NoOfInCheckupEmergencyRover=0;
+    int NoOfInCheckupPolarRover=0;
+    int NoOfInCheckupMountainousRover=0;
 
 public:
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

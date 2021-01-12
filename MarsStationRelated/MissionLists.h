@@ -21,23 +21,23 @@ private:
     MaxHeap<EmergencyMission*> WaitingEmergencyMissionHeap;
     LinkedQueue<PolarMission*> WaitingPolarMissionQueue;
     LinkedListMissions<MountainousMission*> WaitingMountainousMissionList;
-    int NoOfWaitingEmergencyMission;
-    int NoOfWaitingPolarMission;
-    int NoOfWaitingMountainousMission;
+    int NoOfWaitingEmergencyMission=0;
+    int NoOfWaitingPolarMission=0;
+    int NoOfWaitingMountainousMission=0;
     /////////////IsExecution Missions
     LinkedListMissions<MountainousMission*> InExecutionMountainous;
     LinkedListMissions<EmergencyMission*> InExecutionEmergency;
     LinkedListMissions<PolarMission*> InExecutionPolar;
-    int NoOfInExecutionMountainous;
-    int NoOfInExecutionEmergency;
-    int NoOfInExecutionPolar;
+    int NoOfInExecutionMountainous=0;
+    int NoOfInExecutionEmergency=0;
+    int NoOfInExecutionPolar=0;
     /////////////Completed Missions, ##### I dont' think that I need to store them, I just keep their numbers.
     LinkedListMissions<MountainousMission*> CompletedMountainous;
     LinkedListMissions<EmergencyMission*> CompletedEmergency;
     LinkedListMissions<PolarMission*> CompletedPolar;
-    int NoOfCompletedPolar;
-    int NoOfCompletedEmergency;
-    int NoOfCompletedMountainous;
+    int NoOfCompletedPolar=0;
+    int NoOfCompletedEmergency=0;
+    int NoOfCompletedMountainous=0;
 
     /////// NOTE THAT, I need to keep the history of each mission. in terms of all dates.
     ////// I can keep this class that cute and the history is stored in the MarsStation class.

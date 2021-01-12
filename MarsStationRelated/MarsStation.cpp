@@ -95,7 +95,7 @@ bool MarsStation::assignMountainousMission(int & ID)
         ID= ER->getID();
         return true;
     }
-    else false;
+    else return false;
 }
 
 //// So the assign polar just take a mission and assign it if there is an available rovers.
@@ -312,6 +312,7 @@ while(MLs.getInExecutionMountainous().FindCompleted(CurrentDay))//||MLs.getInExe
     }
     MountainousMission* MM=MLs.getInExecutionMountainous().FindCompleted(CurrentDay);
 }
+return true;
 
 }
 
@@ -379,7 +380,11 @@ PolarRover* MarsStation::CompletedPolar(PolarMission *PM,int CurrentDay)
     MLs.getInExecutionPolar().DeleteNode(ID);
     MLs.getCompletedPolar().InsertBeg(M);
     //// Here I can Delete the pair
+    int RoverID=returnRoverID(ID);
+
     eraseIDPair(ID);
+    return RLs.getInMissionPolarRovers().FindID(RoverID);
+
 }
 
 EmergencyRover* MarsStation::CompletedEmergency(EmergencyMission *EM,int CurrentDay)
@@ -392,7 +397,9 @@ EmergencyRover* MarsStation::CompletedEmergency(EmergencyMission *EM,int Current
     MLs.getInExecutionEmergency().DeleteNode(ID);
     MLs.getCompletedEmergency().InsertBeg(M);
     //// Here I can Delete the pair
+    int RoverID=returnRoverID(ID);
     eraseIDPair(ID);
+    return RLs.getInMissionEmergencyRovers().FindID(RoverID);
 }
 
 bool MarsStation::transferInMissionMountainousRover(MountainousRover *MR)

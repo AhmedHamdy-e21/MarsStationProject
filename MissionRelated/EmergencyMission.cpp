@@ -12,7 +12,7 @@ void EmergencyMission::Print() const {
 
 EmergencyMission::EmergencyMission(int ED, int ID, int TargetLocation, int MissionDuration, int Significance,int FomrulatedDay) : Mission(
         ED, ID, TargetLocation, MissionDuration, Significance,FomrulatedDay) {
-
+    setPriority();
 }
 
 int EmergencyMission::getPriority()
@@ -34,19 +34,19 @@ void EmergencyMission::setPriority()
 EmergencyMission::EmergencyMission(FormulationEvent *EV, int ExecutionDay):Mission(
 
         ExecutionDay, EV->getID(), EV->getTargetLocation(),EV-> getMissionDuration(), EV->getSignificance(),EV->getEventDay())// The getEventDay is the formulation
-{
+{setPriority();
 }
 
 EmergencyMission::EmergencyMission(MountainousMission *EV, int FormulationDay):Mission(
         FormulationDay, EV->getID(), EV->getTargetLocation(), EV-> getMissionDuration(), EV->getSignificance(),EV->getED())
-{
+{setPriority();
 
 
 }
 
 EmergencyMission::EmergencyMission(EmergencyMission *EV):Mission(
         EV->getED(), EV->getID(), EV->getTargetLocation(), EV-> getMissionDuration(), EV->getSignificance(),EV->getFormulatedDay())
-        {
+        {setPriority();
     setCompletedDay(EV->getCompletedDay());
 
 }
